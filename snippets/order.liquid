@@ -1,0 +1,31 @@
+                        
+                        {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+                        {% if template contains 'index' or template contains 'store' %}
+                        <ul id="collection-selector">
+                            <li><span data-collection="{{ settings.men_collection }}" data-collection-id="{{ collections[settings.men_collection].id }}" class="active">{{ collections[settings.men_collection].title }}</span></li>
+                            <li><span data-collection="{{ settings.women_collection }}" data-collection-id="{{ collections[settings.women_collection].id }}">{{ collections[settings.women_collection].title }}</span></li>
+                        </ul>
+                        {% endif %}
+                        <form action="/cart/add" method="post" id="quick-order-form">
+                            <div id="select_products">
+                                <div class="selector-wrapper">
+                                    <label for="product_selection">Style</label>
+                                    <select id="product_selection">
+                                    {% assign prod_num = 0 %}
+                                    {% for product in collections[settings.men_collection].products %}
+                                        {% if prod_num == 0 %}{% assign first_id = product.id %}{% endif %}
+                                        <option value="{{ product.id }}"{% if prod_num == 0 %} selected{% endif %}>{{ product.title }}</option>
+                                        {% assign prod_num = prod_num | plus: 1 %}
+                                    {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div id="product-fields">
+                                <span class="loading">Loading...</span>
+                            </div>
+            	        </form>
+            	        <script type="text/javascript">
+						$(document).ready(function() {
+							FrontLogic.getProductVariations({{ first_id }});
+						});
+                        </script>

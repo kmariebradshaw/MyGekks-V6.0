@@ -1,0 +1,34 @@
+{
+  "shopify": {
+    "attributes": {
+      "last_name": "\n"
+    },
+    "checkout": {
+      "contact": {
+        "last_name_label": "name",
+        "last_name_placeholder": "name",
+        "customer_information_title": "① Customer Information",
+        "zip_code_placeholder": "zip code"
+      },
+      "general": {
+        "continue_to_shipping_method": " ② Shipping Method",
+        "continue_to_payment_method": "③ Payment Method",
+        "back_to_contact_information": "① Customer Information",
+        "back_to_shipping_method": "② Shipping Method",
+        "back_to_payment_method": "③ Payment Method"
+      },
+      "shipping": {
+        "title": "② Shipping Method"
+      },
+      "payment": {
+        "title": "③ Payment Method"
+      },
+      "newsletter": {
+        "subscription_checkbox_label": "Receive Shipping & Product Updates"
+      }
+    },
+    "addresses": {
+      "zip_code": "zip code"
+    }
+  }
+}

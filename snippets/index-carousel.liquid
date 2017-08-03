@@ -1,0 +1,59 @@
+<ul id="Carousel" class="fader loading bxslider">
+    {% assign count = 0 %}
+    {% for i in (1..6) %}
+      {% capture show %}show_slide_{{ i }}{% endcapture %}
+      {% capture full %}full_slide_{{ i }}{% endcapture %}
+      {% capture image_left %}hero{{ i }}_left.jpg{% endcapture %}
+      {% capture image_right %}hero{{ i }}_right.jpg{% endcapture %}
+      {% capture link_left %}hero{{ i }}_left_link{% endcapture %}
+      {% capture link_right %}hero{{ i }}_right_link{% endcapture %}
+      {% capture text_left %}hero{{ i }}_left_text{% endcapture %}
+      {% capture text_right %}hero{{ i }}_right_text{% endcapture %}
+      {% capture caption_left %}hero{{ i }}_left_caption{% endcapture %}
+      {% capture caption_right %}hero{{ i }}_right_caption{% endcapture %}
+
+      {% if settings[show] %}
+   		<li class="slide{% if i == 1 %} active{% endif %}">
+          {% unless settings[full] %}
+            <a class="hero hero-left" {% if settings[link_left] != '' %} href="{{ settings[link_left] }}"{% endif %}>
+              <img id="slide-left-mh" src="{{ image_left | asset_url }}" alt="{{ settings[text_left] }}"/>
+              {% if settings[text_left] != '' %}
+              <div class="slide-pos" style="bottom:65px;">
+                <div class="slide-details">
+                  <h3>{{ settings[text_left] }}</h3>
+                  <p>{{ settings[caption_left] }}</p>
+                </div>
+              </div>
+              {% endif %}
+            </a>
+          <a id="rightContainer" class="hero hero-right" {% if settings[link_right] != '' %} href="{{ settings[link_right] }}"{% endif %} style="height:100%;">
+            <img id="slide-right-mh" src="{{ image_right | asset_url }}" alt="{{ settings[text_left] }}"/>
+              
+            {% if settings[text_right] != '' %}
+              <div class="slide-pos">
+              	<div class="slide-details">
+                  <h3>{{ settings[text_right] }}</h3>
+                  <p>{{ settings[caption_right] }}</p>
+                </div>
+              </div>
+              {% endif %}
+            </a>
+          {% else %}
+            <a class="hero hero-full" {% if settings[link_left] != '' %} href="{{ settings[link_left] }}"{% endif %}>
+              <img src="{{ image_left | asset_url }}" alt="{{ settings[text_left] }}"/>
+              {% if settings[text_left] != '' %}
+              <div class="slide-pos">
+                <div class="slide-details">
+                  <h3>{{ settings[text_left] }}</h3>
+                  <p>{{ settings[caption_left] }}</p>
+                </div>
+              </div>
+              {% endif %}
+            </a>
+          {% endunless %}
+          {% capture count %}{{ count | plus: 1 }}{% endcapture %}
+        </li>
+      {% endif %}
+    {% endfor %}
+</ul>
+

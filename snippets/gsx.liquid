@@ -1,0 +1,27 @@
+<!------GSX International Checkout----->
+   <form id="from-gsx" method="post" name="from-gsx" action="https://globalshopex.com/shoppingCart.asp">
+    <input type="hidden" name="MerchantID" value="2458494">   
+
+	{% for item in cart.items %}
+		<input type="hidden" name="ProductDesc{{forloop.index }}" value="{{ item.title }}">
+		<input type="hidden" name="ProductSKU{{forloop.index }}" value="{{item.product.variants.first.sku}}">
+		<input type="hidden" name="ProductLink{{forloop.index }}" value="http://www.mygekks.com/{{ item.product.url }}">
+		<input type="hidden" name="ProductImage{{forloop.index }}" value="HTTPS:{{ item.product.featured_image | product_img_url: 'thumb' }}">
+		<input type="hidden" name="ProductQty{{forloop.index }}" value="{{ item.quantity }}">
+		<input type="hidden" name="ProductPrice{{forloop.index }}" value="{{ item.price | money_without_currency }}">
+		<input type="hidden" name="ProductWeight{{forloop.index }}" value="{{item.grams | weight_with_unit | remove: ' lb'}}">
+	{% endfor %}
+     
+       <input type="hidden" name="LocalShippingEXP" value="0"> 
+	   <input type="hidden" name="LocalShipping" value="0">
+   </form>
+
+	<script>
+      function sendGSX(){
+        document.getElementById("from-gsx").submit();
+      }
+      $('#checkout').after('<a class="button button-xs white-blue" href="javascript:sendGSX();">International Checkout</a>');
+      //if (location.search.toLowerCase().indexOf('gsx')!=-1) {};
+          
+  </script>
+ <!------GSX International Checkout----->

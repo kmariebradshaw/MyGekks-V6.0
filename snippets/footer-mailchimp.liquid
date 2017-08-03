@@ -1,0 +1,82 @@
+<script type="text/javascript">
+setTimeout('mce_preload_check();', 250);
+
+var mce_preload_checks = 0;
+function mce_preload_check(){
+    if (mce_preload_checks>40) return;
+    mce_preload_checks++;
+    try {
+        var validatorLoaded=jQuery("#fake-form").validate({});
+    } catch(err) {
+        setTimeout('mce_preload_check();', 250);
+        return;
+    }
+    mce_init_form();
+}
+function mce_init_form(){
+    jQuery(document).ready( function($) {
+      if(!$('html').hasClass('ie')) { 
+        var submitURL = $('#mc-embedded-subscribe-form').attr('action'); 
+        submitURL = submitURL.replace('post', 'post-json'); 
+        submitURL = submitURL + '&c=?'; 
+        
+        var options = { errorClass: 'mce_inline_error', errorElement: 'div', onkeyup: function(){}, onfocusout:function(){}, onblur:function(){}  };
+        var mce_validator = $("#mc-embedded-subscribe-form").validate(options);
+        $("#mc-embedded-subscribe-form").unbind('submit');//remove the validator so we can get into beforeSubmit on the ajaxform, which then calls the validator
+        options = { url: submitURL, type: 'GET', dataType: 'json', contentType: "application/json; charset=utf-8",
+                      beforeSubmit: function(){
+                          $('#mce_tmp_error_msg').remove();
+                          return mce_validator.form();
+                      }, 
+                      success: mce_success_cb
+                  };
+        $('#mc-embedded-subscribe-form').ajaxForm(options);
+      }
+   });
+}
+function mce_success_cb(resp){
+    $('#mce-success-response').hide();
+    $('#mce-error-response').hide();
+    if (resp.result=="success"){
+        $('#mce-'+resp.result+'-response').show();
+        $('#mce-'+resp.result+'-response').html('Thanks for signing up! You will receive an email from us shortly.');
+        $('#mc-embedded-subscribe-form').each(function(){
+            this.reset();
+    	});
+    } else {
+        var index = -1;
+        var msg;
+        try {
+            var parts = resp.msg.split(' - ',2);
+            if (parts[1]==undefined){
+                msg = resp.msg;
+            } else {
+                i = parseInt(parts[0]);
+                if (i.toString() == parts[0]){
+                    index = parts[0];
+                    msg = parts[1];
+                } else {
+                    index = -1;
+                    msg = resp.msg;
+                }
+            }
+        } catch(e){
+            index = -1;
+            msg = resp.msg;
+        }
+        try{
+            if (index== -1){
+                $('#mce-'+resp.result+'-response').show();
+                $('#mce-'+resp.result+'-response').html(msg);            
+            } else {
+                err_id = 'mce_tmp_error_msg';
+                html = '<div id="'+err_id+'" style="'+err_style+'"> '+msg+'</div>';
+            }
+        } catch(e){
+            $('#mce-'+resp.result+'-response').show().html(msg);
+        }
+    }
+}
+
+</script>
+<!--End mc_embed_signup-->

@@ -1,0 +1,28 @@
+        {% if settings.col_1_text or settings.col_2_text or settings.col_3_text %}
+        <section id="benefits">
+            <div class="wrap">
+            	<div class="clearfix">
+                	{% if settings.col_1_text %}
+                	<div class="third features">
+                    	{% if settings.col_1_title %}<h2>{{ settings.col_1_title }}</h2>{% endif %}
+                    	{% if settings.col_1_text %}{{ settings.col_1_text }}{% endif %}
+                	</div>
+                	{% endif %}
+                	
+                	{% if settings.col_2_text %}
+                	<div class="third benefits">
+                    	{% if settings.col_2_title %}<h2>{{ settings.col_2_title }}</h2>{% endif %}
+                    	{% if settings.col_2_text %}{{ settings.col_2_text }}{% endif %}
+                	</div>
+                	{% endif %}
+                	
+                	{% if settings.col_3_text %}
+                	<div class="third pros">
+                    	{% if settings.col_3_title %}<h2>{{ settings.col_3_title }}</h2>{% endif %}
+                    	{% if settings.col_3_text %}{{ settings.col_3_text }}{% endif %}
+                	</div>
+                	{% endif %}
+            	</div>
+            </div>
+        </section>    
+        {% endif %}

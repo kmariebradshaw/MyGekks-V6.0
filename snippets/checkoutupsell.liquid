@@ -1,0 +1,67 @@
+{% for item in checkout.line_items %}
+	{% if item.product.type == "Closet Pack" %}
+		{% assign closetpack = 1 %}
+    {% endif %}
+    {% if item.product.collections.first.title == "Women" %}
+		{% assign women = 1 %}
+	{% endif %}
+    {% if item.product.collections.first.title == "Men" %}
+		{% assign men = 1 %}
+     {% endif %}
+{% endfor %}
+
+{% if checkout.item_count >= 2 and closetpack != 1 %}
+  <div id="upsell">
+    <div id="close-up">X</div>
+    <h4>Upgrade to a Closet Pack and Save!</h4>
+    <p> Receive three pairs of Gekks and Free Shipping</p>
+    <table class="product-table" id="up-table">
+      <tbody>
+        <tr class="product">
+          <td class="product__image">
+            <div class="product-thumbnail">
+              <div class="product-thumbnail__wrapper">
+                 {% if women == 1 and men !=1%}
+                  <img alt="Women's Closet Pack" class="product-thumbnail__image" src="//cdn.shopify.com/s/files/1/0424/0893/products/newnotitlewomen_small.jpg?2875703539781148608" />
+                </div>
+                <span class="product-thumbnail__quantity" aria-hidden="true">1</span>
+              </div>
+
+            </td>
+            <td class="product__description">
+              <span class="product__description__name order-summary__emphasis">Women's Closet Pack</span>
+            </td>
+            <td class="opt-size" id="sm"><a href="#" class="upsell" data-id='26654748040'>Small</a></td>
+            <td class="opt-size" id="med"><a href="#" class="upsell" data-id='26654825672'>Medium</a></td>
+            <td class="opt-size" id="lar"><a href="#" class="upsell" data-id='26654825736'>Large</a></td>
+            <td class="product__price">
+              <span class="order-summary__emphasis">$ 47.00</span>
+            </td>
+            {% elsif men == 1 and women != 1 %}
+              <img alt="Men's Closet Pack" class="product-thumbnail__image" src="//cdn.shopify.com/s/files/1/0424/0893/products/newnotitlemen_small.jpg?9619103650880129910" />
+                </div>
+                <span class="product-thumbnail__quantity" aria-hidden="true">1</span>
+                </div>
+
+              </td>
+          <td class="product__description">
+            <span class="product__description__name order-summary__emphasis">Men's Closet Pack</span>
+          </td>
+          <td class="opt-size" id="sm"><a href="#" class="upsell" data-id='31619578961'>small</a></td>
+          <td class="opt-size" id="med"><a href="#" class="upsell" data-id='31619579153'>medium</a></td>
+          <td class="opt-size" id="lar"><a href="#" class="upsell" data-id='31619579537'>large</a></td>
+          <td class="product__price">
+            <span class="order-summary__emphasis">$ 32.00</span>
+    	  </td>
+ 			{% endif %}
+        </tr>
+      </tbody>
+    </table>
+    <center>
+      <p id="up-error">Please Select a Size</p>
+  <!-- <button id="clear-up" onClick="ga('send', 'event', 'Upsell', 'Click', 'Men');">Clear Cart & Add</button> -->
+      <button id="conf-up" onClick="ga('send', 'event', 'Upsell', 'Click');">quick add to cart</button>  
+    </center>
+  </div>
+{% endif %}
+

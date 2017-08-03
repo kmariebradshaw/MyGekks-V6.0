@@ -1,0 +1,82 @@
+<main>
+<!--  Video  -->
+
+  <h1 id="hiw-title"> Gekks, explained. </h1> 
+  {% if settings.homepage_video_embedded %}
+  <div class='embed-container' style="width: 80%; margin: 0 auto;">
+    <iframe src='https://www.youtube.com/embed/8X0_PWUFKRQ?color=5acbff&title=0&byline=0&portrait=0" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen'></iframe>
+  </div>
+  {% endif %}
+   
+  <div id="gekks-in-action">
+    <div class="gifslide"><span class="gif-hiw" onClick="ga('send', 'event', 'Expand', 'Click', 'Gif-Banner Shown');">Expand to See Gekks in Action</span>
+
+    </div>
+    <div class="gif-content">
+      <img src="{{ 'Timelinefinal1.gif' | asset_url }}", id="gif-banner" class="tw"/>
+    </div>
+  </div>
+ 
+ <div class="gifslide" style="display: none;text-align:center;"><span class="gif-hiw">Minimize Video</span></div>
+ <div class="text-half-wrapper">
+  <div class="text-half" style="margin-right: 5%;">
+    <h3>Socks are no bueno.</h3>
+    <p>Socks pose all sorts of problems. You're constantly adjusting no show socks from sliding down your heel, 
+       and they still show. Unless your sock drawer is perfectly organized (and if you say it is, you're lying) it's almost impossible 
+      to find two of a kind. With Gekks, you'll never need to look for no show socks again.</p>
+  </div>
+  <div class="text-half" style="margin-left: 5%;">
+    <h3>No socks are no bueno.</h3>
+    <p>Not only do your feet smell, but your shoes smell too, not to mention the blisters you get without socks. If this wasn’t enough, walking boldly into the world without socks jeopardizes the freshness and life of your shoe. Luckily for you, a pair of Gekks can solve all these problems. </p>
+  </div>
+ </div>
+  
+  <div id="banner-attn">
+    <h1>we solved your sock issues.</h1>
+    <h4>it's pretty simple...</h4>
+  </div>
+  <div class="image-half-wrapper">
+    <div class="text-half" id="velcro-text">
+    	<h3>Gekks include an ultra thin fastening system that won't alter the way your shoes fit.</h3>
+    	<p>The magic is all in this small fastening strip that is attached to both the Gekks and the gripper for a perfect, no slip fit inside your shoe. Install and go!</p>
+    </div>
+    <span style="display: inline-block;height: 100%;vertical-align: middle;"></span>
+  	<img src="{{'velcro.gif' | asset_url }}" id="velcro" />
+  </div>
+ <div id="infographic-hiw" class="darkgray">
+   <h1>here's how it works...</h1>
+   <img src="{{'HIW-explaination.jpg' | asset_url }}" id="hiw-explained" class="tw do" />
+   <img src="{{'HIW-explaination-m.jpg' | asset_url }}" id="hiw-explained" class="tw mo" />
+  </div>
+ 
+  <div id="size-order">
+    <div id="order">
+      <h1>Ready to Order?</h1>	
+      <a href="/collections/men/products/mens-closet-pack" class="button double">Shop Men</a><br>
+      <a href="/collections/women/products/womens-closet-pack" class="button double">Shop Women</a><br>
+    </div>
+  
+
+<div id="size">
+    <img src="{{'Website-SizeChart2.jpg' | asset_url }}" class="tw"/>
+</div>
+
+  </div>
+</main>
+
+  <script>
+$(function() {
+    var $gifSlide = $('.gifslide'),
+        $loadGif = $('.embed-container'),
+        $gifContent = $('.gif-content');
+
+    $gifSlide.off('click').on('click', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        $('.gifslide').toggle();
+
+        $loadGif.slideToggle(500);
+        $gifContent.slideToggle(500);
+    });
+});
+  </script>

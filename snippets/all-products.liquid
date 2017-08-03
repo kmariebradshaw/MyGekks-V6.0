@@ -1,0 +1,125 @@
+{% for product in products %}
+ {% unless product.title == "Select" or product.title == "Extra Gripper Sets" or product.title == "Gift Cards" %}
+		
+<div id='{{product.id}}' style="display: none;" >
+  {% assign current_id = product.id %} 
+   <section id="quick-order" class="split content">   
+     <div class="wrap">
+      <div class="clearfix">
+        <div class="half" style="width: 60%;">
+          <div id="gallery">
+            <div id="panel">
+              <img class="product-image-img largeImage" src="{{ product.featured_image.src | product_img_url: 'large' }}" alt="{{ product.title }}" style="margin-top: 20px;" />
+            </div> 
+            {% if product.title == "Gift Cards" %}
+            <div style="width: 100%; height: 20px;"></div>
+            {% else %}
+            <div id="thumb-container">
+              <img src="{{'arrow.png' | asset_url }}" id="left" style="float: left; max-width: 20px; z-index: 999;"/>
+              <div id="thumbs" style="overflow: auto; white-space: nowrap;">
+                {% for image in product.images limit:8 %}
+                <img src="{{ image | product_img_url: 'compact' }}" id="thumb-content"/>
+                {% endfor %}
+              </div>
+              <img src="{{'arrow.png' | asset_url }}" id="right" style="-webkit-transform: rotate(180deg); -moz-transform: rotate(180deg);-o-transform: rotate(180deg);-ms-transform: rotate(180deg);transform: rotate(180deg); float: right; max-width: 20px; z-index: 999;"/>
+            </div>
+            {% endif %}
+          </div>
+          <script type="text/javascript">$("#thumbs").delegate("img","click",function(){$(".largeImage").attr("src",$(this).attr("src").replace("compact","large"))});var leftChild=$("#thumb-content:first-child");$("#right").click(function(){event.preventDefault(),parseInt($("#thumb-content:first-child").css("margin-left"),10)>-800&&$("#thumb-content").animate({marginLeft:"-=200px"},"fast")}),$("#left").click(function(){event.preventDefault(),parseInt($("#thumb-content:first-child").css("margin-left"),10)<0&&$("#thumb-content").animate({marginLeft:"+=200px"},"fast")});</script>
+          <div id="also-shop">
+            <center>
+              <h4 id="also">also shop</h4>
+              <div style="width: 100%; margin: 0 auto;">
+                {% for collection in product.collections %}
+                {% for product in collection.products %}
+                {% unless product.title == "Extra Gripper Sets" or product.title == "Select" or product.title =="Gift Cards" %}
+                {% if product.title == "Women's Closet Pack" %}
+                {% if product.id !=  current_id %}
+                <div class="fake-buttons closet-pack">
+                  <a href="{{ product.url | within: collection }}" title='{{product}}'> 
+                    {% for image in product.images offset:10 limit: 1%}
+                    <img src="{{ image | product_img_url: 'large' }}" class="select-icons-cp" />
+                    {% endfor%}
+                    <h4>{{ product.title }}</h4>
+                  </a>
+                </div><br>
+                {% endif %}
+
+                {% elsif product.title == "Men's Closet Pack" %}
+                {% if product.id !=  current_id %}
+                <div class="fake-buttons closet-pack-men">
+                  <a href="{{ product.url | within: collection }}"> 
+                    {% for image in product.images offset:10 limit: 1%}
+                    <img src="{{ image | product_img_url: 'large' }}" class="select-icons-cp-m"/>
+                    {% endfor%}
+                    <h4>{{ product.title }} - $4 off</h4>
+                  </a>
+                </div><br>
+                {% endif %}  
+
+                {% elsif product.id != current_id %}
+                <div class="fake-buttons">
+                  <a href="{{ product.url | within: collection }}"> 
+                    {% for image in product.images offset:10 limit: 1%}
+                    <img src="{{ image | product_img_url: 'compact' }}" class="select-icons" />
+                    {% endfor%}
+                    <h4>{{ product.title }}</h4>
+                  </a>
+                </div>
+                {% endif %}
+                {% endunless %}
+                {% endfor %}
+                {% endfor %}
+                <div class="fake-buttons do">
+                  <a href="/products/extra-gripper-sets">
+                    <img src="{{'gripper-icon.jpg' | asset_url }}" class="select-icons" />
+                    <h4>Extra Grippers</h4>
+                  </a>
+                </div>
+              </div>
+            </center>
+          </div>
+
+          <div id="reviews-toggle" style="max-height: 450px; overflow: scroll; width: 100%; display: none;">
+            <div id="orankl-reviews"
+                 data-store-key="dc8e48a7-b20c-4472-b296-32446a08b070"
+                 data-product-name="{{product.title | escape}}"
+                 data-product-key="{{product.id}}"
+                 data-product-image-url="http:{{product.featured_image | product_img_urs: 'large' | escape}}"
+                 data-product-description="{{product.description | strip_html | escape}}"
+                 data-product-price="{{product.price}}"
+                 data-currency="{{shop.currency}}"
+                 data-url="{{ product.url | within: collection }}"
+                 ></div>
+          </div>
+        </div>
+        <div class="half" style="width:30%;">
+          {% unless product.title == "Select" or product.title == "Extra Gripper Sets" or product.title =="Gift Cards"%}
+          {% if product.collections.first.title == "Women" %}
+          <h2 class="product-title small-title">Women's</h2>
+          {% else %}
+          <h2 class="product-title small-title">Men's</h2>
+          {% endif %}
+          {% if product.type == "Closet Pack"%}
+          <h1 class="product-title">Closet Pack</h1>
+          {% else %}
+          <h1 class="product-title">{{ product.title }}</h1>
+          {% endif %}
+          {% endunless %}
+          {%if product.title == "Extra Gripper Sets" %}
+          <h2 class="product-title small-title">extra</h2>
+          <h1 class="product-title">gripper sets</h1>
+          {% elsif product.title =="Gift Cards" %}
+          <h1 class="product-title">{{product.title}}</h1>
+          {% endif %}
+		
+          {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+          {% include 'all-products-add-to-cart' %}
+
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+{% endunless %} 
+{% endfor %}
