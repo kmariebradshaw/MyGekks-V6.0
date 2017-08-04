@@ -187,8 +187,15 @@
                   </a>
                 </div><br>
                 {% endif %}  
+                {% endif %}
+                {% endunless %}
+                {% endfor %}
+                {% endfor %}
+                 {% for collection in product.collections %}
+                {% for product in collection.products %}
+                {% unless product.title == "Select" or product.title == "Extra Gripper Sets" or product.title == "Gift Cards" or product.type == "Closet Pack" %}
 
-                {% elsif product.id != current_id %}
+                {% if product.id != current_id %}
                 <div class="fake-buttons">
                   <a href="{{ product.url | within: collection }}"> 
                     {% for image in product.images offset:10 limit: 1%}
