@@ -3461,9 +3461,10 @@ body .cl-desc {
 }
 
   .shoe-wrapper { 
-    width: 92%; 
+    width: 90%; 
     overflow: auto;
     white-space: nowrap;
+    margin-left: 20px;
   }
 
  .shoe-count { 
@@ -3471,13 +3472,20 @@ body .cl-desc {
     margin: 1%;
     width: 33%;
   } 
-    .leftp { left: 1%; }
+    .leftp { 
+    margin-top: -67.76px;
+ }
   .scrollp { 
-    position: absolute; 
-    margin-top: 55px; 
+/*    position: absolute; 
+    margin-top: 55px; */
   } 
   .scrollp img {     max-height: 20px; }
-  .rightp { right: 1%; } 
+  .rightp { 
+    position: absolute;
+    right: 3%;
+    margin-top: -40px;
+    transform: rotate(180deg);
+  } 
   .shoe-wrapper::-webkit-scrollbar { 
     display: none !important;
   }

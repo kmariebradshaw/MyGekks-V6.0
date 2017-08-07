@@ -93,8 +93,7 @@
                                    {% for image in select.images offset: 100 limit: 15 %}
                                    <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
                                    {% endfor %}
-                  {% comment %}           <div class="scrollp leftp"><img src="{{'arrow.png' | asset_url }}" alt="left"/></div>
-                                  <div class="scrollp rightp"><img src="{{'arrow.png' | asset_url }}" alt="right"/></div>{% endcomment %}
+                 
                               {% when "Loafers & Slip-Ons" %}
                                {% if product.collections.first.title ==  "Women" %} 
                                 {% for image in select.images offset: 115 limit: 6 %}
@@ -125,6 +124,8 @@
                                 {% endfor %}                               
                               {% endcase %}
                            </div>
+                                       <div class="scrollp leftp"><img src="{{'arrow.png' | asset_url }}" alt="left"/></div>
+                                  <div class="scrollp rightp"><img src="{{'arrow.png' | asset_url }}" alt="right"/></div>
                            {% endunless %}
 
                                <h4 id="prod-det">Product Details</h4>
@@ -148,6 +149,7 @@
                               {% endunless %}
                              </section>
   						  </div>
+
                             {% endif %}
                          
   {% unless product.title == "Select" %} 
@@ -190,13 +192,23 @@
   //      $(document).ready(function(){
   // $(".shoe-wrapper").animate({ scrollLeft: $('.shoe-wrapper').prop('scrollWidth') }, 10000);
   // });          
-            $('.shoe-wrapper').scroll(function() {
-            if ( $('.shoe-wrapper').prop('offsetWidth') + $('.shoe-wrapper').prop('scrollLeft') >= $('.shoe-wrapper').prop('scrollWidth')) {
-                    $('.shoe-wrapper').scrollLeft(0)
+            // $('.shoe-wrapper').scroll(function() {
+            // if ( $('.shoe-wrapper').prop('offsetWidth') + $('.shoe-wrapper').prop('scrollLeft') >= $('.shoe-wrapper').prop('scrollWidth')) {
+            //         $('.shoe-wrapper').scrollLeft(0)
            
-               } 
+            //    } 
 
-            });
+            // });
+
+   $('.scrollp').on("click", function() { 
+    var wrapper = $('.shoe-wrapper'); 
+    if ($(this).hasClass('rightp')) { 
+      $(wrapper).animate( { scrollLeft: '+=200' });
+    }
+    else {
+      $(wrapper).animate({scrollLeft: '-=200'});  
+    }
+    }); 
                         
    </script>
   {% endunless %} 
