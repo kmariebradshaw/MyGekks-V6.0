@@ -83,35 +83,39 @@
                              {% case product.title %}
                               {% when "Ballet Flats" %}
                                    {% for image in select.images offset: 100 limit: 15 %}
-                                   <div class="shoe-count flats"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+                                   <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
                                    {% endfor %}
                   {% comment %}           <div class="scrollp leftp"><img src="{{'arrow.png' | asset_url }}" alt="left"/></div>
                                   <div class="scrollp rightp"><img src="{{'arrow.png' | asset_url }}" alt="right"/></div>{% endcomment %}
                               {% when "Loafers & Slip-Ons" %}
-                               {% if product.collections.first.title ==  "Women" %}                        
+                               {% if product.collections.first.title ==  "Women" %} 
                                 {% for image in select.images offset: 115 limit: 6 %}
-                                <div class="shoe-count flats"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+                                <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
                                    {% endfor %}
                                 {% else %}
                                    {% for image in select.images offset: 95 limit: 4 %}
-                                   <div class="shoe-count flats"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+                                   <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
                                    {% endfor %}
                                 {% endif %}
                               {% when "Sneakers & Lace-Ups" %}
                                {% if product.collections.first.title == "Women" %}
                                 {% for image in select.images offset: 121 limit: 7%}
-                                  <div class="shoe-count flats"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+                                  <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
                                 {% endfor %}
                               {% else %}
                                 {% for image in select.images offset: 87 limit: 8 %}
-                                  <div class="shoe-count flats"><img src="{{ image | product_img_url: 'compact' }}" /></div>
-                                {% endfor %}                               {% endif %}
+                                  <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+                                {% endfor %}             
+                              {% endif %}
                               {% when "Women's Closet Pack" %}
-                              women's closet pack 
-                              {% when "Men's Closet Pack" %}
-                               men's closet pack 
+                                {% for image in select.images offset: 129 limit: 9 %}
+                                  <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+                                {% endfor %}                               
+                                {% when "Men's Closet Pack" %}
+                                {% for image in select.images offset: 138 limit: 8 %}
+                                  <div class="shoe-count flats"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+                                {% endfor %}                               
                               {% endcase %}
-
                            </div>
                            {% endunless %}
                             <section id="newsletter" class="content" style="background-color: transparent; margin: 5px;">
