@@ -77,7 +77,30 @@
 					
 						<div class="pl" style="margin-top: 20px;">
                          {% if settings.allow_newsletter and settings.mailchimp_code != empty %}
-<!--                           <img src="{{'placeholder.png' | asset_url }}" alt="Gekks last the lifetime of your Shoe" class= "fw mo" style="margin-top: 1%;"/> -->
+                         {% unless product.title == "Select" or product.title =="Extra Gripper Sets" or product.title == "Gift Cards" %}
+                           {% case product.title %}
+                            {% when "Ballet Flats" %}
+                              flats
+                            {% when "Loafers & Slip-Ons" %}
+                             {% if product.collections.first.title ==  "Women" %}
+                              loafers - w 
+                              {% else %}
+                              loafers - m 
+                              {% endif %}
+                            {% when "Sneakers & Lace-Ups" %}
+                             {% if product.collections.first.title == "Women" %}
+                            sneakers - w 
+                             {% else %}
+                             sneakers - m 
+                             {% endif %} 
+                            {% when "Women's Closet Pack" %}
+                            women's closet pack 
+                            {% when "Men's Closet Pack" %}
+                             men's closet pack 
+                            {% endcase %}
+
+                         
+                         {% endunless %}
                           <section id="newsletter" class="content" style="background-color: transparent; margin: 5px;">
                             <h4 id="quick-pay-opt">Quick Payment Options Available</h4>
                             <img src="{{'apple.png' | asset_url }}" alt= "paypal" class="pay-icon"/>
