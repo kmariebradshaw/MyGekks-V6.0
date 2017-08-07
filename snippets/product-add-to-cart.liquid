@@ -77,7 +77,15 @@
 
   						<div class="pl" style="margin-top: 20px;">
                            {% if settings.allow_newsletter and settings.mailchimp_code != empty %}
-                           {% unless product.title == "Select" or product.title =="Extra Gripper Sets" or product.title == "Gift Cards" %}
+
+                            <section id="newsletter" class="content" style="background-color: transparent; margin: 5px;">
+                              <h4 id="quick-pay-opt">Quick Payment Options Available</h4>
+                              <img src="{{'apple.png' | asset_url }}" alt= "paypal" class="pay-icon"/>
+                              <img src="{{'amazon.png' | asset_url }}" alt="amazon" class="pay-icon" />
+                              <img src="{{'paypal.png' | asset_url }}" alt= "applepay" class="pay-icon"/>
+
+                          {% unless product.title == "Select" or product.title =="Extra Gripper Sets" or product.title == "Gift Cards" %}
+                           <h4 class="sub-info">These Work In:</h4>
                              {% assign select = collections.all.products[6]%}
                                <div class="shoe-wrapper">
                              {% case product.title %}
@@ -118,11 +126,7 @@
                               {% endcase %}
                            </div>
                            {% endunless %}
-                            <section id="newsletter" class="content" style="background-color: transparent; margin: 5px;">
-                              <h4 id="quick-pay-opt">Quick Payment Options Available</h4>
-                              <img src="{{'apple.png' | asset_url }}" alt= "paypal" class="pay-icon"/>
-                              <img src="{{'amazon.png' | asset_url }}" alt="amazon" class="pay-icon" />
-                              <img src="{{'paypal.png' | asset_url }}" alt= "applepay" class="pay-icon"/>
+
                                <h4 id="prod-det">Product Details</h4>
                                 <ul id="prod-det-l">
                                   <li>Slip in and out barefoot using patented fastening</li>
