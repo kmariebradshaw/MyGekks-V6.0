@@ -1,173 +1,194 @@
-              {% if product.title == "Select" %}
-				<div style="border-bottom: 1px solid black; margin: 5px;"></div>
-			  {% else %}
-        
-				<form action="/cart/add" method="post" id="product-form-{{ product.id }} t" class="checkout" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                  <div class="do">
-                  {% if product.description and product.type == "Closet Pack" %}
-                  <p>{{product.description }}</p>
-                  {% endif %}
-                  </div>
-                        {% if product.available and product.variants.size > 1 %}
-                          {% for option in product.options %}
-                            {% include 'swatch' with option %}
-                          {% endfor %}
-                        {% endif %}
-                          {% if product.available %}
-                                    <meta itemprop="priceCurrency" content="{{ shop.currency }}">
-                                    <link itemprop="availability" href="http://schema.org/InStock">
-                    	        <div id="hide" style="display: none;">
-                                <select name="id" id="productSelect-{{ product.id }}" class="product-single__variants" style="display: none;">
-                                  {% for variant in product.variants %}
-                                    {% if variant.available %}
-                                  		{% if product.collections.first.title == "Men" %}
-                                  			{% if product.title != "Men's Closet Pack" %}
-                                      			<option {% if forloop.index == 4 %}selected="selected"{% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
-                                  			{% else %}
-                                  				<option {% if forloop.index == 2 %}selected="selected"{% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
-											{% endif %}
-                                         {% else %} 
-                                    			{% if product.title != "Ballet Flats" %}
-                                  				<option {% if forloop.index == 2 %}selected="selected"{% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
-											{% else %}
-                                               <option {% if forloop.index == 3 %}selected="selected"{% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
-											{% endif %}
-                                  		{% endif %}
-                                  	{% else %}
-                                      <option disabled="disabled" style="display: none;">
-                                        {{ variant.title }} - {{ 'products.product.sold_out' | t }}
-                                      </option>
-                                    {% endif %}
-                                  {% endfor %}
-                                </select>
-								</div>
-                          <div id="prod-quantity" style="display: inline-block;">
-                           <div class="header" style="margin-bottom: -9px;">quantity</div>
-                          <div class="quantity-toggle">
-                            <input type=radio id="quantity" name="quantity" value="1" checked>
-                                <label for="1">1</label>
-                            <input type=radio id="quantity" name="quantity" value="2">
-                                <label for="2">2</label>
-                            <input type=radio id="quantity" name="quantity" value="3">
-                                <label for="3">3</label>
-                            <input type=radio id="quantity" name="quantity" value="4">
-                                <label for="4">4</label>
-                            <input type=radio id="quantity" name="quantity" value="5">
-                                <label for="5">5</label>
-                             <input type=radio id="quantity" name="quantity" value="8">
-                                <label for="8">8</label>
-                             <input type=radio id="quantity" name="quantity" value="10">
-                                <label for="10">10</label>
-                          </div>
-                          </div><br>
-                    	        <button type="submit" name="add" id="add-to-cart-{{ product.id }} add-cart" class="onsubbutton" style="margin-top: 15px; min-width: 200px !important;"><span>{{ settings.add_to_cart_text }}</span></button>
-                  <div class="price{% if product.price < product.compare_at_price_max %} sale{% endif %}" itemprop="price" content="{{ product.compare_at_price | money_without_currency }}">
-<!--                     <p id="value-prop-lb" onclick="Privy.show(260325)">?</p> -->
-                                    <span id="product-price-{{ product.id }}">{{ product.price | money }}</span>
-                                {% if product.price < product.compare_at_price_max and product.type == "Closet Pack" %}<span id="compare-price-{{ product.id }}">{{ product.compare_at_price | money }}</span>{% endif %}
-                           </div>  
-                          {% else %}
-                                    <meta itemprop="priceCurrency" content="{{ shop.currency }}">                          
-                                    <link itemprop="availability" href="http://schema.org/OutOfStock">
-                                    <div class="sold">Sold Out</div>
-                	        {% endif %}
-            
-            	        </form>
-					{% endif %}
-					
-						<div class="pl" style="margin-top: 20px;">
-                         {% if settings.allow_newsletter and settings.mailchimp_code != empty %}
-                         {% unless product.title == "Select" or product.title =="Extra Gripper Sets" or product.title == "Gift Cards" %}
-                           {% case product.title %}
-                            {% when "Ballet Flats" %}
-                              flats
-                            {% when "Loafers & Slip-Ons" %}
-                             {% if product.collections.first.title ==  "Women" %}
-                              loafers - w 
-                              {% else %}
-                              loafers - m 
-                              {% endif %}
-                            {% when "Sneakers & Lace-Ups" %}
-                             {% if product.collections.first.title == "Women" %}
-                            sneakers - w 
-                             {% else %}
-                             sneakers - m 
-                             {% endif %} 
-                            {% when "Women's Closet Pack" %}
-                            women's closet pack 
-                            {% when "Men's Closet Pack" %}
-                             men's closet pack 
-                            {% endcase %}
-
-                         
-                         {% endunless %}
-                          <section id="newsletter" class="content" style="background-color: transparent; margin: 5px;">
-                            <h4 id="quick-pay-opt">Quick Payment Options Available</h4>
-                            <img src="{{'apple.png' | asset_url }}" alt= "paypal" class="pay-icon"/>
-                            <img src="{{'amazon.png' | asset_url }}" alt="amazon" class="pay-icon" />
-                            <img src="{{'paypal.png' | asset_url }}" alt= "applepay" class="pay-icon"/>
-                             <h4 id="prod-det">Product Details</h4>
-                              <ul id="prod-det-l">
-                                <li>Slip in and out barefoot using patented fastening</li>
-                                <li>A Gripper Set is included with each pair of Gekks</li>
-                                <li>Ultra-thin material doesn’t alter the way your shoes fit</li>
-                                <li>Antimicrobial yarns eliminate the Sockless Stench</li>
-                                <li>73% Nylon, 18% StaCool® Polyester, 5% Elastane, 4% Silver Coated Nylon</li>
-                              </ul>
-                            
-                            {% unless product.title == "Gift Cards" %}
-                              <h4 style="font-size: 17px; letter-spacing: 1px;">Endorsed by</h4>
-                            {% for collection in product.collections limit: 1 %}
-                            	{% if collection.title == "Men" and product.title !="Extra Gripper Sets" %}
-                            		<img src="{{'endorsed-men.jpg'| asset_url }}" class="fw" alt="Endorsed by Maxim"/>
-                            	{% else %}
-                            		<img src="{{'endorsed.jpg'| asset_url }}" class="fw" alt="Endorsed by Vogue"/>
-                            	{% endif %}
+                {% if product.title == "Select" %}
+  				<div style="border-bottom: 1px solid black; margin: 5px;"></div>
+  			  {% else %}
+          
+  				<form action="/cart/add" method="post" id="product-form-{{ product.id }} t" class="checkout" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                    <div class="do">
+                    {% if product.description and product.type == "Closet Pack" %}
+                    <p>{{product.description }}</p>
+                    {% endif %}
+                    </div>
+                          {% if product.available and product.variants.size > 1 %}
+                            {% for option in product.options %}
+                              {% include 'swatch' with option %}
                             {% endfor %}
-                            {% endunless %}
-                           </section>
-						  </div>
                           {% endif %}
-                       
-{% unless product.title == "Select" %} 
-						<script>
-                        var selectCallback_{{ product.id }} = function(variant, selector) {
-                            
-                            // BEGIN SWATCHES
-                          if (variant) {
-                            var form = jQuery('#' + selector.domIdPrefix).closest('form');
-                            for (var i=0,length=variant.options.length; i<length; i++) {
-                              var radioButton = form.find('.swatch[data-option-index="' + i + '"] :radio[value="' + variant.options[i] +'"]');
-                              if (radioButton.size()) {
-                                radioButton.get(0).checked = true;
+                            {% if product.available %}
+                                      <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+                                      <link itemprop="availability" href="http://schema.org/InStock">
+                      	        <div id="hide" style="display: none;">
+                                  <select name="id" id="productSelect-{{ product.id }}" class="product-single__variants" style="display: none;">
+                                    {% for variant in product.variants %}
+                                      {% if variant.available %}
+                                    		{% if product.collections.first.title == "Men" %}
+                                    			{% if product.title != "Men's Closet Pack" %}
+                                        			<option {% if forloop.index == 4 %}selected="selected"{% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+                                    			{% else %}
+                                    				<option {% if forloop.index == 2 %}selected="selected"{% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+  											{% endif %}
+                                           {% else %} 
+                                      			{% if product.title != "Ballet Flats" %}
+                                    				<option {% if forloop.index == 2 %}selected="selected"{% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+  											{% else %}
+                                                 <option {% if forloop.index == 3 %}selected="selected"{% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+  											{% endif %}
+                                    		{% endif %}
+                                    	{% else %}
+                                        <option disabled="disabled" style="display: none;">
+                                          {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                                        </option>
+                                      {% endif %}
+                                    {% endfor %}
+                                  </select>
+  								</div>
+                            <div id="prod-quantity" style="display: inline-block;">
+                             <div class="header" style="margin-bottom: -9px;">quantity</div>
+                            <div class="quantity-toggle">
+                              <input type=radio id="quantity" name="quantity" value="1" checked>
+                                  <label for="1">1</label>
+                              <input type=radio id="quantity" name="quantity" value="2">
+                                  <label for="2">2</label>
+                              <input type=radio id="quantity" name="quantity" value="3">
+                                  <label for="3">3</label>
+                              <input type=radio id="quantity" name="quantity" value="4">
+                                  <label for="4">4</label>
+                              <input type=radio id="quantity" name="quantity" value="5">
+                                  <label for="5">5</label>
+                               <input type=radio id="quantity" name="quantity" value="8">
+                                  <label for="8">8</label>
+                               <input type=radio id="quantity" name="quantity" value="10">
+                                  <label for="10">10</label>
+                            </div>
+                            </div><br>
+                      	        <button type="submit" name="add" id="add-to-cart-{{ product.id }} add-cart" class="onsubbutton" style="margin-top: 15px; min-width: 200px !important;"><span>{{ settings.add_to_cart_text }}</span></button>
+                    <div class="price{% if product.price < product.compare_at_price_max %} sale{% endif %}" itemprop="price" content="{{ product.compare_at_price | money_without_currency }}">
+  <!--                     <p id="value-prop-lb" onclick="Privy.show(260325)">?</p> -->
+                                      <span id="product-price-{{ product.id }}">{{ product.price | money }}</span>
+                                  {% if product.price < product.compare_at_price_max and product.type == "Closet Pack" %}<span id="compare-price-{{ product.id }}">{{ product.compare_at_price | money }}</span>{% endif %}
+                             </div>  
+                            {% else %}
+                                      <meta itemprop="priceCurrency" content="{{ shop.currency }}">                          
+                                      <link itemprop="availability" href="http://schema.org/OutOfStock">
+                                      <div class="sold">Sold Out</div>
+                  	        {% endif %}
+              
+              	        </form>
+  					{% endif %}
+
+  						<div class="pl" style="margin-top: 20px;">
+                           {% if settings.allow_newsletter and settings.mailchimp_code != empty %}
+                           {% unless product.title == "Select" or product.title =="Extra Gripper Sets" or product.title == "Gift Cards" %}
+                             {% assign select = collections.all.products[6]%}
+                               <div class="shoe-wrapper">
+                             {% case product.title %}
+                              {% when "Ballet Flats" %}
+                                   {% for image in select.images offset: 100 limit: 15 %}
+                                   <div class="shoe-count flats"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+                                   {% endfor %}
+                  {% comment %}           <div class="scrollp leftp"><img src="{{'arrow.png' | asset_url }}" alt="left"/></div>
+                                  <div class="scrollp rightp"><img src="{{'arrow.png' | asset_url }}" alt="right"/></div>{% endcomment %}
+                              {% when "Loafers & Slip-Ons" %}
+                               {% if product.collections.first.title ==  "Women" %}                        
+                                {% for image in select.images offset: 115 limit: 6 %}
+                                <div class="shoe-count flats"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+                                   {% endfor %}
+                                {% else %}
+                                   {% for image in select.images offset: 95 limit: 4 %}
+                                   <div class="shoe-count flats"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+                                   {% endfor %}
+                                {% endif %}
+                              {% when "Sneakers & Lace-Ups" %}
+                               {% if product.collections.first.title == "Women" %}
+                                {% for image in select.images offset: 121 limit: 7%}
+                                  <div class="shoe-count flats"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+                                {% endfor %}
+                              {% else %}
+                                {% for image in select.images offset: 87 limit: 8 %}
+                                  <div class="shoe-count flats"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+                                {% endfor %}                               {% endif %}
+                              {% when "Women's Closet Pack" %}
+                              women's closet pack 
+                              {% when "Men's Closet Pack" %}
+                               men's closet pack 
+                              {% endcase %}
+
+                           </div>
+                           {% endunless %}
+                            <section id="newsletter" class="content" style="background-color: transparent; margin: 5px;">
+                              <h4 id="quick-pay-opt">Quick Payment Options Available</h4>
+                              <img src="{{'apple.png' | asset_url }}" alt= "paypal" class="pay-icon"/>
+                              <img src="{{'amazon.png' | asset_url }}" alt="amazon" class="pay-icon" />
+                              <img src="{{'paypal.png' | asset_url }}" alt= "applepay" class="pay-icon"/>
+                               <h4 id="prod-det">Product Details</h4>
+                                <ul id="prod-det-l">
+                                  <li>Slip in and out barefoot using patented fastening</li>
+                                  <li>A Gripper Set is included with each pair of Gekks</li>
+                                  <li>Ultra-thin material doesn’t alter the way your shoes fit</li>
+                                  <li>Antimicrobial yarns eliminate the Sockless Stench</li>
+                                  <li>73% Nylon, 18% StaCool® Polyester, 5% Elastane, 4% Silver Coated Nylon</li>
+                                </ul>
+                              
+                              {% unless product.title == "Gift Cards" %}
+                                <h4 style="font-size: 17px; letter-spacing: 1px;">Endorsed by</h4>
+                              {% for collection in product.collections limit: 1 %}
+                              	{% if collection.title == "Men" and product.title !="Extra Gripper Sets" %}
+                              		<img src="{{'endorsed-men.jpg'| asset_url }}" class="fw" alt="Endorsed by Maxim"/>
+                              	{% else %}
+                              		<img src="{{'endorsed.jpg'| asset_url }}" class="fw" alt="Endorsed by Vogue"/>
+                              	{% endif %}
+                              {% endfor %}
+                              {% endunless %}
+                             </section>
+  						  </div>
+                            {% endif %}
+                         
+  {% unless product.title == "Select" %} 
+  						<script>
+                          var selectCallback_{{ product.id }} = function(variant, selector) {
+                              
+                              // BEGIN SWATCHES
+                            if (variant) {
+                              var form = jQuery('#' + selector.domIdPrefix).closest('form');
+                              for (var i=0,length=variant.options.length; i<length; i++) {
+                                var radioButton = form.find('.swatch[data-option-index="' + i + '"] :radio[value="' + variant.options[i] +'"]');
+                                if (radioButton.size()) {
+                                  radioButton.get(0).checked = true;
+                                }
                               }
                             }
-                          }
-                          // END SWATCHES
-                            timber.productPage({
-                              money_format: "{{ shop.money_format }}",
-                              variant: variant,
-                              selector: selector,
-                              product_id: '{{ product.id }}',
-                              translations: {
-                                add_to_cart : "{{ settings.add_to_cart_text }}",
-                                sold_out : "Sold Out",
-                                unavailable : "Unavailable"
-                              }
-                            });
-                          };
-                          
-                          jQuery(function($) {
-                            new Shopify.OptionSelectors('productSelect-{{ product.id }}', {
-                              product: {{ product | json }},
-                              onVariantSelected: selectCallback_{{ product.id }},
-                              enableHistoryState: true
-                            });
+                            // END SWATCHES
+                              timber.productPage({
+                                money_format: "{{ shop.money_format }}",
+                                variant: variant,
+                                selector: selector,
+                                product_id: '{{ product.id }}',
+                                translations: {
+                                  add_to_cart : "{{ settings.add_to_cart_text }}",
+                                  sold_out : "Sold Out",
+                                  unavailable : "Unavailable"
+                                }
+                              });
+                            };
                             
-                  
-                          });
-                          
-                       
-                      
-                        </script>
-{% endunless %} 
+                            jQuery(function($) {
+                              new Shopify.OptionSelectors('productSelect-{{ product.id }}', {
+                                product: {{ product | json }},
+                                onVariantSelected: selectCallback_{{ product.id }},
+                                enableHistoryState: true
+                              });
+                              
+                    
+                            });
+  //      $(document).ready(function(){
+  // $(".shoe-wrapper").animate({ scrollLeft: $('.shoe-wrapper').prop('scrollWidth') }, 10000);
+  // });          
+            $('.shoe-wrapper').scroll(function() {
+            if ( $('.shoe-wrapper').prop('offsetWidth') + $('.shoe-wrapper').prop('scrollLeft') >= $('.shoe-wrapper').prop('scrollWidth')) {
+                    $('.shoe-wrapper').scrollLeft(0)
+           
+               } 
+
+            });
+                        
+   </script>
+  {% endunless %} 
