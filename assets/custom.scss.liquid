@@ -3460,31 +3460,30 @@ body .cl-desc {
   left: 0; 
 }
 
-  .shoe-wrapper { 
-    width: 90%; 
+.shoe-wrapper {
+    width: 90%;
     overflow: auto;
     white-space: nowrap;
-    margin-left: 20px;
+    display: inline-block;
   }
-
- .shoe-count { 
+.shoe-count {
     display: inline-block;
     margin: 1%;
-    width: 33%;
-  } 
+    width: 25%;
+}
     .leftp { 
-    margin-top: -67.76px;
+    float: left;
+   
  }
   .scrollp { 
-/*    position: absolute; 
-    margin-top: 55px; */
+    max-width: 4%;
+    margin-top: 15px;
   } 
-  .scrollp img {     max-height: 20px; }
   .rightp { 
-    position: absolute;
-    right: 3%;
-    margin-top: -40px;
+ 
+    float: right;
     transform: rotate(180deg);
+
   } 
   .shoe-wrapper::-webkit-scrollbar { 
     display: none !important;
@@ -3499,6 +3498,16 @@ body .cl-desc {
   }
 
 
+@media only screen and (min-width: 589px) and (max-width: 751px) {
+  body div .scrollp { margin-top: 50px; }
+}
+@media only screen and (max-width: 420px) {
+  body div .scrollp { margin-top: 20px; }
+}
+
+@media only screen and (min-width: 421px) and (max-width: 588px) {
+  body div .scrollp { margin-top: 30px; }
+}
 
 
 
