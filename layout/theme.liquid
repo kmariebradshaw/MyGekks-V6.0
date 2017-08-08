@@ -122,15 +122,17 @@
   </head>
   <body class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '/', '-' | split: '.' }} {% if template == 'index' or page.handle == 'store' %}zoom-aware{% endif %}">
     <header>
-      <div class="wrap" style="text-align: center;"><span class="banner">
+      <div class="wrap cbb-ignored-image" style="text-align: center;"><span class="banner">
         <a href="/collections/women/products/womens-closet-pack" onClick="ga('send', 'event', 'Banner', 'Click', 'Upgrade to Closet Pack');">
           <h4>$5 off & Free Shipping on Women's Closet Pack</h4>
         </a>
         <h4 id="countdown"style="display:none;">hurry! flash sale ends in <div id="divCounter" style="display:inline-block"></div> <b style="font-weight:bold">use code: TWENTY</b></h4>
         </span>
+       
         <a href="/?sh=d">
           <img src="{{'blogo-min.png' | asset_url}}" alt="Gekks" class="blogo"/>
         </a>
+        
         <span class="nav-display desktop"><span>Show Menu</span></span>
         <div class="{% if settings.mobile_landing_page == 'true' %}desktop{% endif %}" id="top-nav">
           <nav>
