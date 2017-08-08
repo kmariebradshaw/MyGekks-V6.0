@@ -37,6 +37,17 @@ $(document).ready(function() {
     }, 3e3)
 });
 
+$(document).ready(function() {
+  if ($("[data-step=shipping_method]")) {
+    var subTotal = $('[data-checkout-subtotal-price-target]')
+    var int = subTotal.attr('data-checkout-subtotal-price-target')
+    var remaining = 4500 - int 
+    var remainingDollar = (remaining / 100).toFixed(2)
+    var getFree = ("add" + " $" + remainingDollar + " to your cart to receive free shipping!")
+    $('.order-summary__section').append(getFree);   
+    
+  }
+});
 $(window).resize(function() {
   readypage();
 });
