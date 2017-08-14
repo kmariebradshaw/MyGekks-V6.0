@@ -5,7 +5,6 @@ function readypage() {
         var e = $(".breadcrumb li:nth-child(2) a").attr("href");
         $("#customer-information a").attr("href", e)
     } else $(".step__footer__previous-link").append($("#check-mark-prev").removeClass("invis")), $(".step__footer__previous-link span").addClass("nm");
-
   if ($(".thank-you__additional-content").length && $(window).width() > 999 ) {
     $('#follow-us').show().insertAfter('.order-summary'); }
   else {
