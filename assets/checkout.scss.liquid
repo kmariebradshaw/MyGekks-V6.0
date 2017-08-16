@@ -217,11 +217,19 @@ body .btn {
 
 body .hidden { display: none !important; } 
 
-.step__footer__continue-btn.btn { 
+@media only screen and (max-width: 588px) {
+  body .step__footer__continue-btn.btn { 
   background-color: #33ffcc;
   color: black;
   margin-right: 10%;
   padding: 16.5px;
+}
+}
+.step__footer__continue-btn.btn { 
+  background-color: #33ffcc;
+  color: black;
+  margin-right: 10%;
+  padding: 14.5px;
 }
 
 .step__footer__previous-link {
@@ -278,6 +286,14 @@ body .step__sections+form {
 #payment-information {
   cursor: default;
   margin-top: 15px;
+}
+
+@media only screen and (min-width: 590px) {
+  #payment-information { padding: 23px; }
+}
+
+@media only screen and (max-width: 589px) {
+  #payment-information { padding: 17px; }
 }
 
 #payment-information:hover, #payment-information:active {
