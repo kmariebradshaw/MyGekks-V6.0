@@ -217,7 +217,7 @@ body .up-label-vis:after {
 <script>
 $('.text-solution').click(function(){
 	var $this = $(this)
-	$this.siblings().children('.info-label').hide();
+	$this.siblings().removeClass('up-label-vis').removeClass('label-vis').children('.info-label').hide();
 	if ($this.hasClass('text-solution-below')) {
 		$this.toggleClass('up-label-vis');
 	}
