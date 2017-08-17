@@ -90,7 +90,15 @@
     height:20px;
     line-height: 20px;
     cursor: pointer;
+        transition: -webkit-transform .1s;
+    transition: transform .1s;
+    transition: transform .1s,-webkit-transform .1s;
     font-size: 16pt;
+}
+
+.label-vis:before, .up-label-vis:before {
+	    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
 }
 
 .info-label {
@@ -100,14 +108,14 @@
     z-index: 99;
     background: white;
     padding: 20px;
-    box-shadow: 0px 3px 5px lightgrey;
-}
+/*    box-shadow: 0px 3px 5px lightgrey;
+*/}
  
 
 body .text-solution-below:before { margin-top: -65px; }
 .slb:before { margin-top: 20px; }
 
-.label-vis:after {
+.label-vis:after, .up-label-vis:after {
     border-bottom: 10px solid #fff;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
@@ -119,6 +127,13 @@ body .text-solution-below:before { margin-top: -65px; }
     z-index: 5;
 }
 
+body .up-label-vis:after {
+	transform: rotate(180deg);
+	    -webkit-transform: rotate(180deg);
+
+	top: -56px;
+}
+
 .card-photo {
     width: 75px;
     border-radius: 50%;
@@ -126,6 +141,7 @@ body .text-solution-below:before { margin-top: -65px; }
     border: 2px solid #33ffcc;
     vertical-align: top;
     margin-top: 5%;
+
 }
 
 .card-text {
@@ -136,7 +152,7 @@ body .text-solution-below:before { margin-top: -65px; }
 }
 
 #no-show {
-  margin-top: 56px;
+  margin-top: 55px;
 }
 
 #tongue-fasten {
@@ -186,7 +202,7 @@ body .text-solution-below:before { margin-top: -65px; }
   <div class="text-solution text-solution-below slb" id="tb-four">
   	<div><p>fastening<br>system</p></div>
  	  <div class="info-label" id="heel-fasten">
-    	<img src="{{'placeholder.png' | asset_url}}" class="card-photo" />
+    	<img src="{{'backheel2.png' | asset_url}}" class="card-photo" />
     	<div class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel venenatis lacus, nec gravida odio. Aenean condimentum ultricies nulla, non auctor est iaculis quis. Nunc et ornare libero.</div>
     </div>  
    </div>
@@ -201,9 +217,14 @@ body .text-solution-below:before { margin-top: -65px; }
 <script>
 $('.text-solution').click(function(){
 	var $this = $(this)
-	$(this).toggleClass('label-vis')
+	$this.siblings().children('.info-label').hide();
+	if ($this.hasClass('text-solution-below')) {
+		$this.toggleClass('up-label-vis');
+	}
+	else {
+	 $this.toggleClass('label-vis');
+	}
 	$this.children('.info-label').toggle(); 
-
 });
 
 </script>
