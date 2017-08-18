@@ -11,15 +11,12 @@
 
 
 .text-solution {
-/*    background-color: hsla(0,0%,100%,.8);
-*/    position: relative;
+   position: relative;
     text-align: center;
     padding: 10px 5px;
-    font-size: 8pt;
     display: inline-block;
     height: auto;
     line-height: normal;
-    width: 66px;
     cursor: pointer;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -40,6 +37,61 @@
 }
 
 @media only screen and (max-width:589px) {
+.label-vis:after, .up-label-vis:after {
+    left: calc(50% - 10px);
+    top: 70px;
+}
+
+#no-show {
+  margin-top: 55px;
+}
+
+#tongue-fasten {
+	left: -64px;
+    top: 80px;
+   }
+
+   #moisture-wick {
+   	right: -30px;
+   	top: 80px;
+   }
+
+   #odor-killing {
+    top: -230px;
+    left: -85px;
+}
+  #heel-fasten {
+    top: -205px;
+    left: 10px;
+}
+
+.slb:before { margin-top: 20px; }
+
+.info-label {width: 300px;}
+
+body .text-solution-below:before { margin-top: -55px; }
+
+body .card-photo {
+    height: 75px;
+    width: 75px;
+  }
+
+ .text-solution:before {
+    top: 25px;
+    width: 20px;
+    height:20px;
+    line-height: 20px;
+    font-size: 16pt;
+}
+
+body .up-label-vis:after {
+	top: -56px;
+}
+
+	.text-solution {
+    font-size: 8pt;
+    width: 66px;
+}
 #int-wrapper {
     width: 320px;
     height: 285px;
@@ -74,11 +126,13 @@
     top: 195px;
     right: 230px;
 }
+ #atf-word{
+ 	font-size: 20pt;
+ }
  }
 
  #atf-word{
  	text-align: center;
- 	font-size: 20pt;
  }
  .text-solution:before {
  	margin-top: 20px;
@@ -88,19 +142,13 @@
     color: white;
     content: "+";
     display: block;
-    font-size: 36px;
     font-weight: 300;
     left: calc(50% - 10px);
     position: absolute;
-    top: 25px;
-    width: 20px;
-    height:20px;
-    line-height: 20px;
     cursor: pointer;
         transition: -webkit-transform .1s;
     transition: transform .1s;
     transition: transform .1s,-webkit-transform .1s;
-    font-size: 16pt;
 }
 
 .label-vis:before, .up-label-vis:before {
@@ -110,19 +158,14 @@
 
 .info-label {
     display: none;
-    width: 300px;
     position: absolute;
     z-index: 99;
     background: white;
     padding: 20px;
     text-align: left;
-
-/*    box-shadow: 0px 3px 5px lightgrey;
-*/}
+}
  
 b { font-weight: 700; }
-body .text-solution-below:before { margin-top: -55px; }
-.slb:before { margin-top: 20px; }
 
 .label-vis:after, .up-label-vis:after {
     border-bottom: 10px solid #fff;
@@ -130,17 +173,13 @@ body .text-solution-below:before { margin-top: -55px; }
     border-right: 10px solid transparent;
     box-sizing: border-box;
     content: "";
-    left: calc(50% - 10px);
     position: absolute;
-    top: 70px;
     z-index: 5;
 }
 
 body .up-label-vis:after {
 	transform: rotate(180deg);
 	    -webkit-transform: rotate(180deg);
-
-	top: -56px;
 }
 
 .card-photo {
@@ -154,8 +193,6 @@ body .up-label-vis:after {
     top: 0;
     bottom: 0;
     margin: auto;
-    height: 75px;
-    width: 75px;
   }
 
 .card-text {
@@ -166,27 +203,103 @@ body .up-label-vis:after {
     float: right;
 }
 
-#no-show {
-  margin-top: 55px;
-}
 
+@media only screen and (min-width: 589px) and (max-width: 799px) {
 #tongue-fasten {
-	left: -64px;
-    top: 80px;
-   }
-
-   #moisture-wick {
-   	right: -30px;
-   	top: 80px;
-   }
-
-   #odor-killing {
-    top: -205px;
-    left: -85px;
+    left: -80px;
+    top: 140px;
 }
-  #heel-fasten {
-    top: -205px;
+
+#no-show {
+    margin-top: 102px;
+    left: 55px;
+}
+
+#moisture-wick {
+    right: -30px;
+    top: 140px;
+}
+
+#odor-killing {
+    top: -416px;
+    left: -165px;
+}
+
+#heel-fasten {
+    top: -364px;
     left: 10px;
+}
+
+.slb:before { margin-top: 45px; }
+
+.card-photo {
+    height: 130px;
+    width: 130px;
+  }
+
+	#int-wrapper {
+    width: 590px;
+    height: 450px;
+}
+
+.text-solution {
+    font-size: 16pt;
+    width: 160px;
+}
+
+  #int-wrapper .plus-more p {
+    line-height: 20px;
+    font-size: 29px;
+}
+
+#tb-one {
+    top: 70px;
+    left: -70px;
+}
+
+#tb-two {
+    top: 15px;
+    right: 85px;
+}
+
+#tb-five {
+    top: 250px;
+    right: 120px;
+}
+ #tb-three  {
+    top: 130px;
+    left: -10px;
+}
+
+#tb-four {
+    top: 255px;
+    right: 140px;
+}
+ #atf-word{ 
+ 	font-size: 30pt;
+ 	margin-top: 5%;
+ }
+ .text-solution:before {
+    top: 50px;
+        width: 30px;
+    height:30px;
+    line-height: 30px;
+    font-size: 30pt;
+}
+
+body .text-solution-below:before { margin-top: -115px; }
+
+.info-label {width: 500px;}
+
+.label-vis:after, .up-label-vis:after {
+    left: calc(50% - 5px);
+    top: 130px;
+}
+
+body .up-label-vis:after {
+	top: -85px;
+}
+
 }
 </style>
 
@@ -208,8 +321,8 @@ body .up-label-vis:after {
     	<b>benefit:</b> installed to your shoe versus placed on foot provides the convenience of slipping in and out barefoot on the go.</div>
     </div>
    </div>
-  <div class="text-solution" id="tb-three">
-  	<div><p>anti-sweat</p></div>
+  <div class="text-solution slb" id="tb-three">
+  	<div><p>moisture <br>wicking</p></div>
  	  <div class="info-label" id="moisture-wick">
     	<img src="{{'placeholder.png' | asset_url}}" class="card-photo" />
     	<div class="card-text">knit with high quality moisture wicking fibers.<br><br>
