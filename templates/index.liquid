@@ -1,6 +1,6 @@
 <style>#ctadb{width: 40%; height: 100px; margin: 50px 0; line-height: 100px; font-size: 24pt;}#ctadb:first-of-type{margin-right: 3%;}#sub-head{text-align: center;margin-top:0;}#slid-b{margin-top: 20px;}#newsletter{background-color: transparent}#masonry ul{position: absolute; width: 100%; max-width: 1366px; overflow: hidden;}.w-control-bar__region--right{display: none !important;}#gia{background-image: url("{{'gekksloading.gif' | asset_url}}"); background-repeat: no-repeat; background-position: center;margin-bottom:0;}
 
-#int-wrapper {
+#int-wrapper, #int-wrapper-do {
 	margin: 0 auto;
 	text-align: center;
 	background: url("{{'sneaker-neon.png' | asset_url}}");
@@ -41,6 +41,7 @@
     left: calc(50% - 10px);
     top: 70px;
 }
+#int-wrapper-do { display: none; }
 
 #no-show {
   margin-top: 55px;
@@ -300,11 +301,62 @@ body .up-label-vis:after {
 	top: -85px;
 }
 
+#int-wrapper-do { display: none; }
+
+}
+
+@media only screen and (min-width: 800px) {
+	#int-wrapper { display: none; }
+	#int-wrapper-do .do-text{ 
+		display: inline-block;
+ 		border-left: 2px solid black;
+    	max-width: 25%;
+    	height: 35%;
+    	text-align: left;
+    	padding-left: 15px;
+	}
+	#int-wrapper-do { height: 800px; }
+
+	.do-explain, .do-benefit { 
+    font-weight: lighter;
+    margin-top: 10px;
+    line-height: normal;
+    font-size: 11pt;
+}
+	.b-title { font-size: 14pt; }
+	.do-benefit b { font-weight: normal; }
 }
 </style>
 
 <div class="index-sections"> <div id="additional-sections"> <div class="cbb-ignored-image">
 <h1 id="atf-word">socks reinvented</h1>
+<div id="int-wrapper-do">
+	<div class="do-text">
+		<p class="b-title"><b>No show. Really</b></p>
+		<p class="do-explain">Gekks line the interior heel, sole and tongue of your shoe providing a complete no-show solution.</p>
+		<p class="do-benefit"><b>Benefit:</b> Don’t embarrass yourself with no-shows that…show.</p>
+	</div>
+	<div class="do-text">
+		<p class="b-title"><b>Patented fastening system</b></p>
+		<p class="do-explain">Micro-thin fastener connects the sock to the inside of your shoe.</p>
+		<p class="do-benefit"><b>Benefit:</b>Installed to your shoe allows for convenient slip in and out barefoot on the go.</p>
+	</div>
+	<div class="do-text">
+		<p class="b-title"><b>Moisture wicking</b></p>
+		<p class="do-explain">Our moisture wicking fibers work to pull the moisture out of your foot for a dry feel.</p>
+		<p class="do-benefit"><b>Benefit:</b>Stay cool and fresh all day.</p>
+	</div>
+	<div class="do-text">
+		<p class="b-title"><b>Patented fastening system</b></p>
+		<p class="do-explain">Micro-thin fastener connects the sock to the inside of your shoe.</p>
+		<p class="do-benefit"><b>Benefit:</b> Stop using regular no-shows that slide down your ankle, bunch up and don’t protect against blisters</p>
+	</div>
+	<div class="do-text">
+		<p class="b-title"><b>Odor killing yarn</b></p>
+		<p class="do-explain">Gekks are knit with high-tech silver anti-microbial yarn used by NASA to eliminate odor as you sweat.</p>
+		<p class="do-benefit"><b>Benefit:</b> Leave Gekks inside your shoes for months without washing, without them getting dirty.</p>
+	</div>
+</div>
 <div id="int-wrapper">
   <div class="text-solution" id="tb-one">
     <div><p>no-show</p></div>
