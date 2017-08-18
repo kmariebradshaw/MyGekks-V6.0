@@ -71,7 +71,7 @@
 }
 
  #tb-four {
-    top: 209px;
+    top: 195px;
     right: 230px;
 }
  }
@@ -115,12 +115,13 @@
     z-index: 99;
     background: white;
     padding: 20px;
+    text-align: left;
 
 /*    box-shadow: 0px 3px 5px lightgrey;
 */}
  
-
-body .text-solution-below:before { margin-top: -65px; }
+b { font-weight: 700; }
+body .text-solution-below:before { margin-top: -55px; }
 .slb:before { margin-top: 20px; }
 
 .label-vis:after, .up-label-vis:after {
@@ -143,20 +144,26 @@ body .up-label-vis:after {
 }
 
 .card-photo {
-    width: 75px;
     border-radius: 50%;
-    height: 75px;
     border: 2px solid #33ffcc;
-    vertical-align: top;
-    margin-top: 5%;
-
-}
+    max-height: 50%;
+    max-width: 50%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 75px;
+    width: 75px;
+  }
 
 .card-text {
     margin-top: 5px;
     max-width: 63%;
     display: inline-block;
     margin-left: 5%;
+    float: right;
 }
 
 #no-show {
@@ -190,35 +197,39 @@ body .up-label-vis:after {
     <div><p>no-show</p></div>
     <div class="info-label" id="no-show">
     	<img src="{{'placeholder.png' | asset_url}}" class="card-photo" />
-    	<div class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel venenatis lacus, nec gravida odio. Aenean condimentum ultricies nulla, non auctor est iaculis quis. Nunc et ornare libero.</div>
+    	<div class="card-text">Gekks line the interior heel, sole, and tongue of your shoe providing a no-show solution.<br><br><b>benefit:</b> go sockless with confidence and style.  don’t embarrass yourself with no-shows that... show.</div>
     </div>
   </div>
   <div class="text-solution slb" id="tb-two">
   	<div><p>fastening<br>system</p></div>
  	 <div class="info-label" id="tongue-fasten">
     	<img src="{{'placeholder.png' | asset_url}}" class="card-photo" />
-    	<div class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel venenatis lacus, nec gravida odio. Aenean condimentum ultricies nulla, non auctor est iaculis quis. Nunc et ornare libero.</div>
-      </div>  
+    	<div class="card-text">micro-thin fastener connects the sock to the inside of your shoe.<br><br>
+    	<b>benefit:</b> installed to your shoe versus placed on foot provides the convenience of slipping in and out barefoot on the go.</div>
     </div>
+   </div>
   <div class="text-solution" id="tb-three">
   	<div><p>anti-sweat</p></div>
  	  <div class="info-label" id="moisture-wick">
     	<img src="{{'placeholder.png' | asset_url}}" class="card-photo" />
-    	<div class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel venenatis lacus, nec gravida odio. Aenean condimentum ultricies nulla, non auctor est iaculis quis. Nunc et ornare libero.</div>
+    	<div class="card-text">knit with high quality moisture wicking fibers.<br><br>
+    	<b>benefit:</b> stay cool, comfortable and fresh on a long weekend day.</div>
       </div>  
    </div>
   <div class="text-solution text-solution-below slb" id="tb-four">
   	<div><p>fastening<br>system</p></div>
  	  <div class="info-label" id="heel-fasten">
     	<img src="{{'backheel2.png' | asset_url}}" class="card-photo" />
-    	<div class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel venenatis lacus, nec gravida odio. Aenean condimentum ultricies nulla, non auctor est iaculis quis. Nunc et ornare libero.</div>
+    	<div class="card-text">micro-thin fastener connects the sock to the inside of your shoe.<br><br>
+    	<b>benefit:</b> stop using regular no-shows that slide down your ankle, bunch up and don’t protect against blisters.</div>
     </div>  
    </div>
   <div class="text-solution text-solution-below slb" id="tb-five">
   	<div><p>odor <br>killing</p></div>
  	  <div class="info-label" id="odor-killing">
     	<img src="{{'placeholder.png' | asset_url}}" class="card-photo" />
-    	<div class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel venenatis lacus, nec gravida odio. Aenean condimentum ultricies nulla, non auctor est iaculis quis. Nunc et ornare libero.</div>
+    	<div class="card-text">Gekks are knit with high-tech silver anti-microbial yarn use by NASA and the military to eliminate odor as you sweat.<br><br>
+    	<b>benefit:</b> leave Gekks inside your shoes for months without washing. they’re cleaner than wearing socks or going barefoot!</div>
       </div>  
    </div>
 </div>
