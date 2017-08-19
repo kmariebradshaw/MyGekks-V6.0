@@ -1,5 +1,9 @@
 <style>#ctadb{width: 40%; height: 100px; margin: 50px 0; line-height: 100px; font-size: 24pt;}#ctadb:first-of-type{margin-right: 3%;}#sub-head{text-align: center;margin-top:0;}#slid-b{margin-top: 20px;}#newsletter{background-color: transparent}#masonry ul{position: absolute; width: 100%; max-width: 1366px; overflow: hidden;}.w-control-bar__region--right{display: none !important;}#gia{background-image: url("{{'gekksloading.gif' | asset_url}}"); background-repeat: no-repeat; background-position: center;margin-bottom:0;}
 
+
+#tongue-fasten, #moisture-wick, #no-show { box-shadow: 5px 5px 5px lightgrey; }
+
+#heel-fasten, #odor-killing {    box-shadow: 5px 0px 5px lightgrey; }
 #int-wrapper, #int-wrapper-do {
 	margin: 0 auto;
 	text-align: center;
@@ -316,6 +320,12 @@ body .up-label-vis:after {
     	padding-left: 15px;
     	position: relative;
 	}
+
+	body #int-wrapper-do .do-text-below { border-left: none; }
+
+	body #int-wrapper-do .do-text-below .b-title, body #int-wrapper-do .do-text-below .do-explain { border-left: 2px solid black; padding-left: 10px; }
+
+	body .do-text-below .do-benefit, body .do-text-below .do-plus { padding-left: 10px; }
 	#int-wrapper-do { height: 800px; width: 800px; margin-top: 5%;}
 
 	.do-explain, .do-benefit { 
@@ -323,11 +333,11 @@ body .up-label-vis:after {
     margin-top: 10px;
     line-height: normal;
     font-size: 11pt;
-}
+} 
 	.b-title { font-size: 14pt; line-height: normal; }
 	.do-benefit b { font-weight: normal; }
 
-
+	.border-left { border-left: 2px solid black;}
   #do-no-show {
     left: -5px;
     top: 56px;
@@ -354,8 +364,20 @@ body .up-label-vis:after {
     right: 33px;
 }
 
-.do-text div { width: 40px; height: 40px; border-radius: 50%; cursor: pointer; }
-  #do-odor-killing .b-title { margin-top: 100px; }
+.do-text div {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #33ffcc;
+    font-size: 17pt;
+    line-height: 25px;
+    text-align: center;
+    margin-top: 5%;
+    color: white;
+}  
+
+#do-odor-killing .b-title { padding-top: 100px; }
   
   #do-heel-fasten {
     left: -125px;
@@ -367,14 +389,15 @@ body .up-label-vis:after {
     -webkit-transform: rotate(45deg);
  }
 
-#do-heel-fasten .b-title { margin-top: 100px; }
+#do-heel-fasten .b-title { padding-top: 100px; }
+
+#do-heel-fasten .do-explain, #do-odor-killing .do-explain { margin-top: 0; padding-top: 10px; }
 
 }
 </style>
 
 {% comment %}
 -Safari rotate bug
--More Button needs color, font-size, height, width
 -bottom show / hide / invisible mess
 -change photos (in email from Blair)
 -add responsiveness with side arrows
@@ -404,14 +427,14 @@ body .up-label-vis:after {
 	<div class="do-text do-text-below" id="do-heel-fasten">
 		<p class="b-title"><b>Patented fastening system</b></p>
 		<p class="do-explain">Micro-thin fastener connects the sock to the inside of your shoe.</p>
-		<div>+</div>
-		<p class="do-benefit invis" style="display: none"><b>Benefit:</b> Stop using regular no-shows that slide down your ankle, bunch up, and don’t protect against blisters.</p>
+		<div class="do-plus">+</div>
+		<p class="do-benefit invis" ><b>Benefit:</b> Stop using regular no-shows that slide down your ankle, bunch up, and don’t protect against blisters.</p>
 	</div>
 	<div class="do-text do-text-below" id="do-odor-killing">
 		<p class="b-title"><b>Odor killing yarn</b></p>
 		<p class="do-explain">Gekks are knit with high-tech silver anti-microbial yarn used by NASA to eliminate odor as you sweat.</p>
-		<div>+</div>
-		<p class="do-benefit invis" style="display: none;"><b>Benefit:</b> Leave Gekks inside your shoes for months without washing, without them getting dirty.</p>
+		<div class="do-plus">+</div>
+		<p class="do-benefit invis"><b>Benefit:</b> Leave Gekks inside your shoes for months without washing, without them getting dirty.</p>
 	</div>
 </div>
 <div id="int-wrapper">
@@ -470,7 +493,10 @@ $('.text-solution').click(function(){
 
 $('.do-text div').click(function(){
 	$(this).toggleClass('rotate')
-	$(this).siblings('.do-benefit').toggleClass('invis').show();
+	$(this).siblings('.do-benefit').toggleClass('invis');
+	if ($(this).parent().hasClass('do-text-below')) {
+		$(this).siblings('.do-benefit').toggleClass('border-left')
+	}
 });
 
 $(document).ready(function() {
