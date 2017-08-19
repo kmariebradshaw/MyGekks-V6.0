@@ -325,7 +325,7 @@ body .up-label-vis:after {
 
 	body #int-wrapper-do .do-text-below .b-title, body #int-wrapper-do .do-text-below .do-explain { border-left: 2px solid black; padding-left: 10px; }
 
-	body .do-text-below .do-benefit, body .do-text-below .do-plus { padding-left: 10px; }
+	body .do-text-below .do-benefit { padding-left: 10px;     margin-top: 0;}
 	#int-wrapper-do { height: 800px; width: 800px; margin-top: 5%;}
 
 	.do-explain, .do-benefit { 
@@ -364,7 +364,17 @@ body .up-label-vis:after {
     right: 33px;
 }
 
-.do-text div {
+body .do-text-below .do-benefit-hide  {
+    padding-left: 10px;
+    background: transparent;
+    border-left: 2px solid black;
+    border-radius: 0;
+    margin-top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.do-text div, .do-plus {
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -377,6 +387,7 @@ body .up-label-vis:after {
     color: white;
 }  
 
+body .do-plus { margin-top: 0; }
 #do-odor-killing .b-title { padding-top: 100px; }
   
   #do-heel-fasten {
@@ -399,9 +410,7 @@ body .up-label-vis:after {
 {% comment %}
 -Safari rotate bug
 -bottom show / hide / invisible mess
--change photos (in email from Blair)
 -add responsiveness with side arrows
--add box shadow on mobile where doesn't hit arrows
 {% endcomment %}
 <div class="index-sections"> <div id="additional-sections"> <div class="cbb-ignored-image">
 <h1 id="atf-word">socks reinvented</h1>
@@ -427,13 +436,13 @@ body .up-label-vis:after {
 	<div class="do-text do-text-below" id="do-heel-fasten">
 		<p class="b-title"><b>Patented fastening system</b></p>
 		<p class="do-explain">Micro-thin fastener connects the sock to the inside of your shoe.</p>
-		<div class="do-plus" onClick="ga('send', 'event', 'Above the Fold', 'Desktop', 'Benefit');">+</div>
+		<section class="do-benefit-hide"><div class="do-plus" onClick="ga('send', 'event', 'Above the Fold', 'Desktop', 'Benefit');">+</div></section>
 		<p class="do-benefit invis" ><b>Benefit:</b> Stop using regular no-shows that slide down your ankle, bunch up, and don’t protect against blisters.</p>
 	</div>
 	<div class="do-text do-text-below" id="do-odor-killing">
 		<p class="b-title"><b>Odor killing yarn</b></p>
 		<p class="do-explain">Gekks are knit with high-tech silver anti-microbial yarn used by NASA to eliminate odor as you sweat.</p>
-		<div class="do-plus" onClick="ga('send', 'event', 'Above the Fold', 'Desktop', 'Benefit');">+</div>
+		<section class="do-benefit-hide"><div class="do-plus" onClick="ga('send', 'event', 'Above the Fold', 'Desktop', 'Benefit');">+</div></section>
 		<p class="do-benefit invis"><b>Benefit:</b> Leave Gekks inside your shoes for months without washing, without them getting dirty.</p>
 	</div>
 </div>
@@ -448,7 +457,7 @@ body .up-label-vis:after {
   <div class="text-solution slb" id="tb-two" onClick="ga('send', 'event', 'Above the Fold', 'Mobile', 'Plus');">
   	<div><p>fastening<br>system</p></div>
  	 <div class="info-label" id="tongue-fasten">
-    	<img src="{{'front-tongue.jpg' | asset_url}}" class="card-photo" />
+    	<img src="{{'front-tongue2.png' | asset_url}}" class="card-photo" />
     	<div class="card-text">micro-thin fastener connects the sock to the inside of your shoe.<br><br>
     	<b>benefit:</b> installed to your shoe versus placed on foot provides the convenience of slipping in and out barefoot on the go.</div>
     </div>
@@ -464,7 +473,7 @@ body .up-label-vis:after {
   <div class="text-solution text-solution-below slb" id="tb-four" onClick="ga('send', 'event', 'Above the Fold', 'Mobile', 'Plus');">
   	<div><p>fastening<br>system</p></div>
  	  <div class="info-label" id="heel-fasten">
-    	<img src="{{'backheel2.png' | asset_url}}" class="card-photo" />
+    	<img src="{{'backheel3.png' | asset_url}}" class="card-photo" />
     	<div class="card-text">micro-thin fastener connects the sock to the inside of your shoe.<br><br>
     	<b>benefit:</b> stop using regular no-shows that slide down your ankle, bunch up and don’t protect against blisters.</div> 
     </div>  
@@ -484,7 +493,7 @@ $('.text-solution').click(function(){
 	$this.siblings().removeClass('up-label-vis').removeClass('label-vis').children('.info-label').hide();
 	if ($this.hasClass('text-solution-below')) {
 		$this.toggleClass('up-label-vis');
-	}
+	} 
 	else {
 	 $this.toggleClass('label-vis');
 	}
@@ -492,10 +501,17 @@ $('.text-solution').click(function(){
 });
 
 $('.do-text div').click(function(){
-	$(this).toggleClass('rotate')
-	$(this).siblings('.do-benefit').toggleClass('invis');
-	if ($(this).parent().hasClass('do-text-below')) {
-		$(this).siblings('.do-benefit').toggleClass('border-left')
+	if ($(this).parent().parent().hasClass('do-text-below')) {
+		$(this).parent().siblings('.do-benefit').toggleClass('border-left');
+			$('.do-plus').toggleClass('rotate');
+			console.log('sure')
+		   $(this).parent().siblings('.do-benefit').toggleClass('invis');
+
+
+	} 
+	else {
+	  $(this).toggleClass('rotate');
+	  $(this).siblings('.do-benefit').toggleClass('invis');
 	}
 });
 
