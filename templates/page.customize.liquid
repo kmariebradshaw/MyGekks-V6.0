@@ -42,7 +42,7 @@
                     <div class="fbutton" onClick="ga('send', 'event', 'Education', 'Progress', 'Basics');">ready!</div>
                 </div>
             </section>
-            <section id="step-two" style="display:none;">
+            <section id="step-two" class="prob-select-first" style="display:none;">
                 <div> <img class="sgblogo" src="{{'blogo.png' | asset_url}}" alt="Gekks" />
                     <h1 style="margin: 0 2%;">tap your sockless <br>style problems</h1>
                     <h3 style="margin: 0 9%;">select as many as you'd like</h3>
@@ -60,8 +60,32 @@
                             <br>by a 3-inch tall bear.</li>
                     </ul>
                     <div class="errors-s" style="height: 5vh;"></div>
-                    <div class="fbutton" onClick="ga('send', 'event', 'Education', 'Progress', 'Problems');">solve my problems</div>
+                    <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Problems');">solve my problems</div>
                 </div>
+            </section>
+            <section style="display: none;" id="smell-prob-sel">
+            <div>
+              <h1>Smell</h1>
+              <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Smell');">go</div>
+              </div>
+            </section>
+            <section style="display: none;" id="slip-prob-sel">
+            <div>
+              <h1>Slip</h1>
+              <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Slip');">go</div>
+              </div>
+            </section>
+            <section style="display: none;" id="lost-prob-sel">
+            <div>
+              <h1>Search</h1>
+              <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Searching');">go</div>
+              </div>
+            </section>
+            <section style="display: none;" id="heel-prob-sel">
+            <div>
+              <h1>Blister</h1>
+              <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Blister');">go</div>
+              </div>
             </section>
             <section class="continue" id="step-three" style="display:none;">
                 <div>
@@ -89,6 +113,7 @@
                     <div class="fbutton" id="rcalc" onClick="ga('send', 'event', 'Education', 'Progress', 'Style');">show my results</div>
                 </div>
             </section>
+ 
             <section id="step-five" style="display:none;">
                 <div>
                     <h1>based on your answers,<br>the perfect Gekks for you are...</h1>
@@ -117,7 +142,7 @@
                     <img src="{{'BuzzFeed.png' | asset_url}}" alt="BuzzFeed" class="pres-log" />
                     </div>
                     </div>
-                   </section>
+            </section>
         </div>
     </section>
 </div>
@@ -143,7 +168,17 @@ $(document).on("ready", function() {
         u = "";
     $(".fbutton").on("click", function() {
         var f = $(this);
-        f.parent().parent().hasClass("continue") ? nextSlide(f) : "step-two-five" == f.parent().parent().attr("id") ? n || a ? nextSlide(f) : ($(".errors-s").empty(), $(".errors-s").append("<p>please select an option</p>")) : "step-two" == f.parent().parent().attr("id") ? t + e + s + o > 0 ? nextSlide(f) : ($(".errors-s").empty(), $(".errors-s").append("<p>please select an option</p>")) : "rcalc" == f.attr("id") ? r + i + l > 0 ? (a ? (c = "women", r + i + l > 1 ? (h = "womens-closet-pack", p = "women's closet pack", d = "welcome to sockless freedom! you’ve been paired with more than one Gekk, so we recommend the closet pack for your best value!", u = "(includes sneaker, loafer and flats)", $("#womens-results").show()) : 1 == r ? (h = "flats-version", p = "ballet flats", d = "our Ballet Flat Gekks are designed to fit perfectly in your flats without showing or moving around while protecting you against that embarassing foot odor.", $("#ballet-results").show()) : 1 == l ? (h = "womens-sneaker-version", p = "sneakers & <br>lace-ups", d = "go sockless with our Gekks that we perfected for your sneakers. install them into your lace-up shoes for the comfort of wearing socks without the hassle.", $("#sneaker-results").show()) : 1 == i && (h = "womens-loafer-version", p = "loafers & <br>slip-ons", d = "our Loafer Gekks are designed to allow you the ease of slipping in and out barefoot while fighting and eliminating the odor of going barefoot!", $("#loaf-results").show())) : n && (c = "men", i + l > 1 ? (h = "mens-closet-pack", p = "men's closet pack", u = "(includes sneaker and loafer)", d = "welcome to sockless freedom! you’ve been paired with more than one Gekk, so we recommend the closet pack for your best value!", $("#mens-results").show()) : 1 == l ? (h = "sneaker-version", p = "sneakers & <br>lace-ups", d = "go sockless with our Gekks that we perfected for your sneakers. install them into your lace-up shoes for the comfort of wearing socks without the hassle.", $("#sneaker-results").show()) : 1 == i && (h = "loafer-version", p = "loafers & <br> slip-ons", d = "our Loafer Gekks are designed to allow you the ease of slipping in and out barefoot while fighting and eliminating the odor of going barefoot!", $("#loaf-results").show())), $("#rtitle").append(p), $("#rprodinfo").append(d), u.length > 1 && $("#rftitle").append(u), f.addClass("clicked"), nextSlide(f)) : ($(".errors-s").empty(), $(".errors-s").append("<p>please select one or more shoe styles</p>")) : "finalresult" == f.attr("id") && (window.location = "/collections/" + c + "/products/" + h + "?sh")
+        console.log('click')
+        if (f.hasClass('spec-prob-fb')) { 
+         if (e + s + o + t == 0 && f.parent().parent().hasClass('prob-select-first')) {
+            $(".errors-s").empty(); 
+            $(".errors-s").append("<p>please select an option</p>")
+         }
+         else {
+            feedbackSlide(f); 
+         }
+        }
+        f.parent().parent().hasClass("continue") ? nextSlide(f) : "step-two-five" == f.parent().parent().attr("id") ? n || a ? nextSlide(f) : ($(".errors-s").empty(), $(".errors-s").append("<p>please select an option</p>")) : "rcalc" == f.attr("id") ? r + i + l > 0 ? (a ? (c = "women", r + i + l > 1 ? (h = "womens-closet-pack", p = "women's closet pack", d = "welcome to sockless freedom! you’ve been paired with more than one Gekk, so we recommend the closet pack for your best value!", u = "(includes sneaker, loafer and flats)", $("#womens-results").show()) : 1 == r ? (h = "flats-version", p = "ballet flats", d = "our Ballet Flat Gekks are designed to fit perfectly in your flats without showing or moving around while protecting you against that embarassing foot odor.", $("#ballet-results").show()) : 1 == l ? (h = "womens-sneaker-version", p = "sneakers & <br>lace-ups", d = "go sockless with our Gekks that we perfected for your sneakers. install them into your lace-up shoes for the comfort of wearing socks without the hassle.", $("#sneaker-results").show()) : 1 == i && (h = "womens-loafer-version", p = "loafers & <br>slip-ons", d = "our Loafer Gekks are designed to allow you the ease of slipping in and out barefoot while fighting and eliminating the odor of going barefoot!", $("#loaf-results").show())) : n && (c = "men", i + l > 1 ? (h = "mens-closet-pack", p = "men's closet pack", u = "(includes sneaker and loafer)", d = "welcome to sockless freedom! you’ve been paired with more than one Gekk, so we recommend the closet pack for your best value!", $("#mens-results").show()) : 1 == l ? (h = "sneaker-version", p = "sneakers & <br>lace-ups", d = "go sockless with our Gekks that we perfected for your sneakers. install them into your lace-up shoes for the comfort of wearing socks without the hassle.", $("#sneaker-results").show()) : 1 == i && (h = "loafer-version", p = "loafers & <br> slip-ons", d = "our Loafer Gekks are designed to allow you the ease of slipping in and out barefoot while fighting and eliminating the odor of going barefoot!", $("#loaf-results").show())), $("#rtitle").append(p), $("#rprodinfo").append(d), u.length > 1 && $("#rftitle").append(u), f.addClass("clicked"), nextSlide(f)) : ($(".errors-s").empty(), $(".errors-s").append("<p>please select one or more shoe styles</p>")) : "finalresult" == f.attr("id") && (window.location = "/collections/" + c + "/products/" + h + "?sh")
     }), $("ul li").on("click", function() {
         var h = $(this);
         switch ($(".errors-s").empty(), h.toggleClass("highlight"), $(this).attr("class")) {
@@ -190,5 +225,27 @@ $(document).on("ready", function() {
                 t = 1
         }
     })
+function feedbackSlide(f) {
+    if (e >= 1){
+     e = 0 
+     $(f).parent().parent().hide().siblings('#slip-prob-sel').fadeIn("slow")
+    }
+    else if (o >= 1) {
+      o = 0 
+      $(f).parent().parent().hide().siblings('#lost-prob-sel').fadeIn("slow")
+    }
+    else if (s >= 1) {
+      s = 0 
+      $(f).parent().parent().hide().siblings('#smell-prob-sel').fadeIn("slow")
+    }
+    else if ( t >= 1 ) {
+      t = 0 
+      $(f).parent().parent().hide().siblings('#heel-prob-sel').fadeIn("slow")
+    }
+    else {
+      $(f).parent().parent().hide().siblings('#step-three').fadeIn("slow")
+    }
+}
 }); 
+
 </script>
