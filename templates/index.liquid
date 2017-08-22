@@ -62,12 +62,14 @@
    }
 
    #odor-killing {
-    top: -230px;
-    left: -85px;
-}
+/*    top: -230px;
+*/    left: -85px;
+/*    margin-top: -267px;
+*/
+bottom: 102px;}
   #heel-fasten {
-    top: -205px;
     left: 10px;
+    bottom: 101px;
 }
 
 .slb:before { margin-top: 20px; }
@@ -159,6 +161,12 @@ body .up-label-vis:after {
 .label-vis:before, .up-label-vis:before {
 	    transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    -ms-transform: translateY(45deg);
+-webkit-transform: translateY(45deg);
+-moz-transform: translateY(45deg);
+-o-transform: translateY(45deg);
+transform: translateY(45deg);
 }
 
 .info-label {
@@ -185,6 +193,11 @@ b { font-weight: 700; }
 body .up-label-vis:after {
 	transform: rotate(180deg);
 	    -webkit-transform: rotate(180deg);
+    -ms-transform: translateY(180deg);
+-webkit-transform: translateY(180deg);
+-moz-transform: translateY(180deg);
+-o-transform: translateY(180deg);
+transform: translateY(180deg);
 }
 
 .card-photo {
@@ -227,13 +240,13 @@ body .up-label-vis:after {
 }
 
 #odor-killing {
-    top: -415px;
     left: -165px;
+    bottom: 157px;
 }
 
 #heel-fasten {
-    top: -363px;
     left: 10px;
+    bottom: 156px;
 }
 
 .slb:before { margin-top: 45px; }
@@ -314,7 +327,7 @@ body .up-label-vis:after {
 	#int-wrapper { display: none; }
 	#int-wrapper-do .do-text{ 
 		display: inline-block;
- 		border-left: 2px solid black;
+ 		border-left: 2px solid lightgray;
     	max-width: 25%;
     	text-align: left;
     	padding-left: 15px;
@@ -323,10 +336,10 @@ body .up-label-vis:after {
 
 	body #int-wrapper-do .do-text-below { border-left: none; }
 
-	body #int-wrapper-do .do-text-below .b-title, body #int-wrapper-do .do-text-below .do-explain { border-left: 2px solid black; padding-left: 10px; }
+	body #int-wrapper-do .do-text-below .b-title, body #int-wrapper-do .do-text-below .do-explain { border-left: 2px solid lightgray; padding-left: 10px; }
 
 	body .do-text-below .do-benefit { padding-left: 10px;     margin-top: 0;}
-	#int-wrapper-do { height: 800px; width: 800px; margin-top: 5%;}
+	#int-wrapper-do { height: 800px; width: 800px; margin-top: 3%;}
 
 	.do-explain, .do-benefit { 
     font-weight: lighter;
@@ -337,7 +350,7 @@ body .up-label-vis:after {
 	.b-title { font-size: 14pt; line-height: normal; }
 	.do-benefit b { font-weight: normal; }
 
-	.border-left { border-left: 2px solid black;}
+	.border-left { border-left: 2px solid lightgray;}
   #do-no-show {
     left: -5px;
     top: 56px;
@@ -367,7 +380,7 @@ body .up-label-vis:after {
 body .do-text-below .do-benefit-hide  {
     padding-left: 10px;
     background: transparent;
-    border-left: 2px solid black;
+    border-left: 2px solid lightgray;
     border-radius: 0;
     margin-top: 0;
     padding-top: 10px;
@@ -395,9 +408,25 @@ body .do-plus { margin-top: 0; }
     top: 158px;
 }
 
+#do-moisture-wick {
+    right: -69px;
+    height: 250px;
+    top: 117px;
+}
+
+#do-odor-killing {
+    top: 188px;
+    right: 33px;
+}
+
 .rotate { 
    transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
+    -ms-transform: translateY(45deg);
+-webkit-transform: translateY(45deg);
+-moz-transform: translateY(45deg);
+-o-transform: translateY(45deg);
+transform: translateY(45deg);
  }
 
 #do-heel-fasten .b-title { padding-top: 100px; }
@@ -408,26 +437,38 @@ body .do-plus { margin-top: 0; }
 
 @media only screen and (min-width: 1000px){
 	#do-heel-fasten .b-title {
-    border-top: 2px solid black;
+    border-top: 2px solid lightgray;
     width: 90px;
     white-space: nowrap;
 	}
 
-	 #do-heel-fasten {
-    left: -240px;
+	#do-tongue-fasten {
+    left: 30px;
+    height: 250px;
+    top: 24px;
+}
+
+#do-heel-fasten {
+    left: -243px;
     top: 137px;
 }
 
+#do-no-show {
+    left: -202px;
+    top: 63px;
+    height: 275px;
+    border-bottom: 2px solid lightgray;
+}
 #atf-word {
     font-size: 54pt;
-    margin-top: 5%;
+    margin-top: 3%;
 }
 
 #do-moisture-wick {
     border-left: none !important;
-    border-right: 2px solid black;
+    border-right: 2px solid lightgray;
     padding-right: 10px;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid lightgray;
 }
 
 .b-title { white-space: nowrap; }
