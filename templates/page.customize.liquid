@@ -3,13 +3,15 @@
  
 b { font-weight: 600; }
 .flow-r {
-    width: 100%;
+    width: 84%;
     font-weight: lighter;
     min-height: 150px;
+    margin: 0 auto;
 }
 
 .flow-r:before {
         content: '"';
+        float: left;
 
 }
 .flow-r:before, .flow-r:after {
@@ -17,12 +19,16 @@ b { font-weight: 600; }
     color: #33ffcc;
     font-family: cursive;
     vertical-align: middle;
-    margin: 8px;
-    line-height: 18pt;
+    margin-top: -30px;
+    line-height: normal;
+    position: relative;
+    margin-bottom: -30px;
 }
 
 .flow-r:after {
     content: '”';
+    float: right;
+    top: 3px;
 }
 #review-slide { width: 100%; margin-bottom: 1vh; margin-top: 3vh; }
 #sub-til { margin-top: 3vh; font-size: 18pt; }
@@ -184,16 +190,16 @@ b { font-weight: 600; }
                     <div id="rprodp"> <img src="{{'Icon-ballet-results.png' | asset_url}}" id="ballet-results" style="display:none;" /> <img src="{{'Icon-loafers-results.png' | asset_url}}" id="loaf-results" style="display:none;" /> <img src="{{'Icon-sneakers-results.png' | asset_url}}" id="sneaker-results" style="display:none;" /> <img src="{{'icon-mens-closet.png' | asset_url}}" id="mens-results" style="display:none;" /> <img src="{{'Gekks-Icons.png' | asset_url}}" id="womens-results" style="display:none;" /> </div>
                     <p id="rprodinfo"></p>
                     <div style="height: 5vh;"></div>
-                    <div class="fbutton" id="finalresult" style="margin-bottom: 3vh;" onClick="ga('send', 'event', 'Education', 'Progress', 'Shop Now');">shop now</div><a class="fbutton" style="margin-bottom: 3vh;" href="/?sh=d" onClick="ga('send', 'event', 'Education', 'Progress', 'Learn More');">learn more <a class="fbutton" style="margin-bottom: 3vh;" href="/pages/reviews" onClick="ga('send', 'event', 'Education', 'Progress', 'Reviews');">reviews</a> 
+                    <div class="fbutton" id="finalresult" style="margin-bottom: 3vh;" onClick="ga('send', 'event', 'Education', 'Progress', 'Shop Now');">shop now</div><a class="fbutton" style="margin-bottom: 3vh;" href="/?sh=d" onClick="ga('send', 'event', 'Education', 'Progress', 'Learn More');">learn more <a class="fbutton" style="margin-bottom: 3vh; display: none;" href="/pages/reviews" onClick="ga('send', 'event', 'Education', 'Progress', 'Reviews');">reviews</a> 
                     <div style="width: 100%;margin-bottom:3vh;">
                     <div id="review-slide">
                        <div class="flow-r" id="start-slide">I absolutely love my Gekks. They are worth every penny, stay in place and my feet don't stink at the end of the day</div>
-                       <div class="flow-r" style="display: none;">this is my 2nd gekks purchase. works great to keep my feet dry and combat stinky shoes. love them.</div>
+                       <div class="flow-r" style="display: none;">this is my 2nd gekks purchase. works great to keep my feet dry and combat stinky shoes. <br>love them.</div>
                        <div class="flow-r" style="display: none;">Love them! I never have to search for no show socks and they keep my feet from rubbing in my shoes.</div>
-                       <div class="flow-r" style="display: none;">This is a wonderful product and the solution I have been searching for.  Solves the problems of wanting to wear shoes without socks showing, sweaty feet, and stinky shoes!</div>
+                       <div class="flow-r" style="display: none;">This is a wonderful product and the solution I have been searching for.</div>
                        <div class="flow-r" style="display: none;">I have several pairs and love them. They are comfortable and very easy to use.</div>
                        <div class="flow-r" style="display: none;">Amazing! I was skeptical about how well they would stay in place, but they are incredible! I will be ordering more!</div>
-                       <div class="flow-r" style="display: none;">I loved them so much I immediately ordered more!!!! Where have these been all my life.</div>
+                       <div class="flow-r" style="display: none;">I loved them so much I immediately ordered more!!!! Where have these been <br> all my life.</div>
                        <div class="flow-r" style="display: none;">I love these things! I'm a first-time Gekks customer, and I have been raving about these smart inventions to everyone.</div>
                        <div class="flow-r" style="display: none;">Love them! No more sweaty feet, no more slip-on liners that don't stay put.</div>
                        <div class="flow-r" id="last-slide" style="display: none;" >I love these even more than I thought I would. The "sock" feels silky and lets my feet breathe.</div>
