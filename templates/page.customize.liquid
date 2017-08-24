@@ -193,10 +193,10 @@ b { font-weight: 600; }
                        <div class="flow-r" style="display: none;">This is a wonderful product and the solution I have been searching for.  Solves the problems of wanting to wear shoes without socks showing, sweaty feet, and stinky shoes!</div>
                        <div class="flow-r" style="display: none;">I have several pairs and love them. They are comfortable and very easy to use.</div>
                        <div class="flow-r" style="display: none;">Amazing! I was skeptical about how well they would stay in place, but they are incredible! I will be ordering more!</div>
-                       <div class="flow-r" style="display: none;">I loved them so much I immediately ordered more!!!! Where have these been all my life. Fit perfectly in my shoes, keep my feet from sweating, and keep my shoes from smelling.</div>
+                       <div class="flow-r" style="display: none;">I loved them so much I immediately ordered more!!!! Where have these been all my life.</div>
                        <div class="flow-r" style="display: none;">I love these things! I'm a first-time Gekks customer, and I have been raving about these smart inventions to everyone.</div>
-                       <div class="flow-r" style="display: none;">Love them! No more sweaty feet, no more slip-on liners that don't stay put. The Gekks liners stay in place and are very comfortable! Highly recommend.</div>
-                       <div class="flow-r" style="display: none;">I love these even more than I thought I would. The "sock" feels silky and lets my feet breathe. They have also helped my shoes feel more comfortable.</div>
+                       <div class="flow-r" style="display: none;">Love them! No more sweaty feet, no more slip-on liners that don't stay put.</div>
+                       <div class="flow-r" id="last-slide" style="display: none;" >I love these even more than I thought I would. The "sock" feels silky and lets my feet breathe.</div>
                     </div>
              <img src="{{'simple.png' | asset_url}}" alt="Real Simple" class="pres-log" style="margin-left: 0;"/>
                     <img src="{{'maxim.png' | asset_url}}" alt="Maxim" class="pres-log" />
@@ -211,9 +211,14 @@ b { font-weight: 600; }
 <script> 
 
 function reviewSlider() { 
-    setInterval(function(){ 
-    $('.flow-r:visible').hide().next().show();
-    }, 3000)   
+  setInterval(function(){ 
+    if ($('#last-slide').is(':visible')){
+        $('#last-slide').hide().parent().children().first().show()
+    }
+    else {
+      $('.flow-r:visible').hide().next().show();
+    }
+  }, 3000) 
 }
 
 $(document).ready(function(){
@@ -243,7 +248,6 @@ $(document).on("ready", function() {
         u = "";
     $(".fbutton").on("click", function() {
         var f = $(this);
-        console.log('click')
         if (f.hasClass('spec-prob-fb')) { 
          if (e + s + o + t == 0 && f.parent().parent().hasClass('prob-select-first')) {
             $(".errors-s").empty(); 
