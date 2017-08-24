@@ -3,7 +3,7 @@
  
 b { font-weight: 600; }
 .flow-r {
-    width: 84%;
+    width: 92%;
     font-weight: lighter;
     min-height: 150px;
     margin: 0 auto;
@@ -107,7 +107,7 @@ b { font-weight: 600; }
                 <li>our moisture wicking material actively pulls moisture off your feet so you stay dry</li>
               </ul>
               <div style="height: 3vh;"></div>
-              <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Smell');">go</div>
+              <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Smell');">got it!</div>
               </div>
             </section>
             <section style="display: none;" id="slip-prob-sel">
@@ -122,7 +122,7 @@ b { font-weight: 600; }
                 <li>sock comfort in the front, heel blister protection in the back</li>
               </ul>
              <div style="height: 3vh;"></div>
-              <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Slip');">go</div>
+              <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Slip');">got it!</div>
               </div>
             </section>
             <section style="display: none;" id="lost-prob-sel">
@@ -134,16 +134,16 @@ b { font-weight: 600; }
               <ul id="problem-info">
                 <li>unlike all other no shows, Gekks stay locked <b>INSIDE</b> your shoes.</li>
                 <li>you install them inside your shoes, you don’t put them on your feet</li>
-                <li>the comfort of a thin sock with the ultimate convenience</li>
+                <li>the convenience of going barefoot with the protection of a sock</li>
               </ul>
               <div style="height: 3vh;"></div>
-              <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Searching');">go</div>
+              <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Searching');">got it!</div>
               </div>
             </section>
             <section style="display: none;" id="heel-prob-sel">
             <div>
             <div id="mult-prob">
-                <h1 id="til">painful blister? Band-Aids cramping your style? we get it. that’s why we invented Gekks.</h1>
+                <h1 id="til">painful blister? Band-Aids® cramping your style? we get it. that’s why we invented Gekks.</h1>
                 <h1 id="sub-til">how do Gekks <br>prevent blisters?</h1>
               </div>
               <ul id="problem-info">
@@ -152,14 +152,27 @@ b { font-weight: 600; }
                 <li>Gekks are strong and won’t tear over time.</li>
               </ul>
                 <div style="height: 3vh;"></div>
-                <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Blister');">go</div>
+                <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Blister');">got it!</div>
+              </div>
+            </section>
+             <section style="display: none;" id="more-than-one-prob-sel">
+            <div>
+               <div id="mult-prob">
+                <h1 id="sub-til">how are <br>Gekks different?</h1>
+              </div>
+             <ul id="problem-info">
+                <li>unlike all other no shows, Gekks lock and stay <b>INSIDE</b> your shoes</li>
+                <li>knit with the same odor eliminating yarn used by the military and NASA </li>
+                <li>sock comfort in the front, heel blister protection in the back</li>
+              </ul>
+              <div style="height: 3vh;"></div>
+              <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Searching');">got it!</div>
               </div>
             </section>
             <section class="continue" id="step-three" style="display:none;">
                 <div>
                     <div id="mult-prob">
-                        <h1 id="til">we've been there too. <br>that's why we created Gekks.</h1>
-                        <h1 id="sub-til">what's different<br> about Gekks</h1> </div>
+                        <h1 id="sub-til">watch Gekks in action</h1> </div>
                     <img src="{{'updated-be.gif' | asset_url }}" alt="Slip in and Out Barefoot" class="tw"/>
                     <div style="height:4vh;"></div>
                     <div class="fbutton" onClick="ga('send', 'event', 'Education', 'Progress', 'Problem-Feedback');">got it!</div>
@@ -311,7 +324,14 @@ $(document).on("ready", function() {
         }
     })
 function feedbackSlide(f) {
-    if (e >= 1){
+    if ( e + o + s + t > 1 ) {
+       $(f).parent().parent().hide().siblings('#more-than-one-prob-sel').fadeIn("slow")
+       e = 0 
+       o = 0 
+       s = 0 
+       t = 0 
+    }
+    else if (e >= 1){
      e = 0 
      $(f).parent().parent().hide().siblings('#slip-prob-sel').fadeIn("slow")
     }
