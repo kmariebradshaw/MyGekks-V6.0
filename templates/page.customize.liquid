@@ -2,8 +2,35 @@
 <style>section{text-align: center; min-height: 100vh; max-width: 320px; display: flex; align-items: center; margin: 0 auto;}section div{width: 100%;}#someone-purchased{display: none !important;}section div h1{font-size: 14pt; margin-left: 3%; margin-right: 3%; line-height: normal; text-transform: none !important; margin-top: 5vh;}section div h3{font-size: 11pt; line-height: normal; font-weight: lighter; margin-left: 10%; margin-right: 10%; text-transform: none !important; letter-spacing: normal;}.fbutton{display: inline-block; background: #33ffcc; color: white; width: 75%; padding: 15px 0px; font-size: 14pt; cursor: pointer; margin: 0 auto; margin-bottom: 5vh; box-shadow: 5px 6px 20px lightgrey; border-radius: 10px;}.fbutton:active{box-shadow: none;}#dw{height: 5vh; font-size: 8pt; line-height: normal; width: 70%; margin: 0 auto;}#step-one img{margin-right: 1.5%; margin-left: 1.5%;}ul{margin-top: 5vh; text-align: left;}ul li{padding: 10px; border: 2px solid whitesmoke; margin: 10px 5px; font-size: 8pt; cursor: pointer; line-height: normal; font-weight: lighter; min-height: 44px;}.highlight{border: 2px solid #33ffcc;}ul li div{font-size: 11pt; font-weight: normal; line-height: normal;}ul li img{float: left; position: relative; margin-right: 5px; margin-top: -5px;}.errors-s{color:crimson;}.errors-s p{margin-top: 0; margin-left: 0; margin-right: 0; font-size: 10pt;}p{font-size: 12pt; margin-left: 5%; margin-right: 5%; line-height: normal; font-weight: lighter; margin-top: 5vh;}#rtitle{font-size: 30pt; margin-top: 3vh; font-weight: bolder;}#rftitle{line-height: 5vh;}#step-five img{display: inline-block;}#step-four ul li div{line-height: 28px;}#step-three img{margin-top: 5vh;}#step-two-five ul li div{margin-top: 11px; margin-left: 60px;}#step-two-five ul li{min-height: 40px;}#step-two-five ul li img{margin-top: -9px;}header{width: 100%; height: 2vh;}#progress-bar{width: 16.666%; background-color: #33ffcc; height: 13px;}.green{color: #33ffcc; background-color: white; display: inline;}#intro-title{font-size: 45pt; text-transform: lowercase !important;}.clicked{background-color: lightgray !important;}#close{position: absolute; color: lightgray; font-size: 11pt; right: 4vh; font-weight: bolder; cursor: pointer;}.fbutton:hover{color: white;}.sgblogo{max-width: 80px; margin-top: 5vh;}#problem-info{margin-top: 2vh; border: none; margin: 0 5px; font-size: 10pt; cursor: inherit; line-height: normal; font-weight: lighter; min-height: 70px; width: 80%; /* margin-left: 21%; */ margin: 0 auto;}#problem-info li{padding: 10px; border: none; margin: 0 5px; font-size: 12pt; cursor: inherit; line-height: normal; font-weight: lighter; min-height: 70px;}#problem-info li div{font-size: 10pt; font-weight: lighter; display: inline-block !important; width: 70%; font-size: 8pt !important;}#wot{font-size: 11pt; margin-left: 5%; margin-right: 5%; line-height: normal; font-weight: normal; margin-bottom: 5vh; margin-top: 5vh;}#sub-til{margin-bottom: 3vh; font-size: 22pt;}.sbutton img{max-width: 51px;}.prog-bar-ticks{border-right: 2px solid lightgray; height: 13.33px; width: 16.66666%; position: absolute; top: 0;}.prog-bar-ticks:nth-of-type(2){margin-left: 16.6666%;}.prog-bar-ticks:nth-of-type(3){margin-left: 33.5%;}.prog-bar-ticks:nth-of-type(5){margin-left: 66.6666%;}.prog-bar-ticks:nth-of-type(4){margin-left: 49.9999%;}#problem-info li:nth-of-type(1):before{content: "1"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #33ffcc; margin-top: -10px; margin-right: 20px; font-weight: 700;}#problem-info li:nth-of-type(2):before{content: "2"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #33ffcc; margin-top: -10px; margin-right: 20px; font-weight: 700;}#problem-info li:nth-of-type(3):before{content: "3"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #33ffcc; margin-top: -10px; margin-right: 20px; font-weight: 700;}
  
 b { font-weight: 600; }
-.flow-r {width: 100%;}
-#review-slide { width: 100%; }
+.flow-r {
+    width: 84%;
+    font-weight: lighter;
+    min-height: 150px;
+    margin: 0 auto;
+}
+
+.flow-r:before {
+        content: '"';
+        float: left;
+
+}
+.flow-r:before, .flow-r:after {
+    font-size: 42pt;
+    color: #33ffcc;
+    font-family: cursive;
+    vertical-align: middle;
+    margin-top: -30px;
+    line-height: normal;
+    position: relative;
+    margin-bottom: -30px;
+}
+
+.flow-r:after {
+    content: '”';
+    float: right;
+    top: 3px;
+}
+#review-slide { width: 100%; margin-bottom: 1vh; margin-top: 3vh; }
 #sub-til { margin-top: 3vh; font-size: 18pt; }
 #til { font-size: 12pt;margin-left: 6%; margin-right: 6%; }
 #problem-info li:before {padding-bottom: 17px;}
@@ -132,7 +159,7 @@ b { font-weight: 600; }
                 <div>
                     <div id="mult-prob">
                         <h1 id="til">we've been there too. <br>that's why we created Gekks.</h1>
-                        <h1 id="sub-til">what's different about Gekks</h1> </div>
+                        <h1 id="sub-til">what's different<br> about Gekks</h1> </div>
                     <img src="{{'updated-be.gif' | asset_url }}" alt="Slip in and Out Barefoot" class="tw"/>
                     <div style="height:4vh;"></div>
                     <div class="fbutton" onClick="ga('send', 'event', 'Education', 'Progress', 'Problem-Feedback');">got it!</div>
@@ -163,20 +190,20 @@ b { font-weight: 600; }
                     <div id="rprodp"> <img src="{{'Icon-ballet-results.png' | asset_url}}" id="ballet-results" style="display:none;" /> <img src="{{'Icon-loafers-results.png' | asset_url}}" id="loaf-results" style="display:none;" /> <img src="{{'Icon-sneakers-results.png' | asset_url}}" id="sneaker-results" style="display:none;" /> <img src="{{'icon-mens-closet.png' | asset_url}}" id="mens-results" style="display:none;" /> <img src="{{'Gekks-Icons.png' | asset_url}}" id="womens-results" style="display:none;" /> </div>
                     <p id="rprodinfo"></p>
                     <div style="height: 5vh;"></div>
-                    <div class="fbutton" id="finalresult" style="margin-bottom: 3vh;" onClick="ga('send', 'event', 'Education', 'Progress', 'Shop Now');">shop now</div><a class="fbutton" style="margin-bottom: 3vh;" href="/?sh=d" onClick="ga('send', 'event', 'Education', 'Progress', 'Learn More');">learn more <a class="fbutton" style="margin-bottom: 3vh;" href="/pages/reviews" onClick="ga('send', 'event', 'Education', 'Progress', 'Reviews');">reviews</a> 
+                    <div class="fbutton" id="finalresult" style="margin-bottom: 3vh;" onClick="ga('send', 'event', 'Education', 'Progress', 'Shop Now');">shop now</div><a class="fbutton" style="margin-bottom: 3vh;" href="/?sh=d" onClick="ga('send', 'event', 'Education', 'Progress', 'Learn More');">learn more <a class="fbutton" style="margin-bottom: 3vh; display: none;" href="/pages/reviews" onClick="ga('send', 'event', 'Education', 'Progress', 'Reviews');">reviews</a> 
                     <div style="width: 100%;margin-bottom:3vh;">
-{% comment %}                    <div id="review-slide">
-                       <div class="flow-r">"I absolutely love my Gekks. They are worth every penny, stay in place and my feet don't stink at the end of the day"</div>
-                       <div class="flow-r" style="display: none;">"this is my 2nd gekks purchase. works great to keep my feet dry and combat stinky shoes. love them. "</div>
-                       <div class="flow-r" style="display: none;">"Love them! I never have to search for no show socks and they keep my feet from rubbing in my shoes."</div>
-                       <div class="flow-r" style="display: none;">"This is a wonderful product and the solution I have been searching for.  Solves the problems of wanting to wear shoes without socks showing, sweaty feet, and stinky shoes!  I love them and will definitely buy them for all my shoes that I want to wear without socks.  I watched the video for how to put them in my shoes.  This made it pretty easy."</div>
-                       <div class="flow-r" style="display: none;">"I have several pairs and love them. They are comfortable and very easy to use."</div>
-                       <div class="flow-r" style="display: none;">"Amazing! I was skeptical about how well they would stay in place, but they are incredible! I will be ordering more!"</div>
-                       <div class="flow-r" style="display: none;">"I loved them so much I immediately ordered more!!!! Where have these been all my life. Fit perfectly in my shoes, keep my feet from sweating, and keep my shoes from smelling."</div>
-                       <div class="flow-r" style="display: none;">"I love these things! I'm a first-time Gekks customer, and I have been raving about these smart inventions to everyone. My fiancee bought me a beautiful pair of patent leather nisolo loafers, and my last pair is essentially ruined from sockless stinky feet! So Gekks have been an awesome solution! "</div>
-                       <div class="flow-r" style="display: none;">"Love them! No more sweaty feet, no more slip-on liners that don't stay put. The Gekks liners stay in place and are very comfortable! Highly recommend."</div>
-                       <div class="flow-r" style="display: none;">"I love these even more than I thought I would. The "sock" feels silky and lets my feet breathe. They have also helped my shoes feel more comfortable. "</div>
-                    </div>{% endcomment %}
+                    <div id="review-slide">
+                       <div class="flow-r" id="start-slide">I absolutely love my Gekks. They are worth every penny, stay in place and my feet don't stink at the end of the day</div>
+                       <div class="flow-r" style="display: none;">this is my 2nd gekks purchase. works great to keep my feet dry and combat stinky shoes. <br>love them.</div>
+                       <div class="flow-r" style="display: none;">Love them! I never have to search for no show socks and they keep my feet from rubbing in my shoes.</div>
+                       <div class="flow-r" style="display: none;">This is a wonderful product and the solution I have been searching for.</div>
+                       <div class="flow-r" style="display: none;">I have several pairs and love them. They are comfortable and very easy to use.</div>
+                       <div class="flow-r" style="display: none;">Amazing! I was skeptical about how well they would stay in place, but they are incredible! I will be ordering more!</div>
+                       <div class="flow-r" style="display: none;">I loved them so much I immediately ordered more!!!! Where have these been <br> all my life.</div>
+                       <div class="flow-r" style="display: none;">I love these things! I'm a first-time Gekks customer, and I have been raving about these smart inventions to everyone.</div>
+                       <div class="flow-r" style="display: none;">Love them! No more sweaty feet, no more slip-on liners that don't stay put.</div>
+                       <div class="flow-r" id="last-slide" style="display: none;" >I love these even more than I thought I would. The "sock" feels silky and lets my feet breathe.</div>
+                    </div>
              <img src="{{'simple.png' | asset_url}}" alt="Real Simple" class="pres-log" style="margin-left: 0;"/>
                     <img src="{{'maxim.png' | asset_url}}" alt="Maxim" class="pres-log" />
                     <img src="{{'vogue.png' | asset_url}}" alt="Vogue" class= "pres-log" />
@@ -188,6 +215,24 @@ b { font-weight: 600; }
     </section>
 </div>
 <script> 
+
+function reviewSlider() { 
+  setInterval(function(){ 
+    if ($('#last-slide').is(':visible')){
+        $('#last-slide').hide().parent().children().first().show()
+    }
+    else {
+      $('.flow-r:visible').hide().next().show();
+    }
+  }, 3000) 
+}
+
+$(document).ready(function(){
+  if ($("#review-slide:visible")) {
+    reviewSlider();
+  }
+});
+
 function nextSlide(e) {
     $(window).scrollTop(0), e.parent().parent().hide().next().fadeIn("slow"), contCount += 16.666666666666668, $("#progress-bar").css("width", contCount + "%")
 }
@@ -209,7 +254,6 @@ $(document).on("ready", function() {
         u = "";
     $(".fbutton").on("click", function() {
         var f = $(this);
-        console.log('click')
         if (f.hasClass('spec-prob-fb')) { 
          if (e + s + o + t == 0 && f.parent().parent().hasClass('prob-select-first')) {
             $(".errors-s").empty(); 
