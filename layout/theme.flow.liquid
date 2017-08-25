@@ -22,6 +22,86 @@
        <script type="application/javascript">(function(w,d,t,r,u){w[u]=w[u]||[];w[u].push({'projectId':'10000','properties':{'pixelId':'10035757'}});var s=d.createElement(t);s.src=r;s.async=true;s.onload=s.onreadystatechange=function(){var y,rs=this.readyState,c=w[u];if(rs&&rs!="complete"&&rs!="loaded"){return}try{y=YAHOO.ywa.I13N.fireBeacon;w[u]=[];w[u].push=function(p){y([p])};y(c)}catch(e){}};var scr=d.getElementsByTagName(t)[0],par=scr.parentNode;par.insertBefore(s,scr)})(window,document,"script","https://s.yimg.com/wi/ytc.js","dotq");</script>
   </head>
   <body>
+  <header class="do-plus">
+      <div class="wrap cbb-ignored-image" style="text-align: center;"><span class="banner">
+        <a href="/collections/women/products/womens-closet-pack" onClick="ga('send', 'event', 'Banner', 'Click', 'Upgrade to Closet Pack');">
+          <h4>$5 off & Free Shipping on Women's Closet Pack</h4>
+        </a>
+        <h4 id="countdown"style="display:none;">hurry! flash sale ends in <div id="divCounter" style="display:inline-block"></div> <b style="font-weight:bold">use code: TWENTY</b></h4>
+        </span>
+       
+        <a href="/?sh=d">
+          <img src="{{'blogo-min.png' | asset_url}}" alt="Gekks" class="blogo"/>
+        </a>
+        
+        <span class="nav-display desktop"><span>Show Menu</span></span>
+        <div class="{% if settings.mobile_landing_page == 'true' %}desktop{% endif %}" id="top-nav">
+          <nav>
+            <ul>
+              {% for link in linklists.main-menu-uu.links %}
+              {% if link.title == "women" %}
+              <li class="collection"><a href="{{ link.url }}" onClick="ga('send', 'event', 'Nav', 'Click', 'Women');">{{ link.title | escape }}</a></li>
+              <ul class="mobile-nav" style="display: none;">
+                {% for link in linklists.product-sub-nav.links %}                           
+                <li><a href="{{ link.url }}" onClick="ga('send', 'event', 'SubNav', 'Touch', 'Women-Product');">{{ link.title | escape }}</a></li>
+                {% endfor %}
+              </ul>
+              {% elsif link.title == "men" %}
+              <li class="collection-m"><a href="{{ link.url }}" onClick="ga('send', 'event', 'Nav', 'Click', 'Men');">{{ link.title | escape }}</a></li>
+              <ul class="mobile-nav" style="display: none;">
+                {% for link in linklists.product-sub-nav-men.links %}                           
+                <li><a href="{{ link.url }}" onClick="ga('send', 'event', 'SubNav', 'Touch', 'Men-Product');">{{ link.title | escape }}</a></li>
+                {% endfor %}
+              </ul>
+              {% else %}
+              <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+              {% endif%}
+              {% endfor %}  
+              <li id="nav-hiw"><a href="#">how it works</a></li>
+
+              {% if shop.customer_accounts_enabled %}
+              {% if customer %}
+              <li class="mobile"><a href="/account">Your Account</a></li>
+              <li class="mobile">{{ 'Logout' | customer_logout_link }}</li>
+              {% else %}
+              <li class="mobile">{{ 'Login' | customer_login_link }}</li>
+              <li class="mobile">{{ 'Register' | customer_register_link }}</li>
+              {% endif %}
+              {% endif %}
+            </ul>
+          </nav>
+          <div>
+            <div class="search">
+              <span class="search-toggle" role="link">Search</span>
+              <form action="/search" method="get">
+                <input type="submit" value="Search" style="background-color: transparent !important;">
+                <input type="hidden" value="product" name="type">
+                <input type="text" placeholder="search products..." value="{% if search.performed %}{{ search.terms | escape | downcase }}{% endif %}" name="q" id="search-product"> 
+                <span class="close">Close</span>
+              </form>
+            </div>
+            <div class="user-info">
+              {% if shop.customer_accounts_enabled %}
+              <div class="sign-in">
+                <ul>
+                  {% if customer %}
+                  <li><a href="/account/">Your Account</a></li>
+                  <li><a href="/account/addresses/">Addresses</a></li>
+                  <li>{{ 'Logout' | customer_logout_link }}</li>
+                  {% else %}
+                  <li>{{ 'Login' | customer_login_link }}</li>
+                  <li>{{ 'Register' | customer_register_link }}</li>
+                  {% endif %}
+                </ul>
+              </div>
+              {% endif %}
+              <a href="/cart/" class="cart"><span>{{ cart.item_count }}</span> <image src="{{'cart.png' | asset_url}}" style="margin-bottom: -12px;"/></a>
+            </div>
+          </div>
+          <ul class="icon-nav collection"> <li><a href="/collections/women/products/womens-closet-pack"> <img src="{{'womensclosetpack.png' | asset_url}}" class="select-icons-cp"/> <h4>Women's Closet Pack</h4> </a> </li><li><a href="/collections/women/products/flats-version"> <img src="{{'balletflaticon.png' | asset_url}}" class="select-icons"/> <h4>Ballet Flats</h4> </a> </li><li><a href="/collections/women/products/womens-loafer-version"> <img src="{{'womenloafericon.png' | asset_url}}" class="select-icons"/> <h4>Loafers & Slip-Ons</h4> </a> </li><li><a href="/collections/women/products/womens-sneaker-version"> <img src="{{'womensneakericon.png' | asset_url}}" class="select-icons"/> <h4>Sneakers & Lace-Ups</h4> </a> </li></ul> <ul class="icon-nav-m collection-m"> <li> <a href="/collections/men/products/mens-closet-pack"> <img src="{{'mensclosetpackicon.png' | asset_url}}" class="select-icons-cp-m"/> <h4>Men's Closet Pack</h4> </a> </li><li> <a href="/collections/men/products/sneaker-version"> <img src="{{'mensneakericon.png' | asset_url}}" class="select-icons"/> <h4>Sneakers & Lace-Ups</h4> </a> </li><li> <a href="/collections/men/products/loafer-version"> <img src="{{'mensloafericon.png' | asset_url}}" class="select-icons"/> <h4>Loafers & Slip-Ons</h4> </a> </li></ul> </div>
+        {% if settings.mobile_landing_page == 'true' %} <a href="/pages/store" class="button blue-white mobile">go to store</a> {% endif %}
+      </div>
+    </header>
 
     {% if shop.metafields.locksmith.active %}{% include 'locksmith' %}{% else %}{{ content_for_layout }}{% endif %}
     

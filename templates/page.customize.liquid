@@ -11,7 +11,136 @@ b { font-weight: 600; }
 #review-slide:before {
         content: '"';
         float: left;
+}
 
+@media only screen and (min-width: 800px) {
+
+    #review-slide {
+    width: 66% !important;
+    margin: 3vh auto;
+}
+
+    #step-three img {
+    margin-top: 1vh;
+}
+
+#prog-head {
+    position: relative;
+    top: 120px;
+    max-width: 1366px;
+    margin: 20px auto;
+}
+    #step-five .fbutton {
+    width: 45%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+#step-five center {
+    margin-top: 20px;
+}
+#page-flow-wrap { margin-top: 100px; }
+
+.sgblogo { display: none; }
+
+#step-one { 
+    margin-left: -7%;
+ }
+
+body #problem-info li {
+    font-size: 14pt;
+}
+
+#step-one h1 { 
+    text-align: left;
+    font-size: 18pt;
+ }
+
+ #step-two ul { 
+    margin-bottom: 3vh;
+  }
+
+  #step-two ul li {
+    display: inline-block;
+    width: 42%;
+    float: left;
+    margin-left: 2.5%;
+    min-height: 46px;
+}
+
+
+#lost-prob-sel, #heel-prob-sel, #more-than-one-prob-sel, #smell-prob-sel, #slip-prob-sel {
+    width: 340px;
+}
+
+#step-three .fbutton  {
+    width: 45%;
+    margin: 0 auto;
+}
+
+#step-four {
+    width: 400px;
+    margin: 0 auto;
+}
+#step-two .fbutton {
+    
+    margin-top: 6vh;
+    width: 45%;
+
+}
+
+ #step-two-five { max-width: 400px; margin: 0 auto; }
+header ul li { border: none; }
+
+section div h1 { font-size: 18pt; }
+
+section div h3 { font-size: 12pt; }
+nav ul { margin-top: 0; }
+
+#close { display: none; }
+section {
+    text-align: center;
+    min-height: 100vh;
+    max-width: 650px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#rprodinfo {
+    width: 62%;
+    margin: 0 auto;
+    font-size: 16pt;
+}
+
+#step-one img {
+    position: relative;
+    left: 3%;
+    bottom: 60px;
+}
+
+body section #intro-title {
+    float: left;
+    text-align: right;
+    width: 45%;
+    font-size: 66pt;
+    margin-right: 7%;
+    line-height: 1;
+}
+
+#step-one h3 {
+    text-align: left;
+    width: 45%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 11pt;
+}
+
+#step-one .fbutton {
+    width: 46%;
+    float: right;
+}
 }
 #review-slide:before, #review-slide:after {
     font-size: 42pt;
@@ -37,9 +166,12 @@ b { font-weight: 600; }
 #til { font-size: 12pt;margin-left: 6%; margin-right: 6%; }
 #problem-info li:before {padding-bottom: 17px;}
 
+@media only screen and (max-width: 799px) {
+.do-plus { display: none; }
+}
 </style>
   <div>
-    <header>
+    <header id="prog-head">
         <div id="progress-bar"> </div>
         <div class="prog-bar-ticks"></div>
         <div class="prog-bar-ticks"></div>
@@ -47,7 +179,7 @@ b { font-weight: 600; }
         <div class="prog-bar-ticks"></div>
         <div class="prog-bar-ticks"></div>
     </header> <a href="/?sh=d" id="close" onClick="ga('send', 'event', 'Education', 'Progress', 'Closed');">X</a>
-    <section>
+    <section id="page-flow-wrap">
         <div>
             <section class="continue" id="step-one">
                 <div>
