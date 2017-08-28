@@ -105,7 +105,33 @@
     </header>
 
     {% if shop.metafields.locksmith.active %}{% include 'locksmith' %}{% else %}{{ content_for_layout }}{% endif %}
-    
+        <footer class="do-plus">
+      <div class="wrap">
+        <div class="clearfix">
+          <div class="half">
+            <img src="{{'blogo-white.png' | asset_url}}" alt="GEEKS" id="flogo" />
+            <nav>
+              <ul>
+                {% for link in linklists.footer-1.links %}<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}
+              </ul>
+            </nav>
+          </div>
+          <div class="half">
+
+            <a href="#"id="referafriend" onclick="ga('send', 'event', 'Refer', 'Footer', 'Click');">refer a friend!</a>
+            <div id="psocial">
+              <h3 id="fsocial">follow us on social!</h3>
+              <ul class="social">
+                {% if settings.facebook_link != '' %}<li class="soc-fb"><a href="{{ settings.facebook_link }}" title="{{ shop.name }} on Facebook" target="_blank">Facebook</a></li>{% endif %}
+                {% if settings.pinterest_link != '' %}<li class="soc-pi"><a href="{{ settings.pinterest_link }}" title="{{ shop.name }} on Pinterest" target="_blank">Pinterest</a></li>{% endif %}
+                {% if settings.instagram_link != '' %}<li class="soc-ig"><a href="{{ settings.instagram_link }}" title="{{ shop.name }} on Instagram" target="_blank">Instagram</a></li>{% endif %}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p>© {{ shop.name }} {{ 'now' | date: '%Y' }}</p>
+      </div>
+    </footer>
     <!-- Google Code for Remarketing Tag -->
     <script type="text/javascript">
       /* <![CDATA[ */
@@ -123,4 +149,5 @@
     </noscript>    
     <!-- END Google Code for Remarketing Tag --> 
   </body>
+
 </html>
