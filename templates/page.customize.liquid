@@ -14,9 +14,25 @@ b { font-weight: 600; }
 }
 
 @media only screen and (min-width: 800px) {
-  /*     body { background: url("{{'interactive-background.jpg' | asset_url}}");}
 
-       header { background: white; }*/
+     footer ul li  {
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    min-height: 0px;
+    background: transparent;
+    font-weight: normal;
+    font-size: 12pt;
+    padding: 5px;
+}
+
+body>footer .social {
+    margin-top: 0px;
+    text-align: center;
+    column-count: 1;
+}
+
+footer ul { column-count: 2; }
 
        #result-info-flow {
     float: left;
@@ -77,6 +93,7 @@ left: 0 ;
 #page-flow-wrap {
     margin-top: 115px;
     padding-top: 50px;
+    padding-bottom: 50px;
 }
 #flow-back { 
     margin-top: 118px;
@@ -109,12 +126,6 @@ body #problem-info li {
     min-height: 46px;
 }
 
-/*
-step five format
-step five cleanup
-background
-footer
-*/
 #lost-prob-sel .fbutton, #heel-prob-sel .fbutton, #more-than-one-prob-sel .fbutton, #smell-prob-sel .fbutton, #slip-prob-sel .fbutton{
     
     width: 45%;
