@@ -714,12 +714,13 @@ j.Lb(t,0),j.$Css(t,"backgroundColor","#000"))):"IMG"==h&&"image"==j.$AttributeEx
 
 
 $(document).ready(function(){
+  if (!sessionStorage.alreadyClicked) {
     var curLocation= location.href;
-    if(curLocation.search("sh=d") >= 0 ) {
-    }  
-    else {
+    if(!curLocation.search("sh=d") >= 0 ) {
         window.location.href="/pages/customize"
+        sessionStorage.alreadyClicked = 1;
     };
-}); 
+  };
+});
 </script>
 <script>$(".sb").click(function(){switch($this=$(this),$this.addClass("selected").siblings().removeClass("selected"),$this.attr("id")){case"flat":$("#flat-i").removeClass("hidden").siblings("img").addClass("hidden"),$("#flat-r").removeClass("hidden").siblings("img").addClass("hidden");break;case"loafer":$("#loafer-i").removeClass("hidden").siblings("img").addClass("hidden"),$("#loafer-r").removeClass("hidden").siblings("img").addClass("hidden");break;case"sneaker":$("#sneaker-i").removeClass("hidden").siblings("img").addClass("hidden"),$("#sneaker-r").removeClass("hidden").siblings("img").addClass("hidden")}}),$(document).on("ready",function(){setInterval(function(){switch($this=$(".sb.selected"),$this.removeClass("selected"),$this.attr("id")){case"sneaker":$("#loafer-i").removeClass("hidden").siblings("img").addClass("hidden"),$("#loafer-r").removeClass("hidden").siblings("img").addClass("hidden"),$("#loafer").addClass("selected");break;case"flat":$("#sneaker-i").removeClass("hidden").siblings("img").addClass("hidden"),$("#sneaker-r").removeClass("hidden").siblings("img").addClass("hidden"),$("#sneaker").addClass("selected");break;case"loafer":$("#flat-i").removeClass("hidden").siblings("img").addClass("hidden"),$("#flat-r").removeClass("hidden").siblings("img").addClass("hidden"),$("#flat").addClass("selected")}},3000)});</script>
