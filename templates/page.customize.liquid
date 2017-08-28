@@ -26,6 +26,12 @@ b { font-weight: 600; }
     margin-top: 1vh;
 }
 
+#step-two h1 { margin-bottom: 20px !important; }
+
+#step-one #intro-title { margin-top: 0px; }
+
+#step-one #intro-title:after { content: url("{{'Gekks-Icons.png' | asset_url}}"); margin-right: -25px;}
+
 #prog-head {
     position: relative;
     top: 120px;
@@ -41,7 +47,7 @@ b { font-weight: 600; }
 #step-five center {
     margin-top: 20px;
 }
-#page-flow-wrap { margin-top: 100px; }
+#page-flow-wrap { margin-top: 200px; }
 
 .sgblogo { display: none; }
 
@@ -70,11 +76,22 @@ body #problem-info li {
     min-height: 46px;
 }
 
-
-#lost-prob-sel, #heel-prob-sel, #more-than-one-prob-sel, #smell-prob-sel, #slip-prob-sel {
-    width: 340px;
+/*
+header js to drop down 
+step five css 
+background
+spacing - remove flex box 
+footer
+*/
+#lost-prob-sel .fbutton, #heel-prob-sel .fbutton, #more-than-one-prob-sel .fbutton, #smell-prob-sel .fbutton, #slip-prob-sel .fbutton{
+    
+    width: 45%;
 }
 
+body section #til { width: 60%; margin: 0 auto; }
+#problem-info { width: 54%; }
+
+#problem-info li:before{ padding-bottom: 0px !important; }
 #step-three .fbutton  {
     width: 45%;
     margin: 0 auto;
@@ -86,13 +103,15 @@ body #problem-info li {
 }
 #step-two .fbutton {
     
-    margin-top: 6vh;
+    margin-top: 40px;
     width: 45%;
 
 }
 
  #step-two-five { max-width: 400px; margin: 0 auto; }
 header ul li { border: none; }
+
+nav ul li { border: 0px solid transparent !important; }
 
 section div h1 { font-size: 18pt; }
 
@@ -104,9 +123,7 @@ section {
     text-align: center;
     min-height: 100vh;
     max-width: 650px;
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
+    display: block;
 }
 
 #rprodinfo {
@@ -143,6 +160,8 @@ body section #intro-title {
     width: 46%;
     float: right;
 }
+
+
 }
 #review-slide:before, #review-slide:after {
     font-size: 42pt;
@@ -171,6 +190,10 @@ body section #intro-title {
 @media only screen and (max-width: 799px) {
 .do-plus { display: none; }
 }
+
+@media only screen and (min-width: 800px) {
+.mo-plus { display: none; }
+}
 </style>
   <div>
     <header id="prog-head">
@@ -190,7 +213,7 @@ body section #intro-title {
                     <div style="height: 2vh;"></div>
                     <h3>yeah, we did too, so we invented Gekks. the ultimate no-show sock.</h3>
                     <div style="height: 10vh"></div>
-                    <div class="fbutton">let's get started</div><img src="{{'Gekks-Icons.png' | asset_url}}" /> </div>
+                    <div class="fbutton">let's get started</div><img class="mo-plus" src="{{'Gekks-Icons.png' | asset_url}}" /> </div>
             </section>
             <section id="step-two-five" style="display:none;">
                 <div> <img class="sgblogo" src="{{'blogo.png' | asset_url}}" alt="Gekks" />
