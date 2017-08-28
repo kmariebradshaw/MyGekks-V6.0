@@ -1,5 +1,5 @@
 {% layout 'theme.flow' %} 
-<style>section{text-align: center; min-height: 100vh; max-width: 320px; display: flex; align-items: center; margin: 0 auto;}section div{width: 100%;}#someone-purchased{display: none !important;}section div h1{font-size: 14pt; margin-left: 3%; margin-right: 3%; line-height: normal; text-transform: none !important; margin-top: 5vh;}section div h3{font-size: 11pt; line-height: normal; font-weight: lighter; margin-left: 10%; margin-right: 10%; text-transform: none !important; letter-spacing: normal;}.fbutton{display: inline-block; background: #33ffcc; color: white; width: 75%; padding: 15px 0px; font-size: 14pt; cursor: pointer; margin: 0 auto; margin-bottom: 5vh; box-shadow: 5px 6px 20px lightgrey; border-radius: 10px;}.fbutton:active{box-shadow: none;}#dw{height: 5vh; font-size: 8pt; line-height: normal; width: 70%; margin: 0 auto;}#step-one img{margin-right: 1.5%; margin-left: 1.5%;}ul{margin-top: 5vh; text-align: left;}ul li{padding: 10px; border: 2px solid whitesmoke; margin: 10px 5px; font-size: 8pt; cursor: pointer; line-height: normal; font-weight: lighter; min-height: 44px;}.highlight{border: 2px solid #33ffcc;}ul li div{font-size: 11pt; font-weight: normal; line-height: normal;}ul li img{float: left; position: relative; margin-right: 5px; margin-top: -5px;}.errors-s{color:crimson;}.errors-s p{margin-top: 0; margin-left: 0; margin-right: 0; font-size: 10pt;}p{font-size: 12pt; margin-left: 5%; margin-right: 5%; line-height: normal; font-weight: lighter; margin-top: 5vh;}#rtitle{font-size: 30pt; margin-top: 3vh; font-weight: bolder;}#rftitle{line-height: 5vh;}#step-five img{display: inline-block;}#step-four ul li div{line-height: 28px;}#step-three img{margin-top: 5vh;}#step-two-five ul li div{margin-top: 11px; margin-left: 60px;}#step-two-five ul li{min-height: 40px;}#step-two-five ul li img{margin-top: -9px;}header{width: 100%; height: 2vh;}#progress-bar{width: 16.666%; background-color: #33ffcc; height: 13px;}.green{color: #33ffcc; background-color: white; display: inline;}#intro-title{font-size: 45pt; text-transform: lowercase !important;}.clicked{background-color: lightgray !important;}#close{position: absolute; color: lightgray; font-size: 11pt; right: 4vh; font-weight: bolder; cursor: pointer;}.fbutton:hover{color: white;}.sgblogo{max-width: 80px; margin-top: 5vh;}#problem-info{margin-top: 2vh; border: none; margin: 0 5px; font-size: 10pt; cursor: inherit; line-height: normal; font-weight: lighter; min-height: 70px; width: 80%; /* margin-left: 21%; */ margin: 0 auto;}#problem-info li{padding: 10px; border: none; margin: 0 5px; font-size: 12pt; cursor: inherit; line-height: normal; font-weight: lighter; min-height: 70px;}#problem-info li div{font-size: 10pt; font-weight: lighter; display: inline-block !important; width: 70%; font-size: 8pt !important;}#wot{font-size: 11pt; margin-left: 5%; margin-right: 5%; line-height: normal; font-weight: normal; margin-bottom: 5vh; margin-top: 5vh;}#sub-til{margin-bottom: 3vh; font-size: 22pt;}.sbutton img{max-width: 51px;}.prog-bar-ticks{border-right: 2px solid lightgray; height: 13.33px; width: 16.66666%; position: absolute; top: 0;}.prog-bar-ticks:nth-of-type(2){margin-left: 16.6666%;}.prog-bar-ticks:nth-of-type(3){margin-left: 33.5%;}.prog-bar-ticks:nth-of-type(5){margin-left: 66.6666%;}.prog-bar-ticks:nth-of-type(4){margin-left: 49.9999%;}#problem-info li:nth-of-type(1):before{content: "1"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #33ffcc; margin-top: -10px; margin-right: 20px; font-weight: 700;}#problem-info li:nth-of-type(2):before{content: "2"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #33ffcc; margin-top: -10px; margin-right: 20px; font-weight: 700;}#problem-info li:nth-of-type(3):before{content: "3"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #33ffcc; margin-top: -10px; margin-right: 20px; font-weight: 700;}
+<style>section{text-align: center; min-height: 100vh; max-width: 320px; display: flex; align-items: center; margin: 0 auto;}section div{width: 100%;}#someone-purchased{display: none !important;}section div h1{font-size: 14pt; margin-left: 3%; margin-right: 3%; line-height: normal; text-transform: none !important; margin-top: 5vh;}section div h3{font-size: 11pt; line-height: normal; font-weight: lighter; margin-left: 10%; margin-right: 10%; text-transform: none !important; letter-spacing: normal;}.fbutton{display: inline-block; background: #33ffcc; color: white; width: 75%; padding: 15px 0px; font-size: 14pt; cursor: pointer; margin: 0 auto; margin-bottom: 5vh; box-shadow: 5px 6px 20px lightgrey; border-radius: 10px;}.fbutton:active{box-shadow: none;}#dw{height: 5vh; font-size: 8pt; line-height: normal; width: 70%; margin: 0 auto;}#step-one img{margin-right: 1.5%; margin-left: 1.5%;}ul{margin-top: 5vh; text-align: left;}ul li{padding: 10px; border: 2px solid whitesmoke; margin: 10px 5px; font-size: 8pt; cursor: pointer; line-height: normal; font-weight: lighter; min-height: 44px;}.highlight{border: 2px solid #33ffcc;}ul li div{font-size: 11pt; font-weight: normal; line-height: normal;}ul li img{float: left; position: relative; margin-right: 5px; margin-top: -5px;}.errors-s{color:crimson;}.errors-s p{margin-top: 0; margin-left: 0; margin-right: 0; font-size: 10pt;}p{font-size: 12pt; margin-left: 5%; margin-right: 5%; line-height: normal; font-weight: lighter; margin-top: 5vh;}#rtitle{font-size: 30pt !important; margin-top: 3vh; font-weight: bolder !important;}#rftitle{line-height: 5vh;}#step-five img{display: inline-block;}#step-four ul li div{line-height: 28px;}#step-three img{margin-top: 5vh;}#step-two-five ul li div{margin-top: 11px; margin-left: 60px;}#step-two-five ul li{min-height: 40px;}#step-two-five ul li img{margin-top: -9px;}header{width: 100%; height: 2vh;}#progress-bar{width: 16.666%; background-color: #33ffcc; height: 13px;}.green{color: #33ffcc; background-color: white; display: inline;}#intro-title{font-size: 45pt; text-transform: lowercase !important;}.clicked{background-color: lightgray !important;}#close{position: absolute; color: lightgray; font-size: 11pt; right: 4vh; font-weight: bolder; cursor: pointer;}.fbutton:hover{color: white;}.sgblogo{max-width: 80px; margin-top: 5vh;}#problem-info{margin-top: 2vh; border: none; margin: 0 5px; font-size: 10pt; cursor: inherit; line-height: normal; font-weight: lighter; min-height: 70px; width: 80%; /* margin-left: 21%; */ margin: 0 auto;}#problem-info li{padding: 10px; border: none; margin: 0 5px; font-size: 12pt; cursor: inherit; line-height: normal; font-weight: lighter; min-height: 70px;}#problem-info li div{font-size: 10pt; font-weight: lighter; display: inline-block !important; width: 70%; font-size: 8pt !important;}#wot{font-size: 11pt; margin-left: 5%; margin-right: 5%; line-height: normal; font-weight: normal; margin-bottom: 5vh; margin-top: 5vh;}#sub-til{margin-bottom: 3vh; font-size: 22pt;}.sbutton img{max-width: 51px;}.prog-bar-ticks{border-right: 2px solid lightgray; height: 13.33px; width: 16.66666%; position: absolute; top: 0;}.prog-bar-ticks:nth-of-type(2){margin-left: 16.6666%;}.prog-bar-ticks:nth-of-type(3){margin-left: 33.5%;}.prog-bar-ticks:nth-of-type(5){margin-left: 66.6666%;}.prog-bar-ticks:nth-of-type(4){margin-left: 49.9999%;}#problem-info li:nth-of-type(1):before{content: "1"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #33ffcc; margin-top: -10px; margin-right: 20px; font-weight: 700;}#problem-info li:nth-of-type(2):before{content: "2"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #33ffcc; margin-top: -10px; margin-right: 20px; font-weight: 700;}#problem-info li:nth-of-type(3):before{content: "3"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #33ffcc; margin-top: -10px; margin-right: 20px; font-weight: 700;}
  
 b { font-weight: 600; }
 .flow-r {
@@ -17,9 +17,36 @@ b { font-weight: 600; }
   /*     body { background: url("{{'interactive-background.jpg' | asset_url}}");}
 
        header { background: white; }*/
-    #review-slide {
-    width: 66% !important;
-    margin: 3vh auto;
+
+       #result-info-flow {
+    float: left;
+    border: 2px solid #33ffcc;
+    padding: 20px;
+    width: 45%;
+    margin-left: 30px;
+    background: white;
+}
+
+#result-info-flow h1 { 
+font-size: 11pt; font-weight: lighter; }
+
+body section #step-five { 
+max-width: 1366px;
+width: 100vw;
+position: absolute;
+left: 0 ;
+}
+#review-slide {
+    width: 26% !important;
+    display: inline-block;
+}
+
+#step-five h2 {
+    display: inline-block;
+    width: 45%;
+    font-size: 14pt;
+    letter-spacing: normal;
+    margin-top: 15px;
 }
 
     #step-three img {
@@ -39,7 +66,7 @@ b { font-weight: 600; }
     margin: 20px auto;
 }
     #step-five .fbutton {
-    width: 45%;
+    width: 22%;
     margin-left: 3%;
     margin-right: 3%;
 }
@@ -47,8 +74,14 @@ b { font-weight: 600; }
 #step-five center {
     margin-top: 20px;
 }
-#page-flow-wrap { margin-top: 200px; }
-
+#page-flow-wrap {
+    margin-top: 115px;
+    padding-top: 50px;
+}
+#flow-back { 
+    margin-top: 118px;
+    background: url("{{'interactive-background.jpg' | asset_url}}");
+} 
 .sgblogo { display: none; }
 
 #step-one { 
@@ -77,10 +110,9 @@ body #problem-info li {
 }
 
 /*
-header js to drop down 
-step five css 
+step five format
+step five cleanup
 background
-spacing - remove flex box 
 footer
 */
 #lost-prob-sel .fbutton, #heel-prob-sel .fbutton, #more-than-one-prob-sel .fbutton, #smell-prob-sel .fbutton, #slip-prob-sel .fbutton{
@@ -88,7 +120,7 @@ footer
     width: 45%;
 }
 
-body section #til { width: 60%; margin: 0 auto; }
+body section #til { width: 61%; margin: 0 auto; }
 #problem-info { width: 54%; }
 
 #problem-info li:before{ padding-bottom: 0px !important; }
@@ -121,22 +153,28 @@ nav ul { margin-top: 0; }
 #close { display: none; }
 section {
     text-align: center;
-    min-height: 100vh;
+    min-height: 75vh;
     max-width: 650px;
     display: block;
 }
 
-#rprodinfo {
-    width: 62%;
-    margin: 0 auto;
-    font-size: 16pt;
-}
+body #step-five div h3 { font-size: 11pt; }
 
+#rprodinfo {
+    width: 80%;
+    margin: 35px auto;
+    font-size: 14pt;
+}
 #step-one img {
     position: relative;
     left: 3%;
     bottom: 60px;
 }
+
+ul li { background: white; }
+
+body section .pres-log { 
+max-width: 7%; }
 
 body section #intro-title {
     float: left;
@@ -204,6 +242,7 @@ body section #intro-title {
         <div class="prog-bar-ticks"></div>
         <div class="prog-bar-ticks"></div>
     </header> <a href="/?sh=d" id="close" onClick="ga('send', 'event', 'Education', 'Progress', 'Closed');">X</a>
+    <div id="flow-back">
     <section id="page-flow-wrap">
         <div>
             <section class="continue" id="step-one">
@@ -357,15 +396,16 @@ body section #intro-title {
  
             <section id="step-five" style="display:none;">
                 <div>
+                    <div id="result-info-flow">
                     <h1>based on your answers,<br>the perfect Gekks for you are...</h1>
                     <h1 id="rtitle"></h1>
                     <h3 id="rftitle" style="height: 5vh;"></h3>
                     <div id="rprodp"> <img src="{{'Icon-ballet-results.png' | asset_url}}" id="ballet-results" style="display:none;" /> <img src="{{'Icon-loafers-results.png' | asset_url}}" id="loaf-results" style="display:none;" /> <img src="{{'Icon-sneakers-results.png' | asset_url}}" id="sneaker-results" style="display:none;" /> <img src="{{'icon-mens-closet.png' | asset_url}}" id="mens-results" style="display:none;" /> <img src="{{'Gekks-Icons.png' | asset_url}}" id="womens-results" style="display:none;" /> </div>
                     <p id="rprodinfo"></p>
-                    <div style="height: 5vh;"></div>
-                    <div class="fbutton" id="finalresult" style="margin-bottom: 3vh;" onClick="ga('send', 'event', 'Education', 'Progress', 'Shop Now');">shop now</div><a class="fbutton" style="margin-bottom: 3vh;" href="/?sh=d" onClick="ga('send', 'event', 'Education', 'Progress', 'Learn More');">learn more <a class="fbutton" style="margin-bottom: 3vh; display: none;" href="/pages/reviews" onClick="ga('send', 'event', 'Education', 'Progress', 'Reviews');">reviews</a> 
-                    <div style="width: 100%;margin-bottom:3vh;">
-                    <div id="review-slide">
+                    </div>
+                    <div class="do-plus">
+                     <h2>don't just take our word for it...</h2>
+                       <div id="review-slide">
                        <div class="flow-r" id="start-slide">I absolutely love my Gekks. They are worth every penny, stay in place and my feet don't stink at the end of the day</div>
                        <div class="flow-r" style="display: none;">this is my 2nd gekks purchase. works great to keep my feet dry and combat stinky shoes. love them.</div>
                        <div class="flow-r" style="display: none;">Love them! I never have to search for no show socks and they keep my feet from rubbing in my shoes.</div>
@@ -377,6 +417,12 @@ body section #intro-title {
                        <div class="flow-r" style="display: none;">Love them! No more sweaty feet, no more slip-on liners that don't stay put.</div>
                        <div class="flow-r" id="last-slide" style="display: none;" >I love these even more than I thought I would. The "sock" feels silky and lets my feet breathe.</div>
                     </div>
+                    </div>
+                    <div style="height: 5vh;"></div>
+                    <div class="fbutton" id="finalresult" style="margin-bottom: 3vh;" onClick="ga('send', 'event', 'Education', 'Progress', 'Shop Now');">shop now</div>
+                    <a class="fbutton" style="margin-bottom: 3vh;" href="/?sh=d" onClick="ga('send', 'event', 'Education', 'Progress', 'Learn More');">learn more </a>
+                    <a class="fbutton mo-plus" style="margin-bottom: 3vh;" href="/pages/reviews" onClick="ga('send', 'event', 'Education', 'Progress', 'Reviews');">reviews</a> 
+    
                     <center>
                      <img src="{{'simple.png' | asset_url}}" alt="Real Simple" class="pres-log" style="margin-left: 0;"/>
                     <img src="{{'maxim.png' | asset_url}}" alt="Maxim" class="pres-log" />
@@ -388,6 +434,7 @@ body section #intro-title {
             </section>
         </div>
     </section>
+</div>
 </div>
 <script> 
 
