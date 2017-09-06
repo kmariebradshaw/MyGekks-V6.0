@@ -715,7 +715,7 @@ j.Lb(t,0),j.$Css(t,"backgroundColor","#000"))):"IMG"==h&&"image"==j.$AttributeEx
 
 $(document).ready(function(){
   if (!sessionStorage.alreadyClicked) {
-    if (!window.location.href.indexOf("?sh=d") > -1) {
+    if (!(window.location.href.indexOf("?sh=d") > -1)) {
         window.location.href="/pages/customize"
         sessionStorage.alreadyClicked = 1;
     };
