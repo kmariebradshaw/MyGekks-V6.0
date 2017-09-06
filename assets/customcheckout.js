@@ -24,10 +24,11 @@ $(document).ready(function() {
     }, 500)
 })
 
-$(document).ready(function(){
-$('.order-summary__section--discount form').submit(function(){
-   location.reload()
-});
+$(document).ready(function() {
+$('.order-summary__section--discount form').on("submit", function(){
+    location.reload()
+
+}); 
 });
 $(window).resize(function() {
   readypage();
