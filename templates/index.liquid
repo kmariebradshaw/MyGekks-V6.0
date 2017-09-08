@@ -565,8 +565,7 @@ $('.text-solution').click(function(){
 $('.do-text div').click(function(){
 	if ($(this).parent().parent().hasClass('do-text-below')) {
 		$(this).parent().siblings('.do-benefit').toggleClass('border-left');
-			$('.do-plus').toggleClass('rotate');
-			console.log('sure')
+			$(this).toggleClass('rotate');
 		   $(this).parent().siblings('.do-benefit').toggleClass('invis');
 
 
