@@ -13,6 +13,8 @@ b { font-weight: 600; }
         float: left;
 }
 
+.sub-info { text-align: center; margin: 10px 0; }
+
 @media only screen and (min-width: 801px) {
 
      footer ul li  {
@@ -24,6 +26,13 @@ b { font-weight: 600; }
     font-weight: normal;
     font-size: 12pt;
     padding: 5px;
+}
+
+body section .shoe-wrapper {
+    background: white;
+    float: right;
+    width: 40%;
+    margin-right: 65px;
 }
 
 body>footer .social {
@@ -434,11 +443,32 @@ body section #intro-title {
                     <a class="fbutton" style="margin-bottom: 3vh;" href="/?sh=d" onClick="ga('send', 'event', 'Education', 'Progress', 'Learn More');">learn more </a>
                     <a class="fbutton mo-plus" style="margin-bottom: 3vh;" href="/pages/reviews" onClick="ga('send', 'event', 'Education', 'Progress', 'Reviews');">reviews</a> 
     
+                    <div id="show-slider-wrapper">
+                     {% assign select = collections.all.products[6]%}
+                        <h4 class="sub-info">Shoes Gekks Work In:</h4>
+
+                    <div id="womens-slider" class="hidden">
+                    <div class="shoe-wrapper">
+                     {% for image in select.images offset: 132 limit: 9 %}
+                        <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+                     {% endfor %} 
+                     </div>
+                    </div>
+                    <div id="mens-slider" class="hidden">
+                      <div class="shoe-wrapper">
+                        {% for image in select.images offset: 141 limit: 8 %}
+                            <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+                        {% endfor %}  
+                      </div> 
+                    </div> 
+                    </div>
                     <center>
+                    <div style="display: none;">
                      <img src="{{'simple.png' | asset_url}}" alt="Real Simple" class="pres-log" style="margin-left: 0;"/>
                     <img src="{{'maxim.png' | asset_url}}" alt="Maxim" class="pres-log" />
                     <img src="{{'vogue.png' | asset_url}}" alt="Vogue" class= "pres-log" />
                     <img src="{{'BuzzFeed.png' | asset_url}}" alt="BuzzFeed" class="pres-log" />
+                    </div>
                     </center>
                     </div>
                     </div>
@@ -519,16 +549,16 @@ $(document).on("ready", function() {
                 i = 1;
                 break;
             case "sbutton woman highlight":
-                a = !0, n = !1, h.siblings().removeClass("highlight"), $("#dw").empty(), $("#dw").append("*don’t worry, you can shop men once we craft the perfect Gekks for you."), $(".flats").removeClass("hidden");
+                a = !0, n = !1, h.siblings().removeClass("highlight"), $("#dw").empty(), $("#dw").append("*don’t worry, you can shop men once we craft the perfect Gekks for you."), $(".flats").removeClass("hidden"), $('#womens-slider').removeClass('hidden'), $('#mens-slider').addClass('hidden');
                 break;
             case "sbutton woman":
-                a = !1, $(".flats").addClass("hidden"), $("#dw").empty();
+                a = !1, $(".flats").addClass("hidden"), $("#dw").empty(), $('#womens-slider').addClass('hidden');
                 break;
             case "sbutton man":
-                n = !1, $("#dw").empty();
+                n = !1, $("#dw").empty(), $('#mens-slider').addClass('hidden');
                 break;
             case "sbutton man highlight":
-                n = !0, a = !1, $("#dw").empty(), $("#dw").append("*don’t worry, you can shop women once we craft the perfect Gekks for you."), h.siblings().removeClass("highlight"), $(".flats").addClass("hidden");
+                n = !0, a = !1, $("#dw").empty(), $("#dw").append("*don’t worry, you can shop women once we craft the perfect Gekks for you."), h.siblings().removeClass("highlight"), $(".flats").addClass("hidden"), $('#mens-slider').removeClass('hidden'), $('#womens-slider').addClass('hidden');
                 break;
             case "sbutton slip highlight":
                 e = 1;
@@ -572,6 +602,8 @@ function feedbackSlide(f) {
       contCount += 16.666666666666668, $("#progress-bar").css("width", contCount + "%")
     }
 }
+
+
 }); 
 
 </script>
