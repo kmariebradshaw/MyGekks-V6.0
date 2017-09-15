@@ -617,4 +617,14 @@ function feedbackSlide(f) {
 
 }); 
 
+  $('.scrollp').on("click", function() { 
+    var wrapper = $('.shoe-wrapper'); 
+    if ($(this).hasClass('rightp')) { 
+      $(wrapper).animate( { scrollLeft: '+=200' });
+    }
+    else {
+      $(wrapper).animate({scrollLeft: '-=200'});  
+    }
+    }); 
+
 </script>
