@@ -13,6 +13,15 @@ b { font-weight: 600; }
         float: left;
 }
 
+.shoe-slider-wrapper:before {
+    content: '<';
+}
+.shoe-slider-wrapper:after {
+    content: '<';
+}
+
+.sub-info { text-align: center; margin: 10px 0; }
+
 @media only screen and (min-width: 801px) {
 
      footer ul li  {
@@ -26,6 +35,13 @@ b { font-weight: 600; }
     padding: 5px;
 }
 
+#shoe-slider-wrapper {
+    display: inline-block;
+    width: 38%;
+}
+
+.scrollp { margin-top: 30px; }
+.shoe-wrapper { background-color: white; }
 body>footer .social {
     margin-top: 0px;
     text-align: center;
@@ -151,7 +167,7 @@ body section #til { width: 61%; margin: 0 auto; }
 
 }
 
- #step-two-five { max-width: 400px; margin: 0 auto; }
+#step-two-five { max-width: 400px; margin: 0 auto; }
 header ul li { border: none; }
 
 nav ul li { border: 0px solid transparent !important; }
@@ -164,7 +180,7 @@ nav ul { margin-top: 0; }
 #close { display: none; }
 section {
     text-align: center;
-    min-height: 100vh;
+    min-height: 110vh;
     max-width: 650px;
     display: block;
 }
@@ -238,6 +254,7 @@ body section #intro-title {
 
 @media only screen and (max-width: 800px) {
 .do-plus { display: none; }
+.scrollp {margin-top: 20px !important;}
 }
 
 @media only screen and (min-width: 801px) {
@@ -434,11 +451,35 @@ body section #intro-title {
                     <a class="fbutton" style="margin-bottom: 3vh;" href="/?sh=d" onClick="ga('send', 'event', 'Education', 'Progress', 'Learn More');">learn more </a>
                     <a class="fbutton mo-plus" style="margin-bottom: 3vh;" href="/pages/reviews" onClick="ga('send', 'event', 'Education', 'Progress', 'Reviews');">reviews</a> 
     
+                    <div id="shoe-slider-wrapper">
+                     {% assign select = collections.all.products[6]%}
+                     <h4 class="sub-info">Shoes Gekks Work In:</h4>
+                     <div id="womens-slider" class="hidden">
+                            <img src="{{'arrow.png' | asset_url }}" alt="left" class="scrollp leftp"/>
+                        <div class="shoe-wrapper">
+                             {% for image in select.images offset: 132 limit: 9 %}
+                                <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+                             {% endfor %} 
+                        </div>
+                            <img src="{{'arrow.png' | asset_url }}" alt="right"/ class="scrollp rightp">
+                    </div>
+                    <div id="mens-slider" class="hidden">
+                        <img src="{{'arrow.png' | asset_url }}" alt="left" class="scrollp leftp"/>
+                      <div class="shoe-wrapper">
+                        {% for image in select.images offset: 141 limit: 8 %}
+                            <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+                        {% endfor %}  
+                      </div> 
+                        <img src="{{'arrow.png' | asset_url }}" alt="right"/ class="scrollp rightp">
+                    </div> 
+                    </div>
                     <center>
+                    <div style="display: none;">
                      <img src="{{'simple.png' | asset_url}}" alt="Real Simple" class="pres-log" style="margin-left: 0;"/>
                     <img src="{{'maxim.png' | asset_url}}" alt="Maxim" class="pres-log" />
                     <img src="{{'vogue.png' | asset_url}}" alt="Vogue" class= "pres-log" />
                     <img src="{{'BuzzFeed.png' | asset_url}}" alt="BuzzFeed" class="pres-log" />
+                    </div>
                     </center>
                     </div>
                     </div>
@@ -519,16 +560,16 @@ $(document).on("ready", function() {
                 i = 1;
                 break;
             case "sbutton woman highlight":
-                a = !0, n = !1, h.siblings().removeClass("highlight"), $("#dw").empty(), $("#dw").append("*don’t worry, you can shop men once we craft the perfect Gekks for you."), $(".flats").removeClass("hidden");
+                a = !0, n = !1, h.siblings().removeClass("highlight"), $("#dw").empty(), $("#dw").append("*don’t worry, you can shop men once we craft the perfect Gekks for you."), $(".flats").removeClass("hidden"), $('#womens-slider').removeClass('hidden'), $('#mens-slider').addClass('hidden');
                 break;
             case "sbutton woman":
-                a = !1, $(".flats").addClass("hidden"), $("#dw").empty();
+                a = !1, $(".flats").addClass("hidden"), $("#dw").empty(), $('#womens-slider').addClass('hidden');
                 break;
             case "sbutton man":
-                n = !1, $("#dw").empty();
+                n = !1, $("#dw").empty(), $('#mens-slider').addClass('hidden');
                 break;
             case "sbutton man highlight":
-                n = !0, a = !1, $("#dw").empty(), $("#dw").append("*don’t worry, you can shop women once we craft the perfect Gekks for you."), h.siblings().removeClass("highlight"), $(".flats").addClass("hidden");
+                n = !0, a = !1, $("#dw").empty(), $("#dw").append("*don’t worry, you can shop women once we craft the perfect Gekks for you."), h.siblings().removeClass("highlight"), $(".flats").addClass("hidden"), $('#mens-slider').removeClass('hidden'), $('#womens-slider').addClass('hidden');
                 break;
             case "sbutton slip highlight":
                 e = 1;
@@ -572,6 +613,18 @@ function feedbackSlide(f) {
       contCount += 16.666666666666668, $("#progress-bar").css("width", contCount + "%")
     }
 }
+
+
 }); 
+
+  $('.scrollp').on("click", function() { 
+    var wrapper = $('.shoe-wrapper'); 
+    if ($(this).hasClass('rightp')) { 
+      $(wrapper).animate( { scrollLeft: '+=200' });
+    }
+    else {
+      $(wrapper).animate({scrollLeft: '-=200'});  
+    }
+    }); 
 
 </script>

@@ -121,7 +121,7 @@
                                 {% endfor %}                               
                                 {% when "Men's Closet Pack" %}
                                 {% for image in select.images offset: 141 limit: 8 %}
-                                  <div class="shoe-count flats"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+                                  <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
                                 {% endfor %}                               
                               {% endcase %}
                            </div>
