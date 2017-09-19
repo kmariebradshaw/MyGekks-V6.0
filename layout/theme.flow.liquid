@@ -144,7 +144,9 @@
     </script>
     <script>
     $(document).ready(function() {
-       sessionStorage.alreadyClicked = 1;
+      var fs = window.RequestFileSystem || window.webkitRequestFileSystem;
+      if (fs) {
+       sessionStorage.alreadyClicked = 1; } 
       })
     </script>
     <noscript>
