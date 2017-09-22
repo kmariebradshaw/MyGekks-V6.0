@@ -1,3 +1,23 @@
+<style>
+#account form p>label {
+    max-width: 150px;
+    min-width: 150px;
+}
+
+body #account #address_province_new, body #account .address_form {
+    margin-top: 10px;
+    border: none;
+    background: white;
+    width: 100%;
+    border-bottom: 1px solid black;
+    font-size: 14pt;
+    max-width: 600px;
+    color: #9c9c9c;
+}
+
+
+</style>
+
     <main id="account">	     
 	    <section>
     	    <div class="wrap clearfix">
@@ -39,7 +59,7 @@
                         </p>
                       <div id="address_province_container_new" style="display:none;">
                         <p>
-                          <label for="address_province_new">Province</label>
+                          <label for="address_province_new" style="margin-top: 15px;">State / Province</label>
                           <select id="address_province_new" name="address[province]" data-default="{{form.province}}"></select>
                         </p>
                       </div>
@@ -106,7 +126,7 @@
                         </p>
                       <div class="grid__item" id="address_province_container_{{form.id}}" style="display:none;">
                         <p>
-                          <label for="address_province_{{form.id}}">Province</label>
+                          <label for="address_province_{{form.id}}" style="margin-top: 15px;">State / Province</label>
                           <select id="address_province_{{form.id}}" class="address_form" name="address[province]" data-default="{{form.province}}"></select>
                         </p>
                       </div>
