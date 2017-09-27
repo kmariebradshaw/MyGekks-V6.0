@@ -17,18 +17,12 @@
     {% else %}
     <meta name="description" content="{{ product.description | strip_html | strip_newlines | truncate: maxmeta | escape }}">
     {% endif %}
-    {% elsif template contains 'page'%}
-    {% if page_description %}
-    <meta name="description" content="{{ page_description }}">
-    {% else %}
-    <meta name="description" content="{{ page.content | strip_html | strip_newlines | truncate: maxmeta | escape }}">
-    {% endif %}
     {% else %}
     <meta name="description" content="{{ shop.description }}">
     {% endif %}
     <meta name="keywords" content="">
     <meta name="google-site-verification" content="oWg2J4dY3iWAFEik74Rdzx-fCF_-Yde7dCNroVYIIGU">
-    <title>{% if template == 'index' %}Gekks | The Innovative No Show Sock for Flats, Loafers, & Sneakers {% elsif template == '404' %}Page Not Found | {{ shop.name }}{% else %}{{ page_title }} | {{ shop.name }}{% endif %}</title>
+    <title>{% if template == 'index' %}Gekks™ | The Innovative No Show Sock for Flats, Loafers, & Sneakers {% elsif template == '404' %}Page Not Found | {{ shop.name }}{% else %}{{ page_title }} | {{ shop.name }}{% endif %}</title>
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="icon" type="image/png" href="{{ 'Gekks-Favicon.png' | asset_url }}">
     {{ 'style.css' | asset_url | stylesheet_tag }}
