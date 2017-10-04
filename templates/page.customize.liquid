@@ -277,7 +277,6 @@ perspective: 1000;
     width: 310px;
     height: 78px;
 }
-/* flip speed goes here */
 .flipper {
 transition: 0.6s;
 transform-style: preserve-3d;
@@ -285,7 +284,6 @@ transform-style: preserve-3d;
 position: relative;
 }
 
-/* hide back of pane during swap */
 .front, .back-card {
 backface-visibility: hidden;
 
@@ -293,8 +291,6 @@ position: absolute;
 top: 0;
 left: 0;
 }
-
-/* front pane, placed above back */
 .front {
 z-index: 2;
 }
@@ -303,15 +299,17 @@ body section .flip-b {
     width: 310px !important;
     box-sizing: border-box;
     margin: 10px 5px;
-}/* back, initially hidden pane */
+    height: 68px;
+}
 .back-card {
 transform: rotateY(180deg);
 }
 
 .back-card .sbutton {
     border: 2px solid #33ffcc;
-
+    text-align: center;
 }
+
 </style>
   <div>
     <header id="prog-head">
@@ -366,19 +364,51 @@ transform: rotateY(180deg);
                             <br>mother could love?</li>
                           </div>
                           <div class="back-card">
-                            <li class="sbutton smell flip-b" onClick="ga('send', 'event', 'Education', 'Problem', 'Smell');">
+                            <li class="sbutton smell flip-b">
                             <div>this is the back of the card</div>back of the card is
-                            <br>hanging out here</li>                          </div>
+                            <br>hanging out here</li>                          
+                          </div>
                         </div>
                     </div>
-                        <li class="sbutton slip" onClick="ga('send', 'event', 'Education', 'Problem', 'Slip');"><img src="{{'Icon-sock-adjust.png' | asset_url}}" />
-                            <div>constant sock adjustment</div>your "no slip" no-shows slip
-                            <br>down your heel.</li>
-                        <li class="sbutton lost" onClick="ga('send', 'event', 'Education', 'Problem', 'Search');"><img src="{{'Icon-sock-drawer.png' | asset_url}}" />
+                    <div class="flip-container">
+                      <div class="flipper">
+                        <div class="front">
+                          <li class="sbutton slip flip-b" onClick="ga('send', 'event', 'Education', 'Problem', 'Slip');"><img src="{{'Icon-sock-adjust.png' | asset_url}}" />
+                          <div>constant sock adjustment</div>
+                          your "no slip" no-shows slip
+                          <br>down your heel.</li>
+                        </div>
+                        <div class="back-card">
+                          <li class="sbutton slip flip-b">
+                          <div>this is the back of the card</div>back of the card is
+                          <br>hanging out here</li>                          </div>
+                        </div>
+                    </div>
+                    <div class="flip-container">
+                      <div class="flipper">
+                        <div class="front">
+                        <li class="sbutton lost flip-b" onClick="ga('send', 'event', 'Education', 'Problem', 'Search');"><img src="{{'Icon-sock-drawer.png' | asset_url}}" />
                             <div>searching your sock drawer</div>your socks aren't organized, don't lie.</li>
-                        <li class="sbutton heel" onClick="ga('send', 'event', 'Education', 'Problem', 'Blister');"><img src="{{'Icon-blister.svg' | asset_url}}" />
+                        </div>
+                        <div class="back-card">
+                          <li class="sbutton lost flip-b">
+                          <div>this is the back of the card</div>back of the card is
+                          <br>hanging out here</li>                          </div>
+                        </div>
+                    </div>
+                    <div class="flip-container">
+                      <div class="flipper">
+                        <div class="front">
+                        <li class="sbutton heel flip-b" onClick="ga('send', 'event', 'Education', 'Problem', 'Blister');"><img src="{{'Icon-blister.svg' | asset_url}}" />
                             <div>heel blisters</div>your heels look like you got attacked
                             <br>by a 3-inch tall bear.</li>
+                            </div>
+                        <div class="back-card">
+                          <li class="sbutton heel flip-b">
+                          <div>this is the back of the card</div>back of the card is
+                          <br>hanging out here</li>                          </div>
+                        </div>
+                    </div>
                     </ul>
                     <div class="errors-s" style="height: 5vh;"></div>
                     <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Problems');">solve my problems</div>
@@ -660,7 +690,8 @@ function feedbackSlide(f) {
 $('.flipper').click(function(){
     // UX option 1 - odd clicks flip, even un-selects
     if ( $(this).children().children().first().hasClass('highlight')) {
-    $(this).toggleClass('flipped');   } 
+    $(this).toggleClass('flipped');  
+  } 
 //  
 // UX option 2 - you can only flip once and you can't unselect it because IDK
     // if (!($(this).hasClass('flipped'))){
