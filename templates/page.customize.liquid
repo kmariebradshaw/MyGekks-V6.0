@@ -260,6 +260,58 @@ body section #intro-title {
 @media only screen and (min-width: 801px) {
 .mo-plus { display: none; }
 }
+
+.flip-container {
+perspective: 1000;
+}
+
+.flipped {
+  -webkit-transform:rotateY(180deg);
+  -moz-transform:rotateY(180deg);
+  -ms-transform:rotateY(180deg);
+  -o-transform:rotateY(180deg);
+  transform:rotateY(180deg);
+}
+
+.flip-container, .front, .back-card {
+    width: 310px;
+    height: 78px;
+}
+/* flip speed goes here */
+.flipper {
+transition: 0.6s;
+transform-style: preserve-3d;
+
+position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back-card {
+backface-visibility: hidden;
+
+position: absolute;
+top: 0;
+left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+z-index: 2;
+}
+
+body section .flip-b {
+    width: 310px !important;
+    box-sizing: border-box;
+    margin: 10px 5px;
+}/* back, initially hidden pane */
+.back-card {
+transform: rotateY(180deg);
+}
+
+.back-card .sbutton {
+    border: 2px solid #33ffcc;
+
+}
 </style>
   <div>
     <header id="prog-head">
@@ -306,9 +358,19 @@ body section #intro-title {
                     <h1 style="margin: 0 2%;">tap your sockless <br>style problems</h1>
                     <h3 style="margin: 0 9%;">select as many as you'd like</h3>
                     <ul>
-                        <li class="sbutton smell" onClick="ga('send', 'event', 'Education', 'Problem', 'Smell');"><img src="{{'Icon-smell.png' | asset_url}}" />
+                      <div class="flip-container">
+                        <div class="flipper">
+                          <div class="front">
+                            <li class="sbutton smell flip-b" onClick="ga('send', 'event', 'Education', 'Problem', 'Smell');"><img src="{{'Icon-smell.png' | asset_url}}" />
                             <div>your feet smelling like... yeah</div>got stench not even your
                             <br>mother could love?</li>
+                          </div>
+                          <div class="back-card">
+                            <li class="sbutton smell flip-b" onClick="ga('send', 'event', 'Education', 'Problem', 'Smell');">
+                            <div>this is the back of the card</div>back of the card is
+                            <br>hanging out here</li>                          </div>
+                        </div>
+                    </div>
                         <li class="sbutton slip" onClick="ga('send', 'event', 'Education', 'Problem', 'Slip');"><img src="{{'Icon-sock-adjust.png' | asset_url}}" />
                             <div>constant sock adjustment</div>your "no slip" no-shows slip
                             <br>down your heel.</li>
@@ -594,5 +656,21 @@ function feedbackSlide(f) {
 
 
 }); 
+
+$('.flipper').click(function(){
+    // UX option 1 - odd clicks flip, even un-selects
+    if ( $(this).children().children().first().hasClass('highlight')) {
+    $(this).toggleClass('flipped');   } 
+//  
+// UX option 2 - you can only flip once and you can't unselect it because IDK
+    // if (!($(this).hasClass('flipped'))){
+    //     $(this).addClass('flipped')
+    // }
+});
+
+// UX option 3 - the click that flips it back also unselects it (this seems like the worst one)
+// $('.back-card').click(function(){
+//     $(this).parent().children().children().first('sbutton').removeClass('highlight'); 
+// })
 
 </script>
