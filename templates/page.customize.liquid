@@ -451,30 +451,8 @@ body section #intro-title {
                     <a class="fbutton" style="margin-bottom: 3vh;" href="/?sh=d" onClick="ga('send', 'event', 'Education', 'Progress', 'Learn More');">learn more </a>
                     <a class="fbutton mo-plus" style="margin-bottom: 3vh;" href="/pages/reviews" onClick="ga('send', 'event', 'Education', 'Progress', 'Reviews');">reviews</a> 
     
-                    <div id="shoe-slider-wrapper">
-                     {% assign select = collections.all.products[6]%}
-                     <h4 class="sub-info">Shoes Gekks Work In:</h4>
-                     <div id="womens-slider" class="hidden">
-                            <img src="{{'arrow.png' | asset_url }}" alt="left" class="scrollp leftp"/>
-                        <div class="shoe-wrapper">
-                             {% for image in select.images offset: 132 limit: 9 %}
-                                <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
-                             {% endfor %} 
-                        </div>
-                            <img src="{{'arrow.png' | asset_url }}" alt="right"/ class="scrollp rightp">
-                    </div>
-                    <div id="mens-slider" class="hidden">
-                        <img src="{{'arrow.png' | asset_url }}" alt="left" class="scrollp leftp"/>
-                      <div class="shoe-wrapper">
-                        {% for image in select.images offset: 141 limit: 8 %}
-                            <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
-                        {% endfor %}  
-                      </div> 
-                        <img src="{{'arrow.png' | asset_url }}" alt="right"/ class="scrollp rightp">
-                    </div> 
-                    </div>
                     <center>
-                    <div style="display: none;">
+                    <div>
                      <img src="{{'simple.png' | asset_url}}" alt="Real Simple" class="pres-log" style="margin-left: 0;"/>
                     <img src="{{'maxim.png' | asset_url}}" alt="Maxim" class="pres-log" />
                     <img src="{{'vogue.png' | asset_url}}" alt="Vogue" class= "pres-log" />
@@ -560,16 +538,16 @@ $(document).on("ready", function() {
                 i = 1;
                 break;
             case "sbutton woman highlight":
-                a = !0, n = !1, h.siblings().removeClass("highlight"), $("#dw").empty(), $("#dw").append("*don’t worry, you can shop men once we craft the perfect Gekks for you."), $(".flats").removeClass("hidden"), $('#nshop-women').removeClass("hidden"), $('#nshop-men').addClass('hidden'), $('#womens-slider').removeClass('hidden'), $('#mens-slider').addClass('hidden');
+                a = !0, n = !1, h.siblings().removeClass("highlight"), $("#dw").empty(), $("#dw").append("*don’t worry, you can shop men once we craft the perfect Gekks for you."), $(".flats").removeClass("hidden");
                 break;
             case "sbutton woman":
-                a = !1, $(".flats").addClass("hidden"), $('#nshop-women').addClass('hidden'), $("#dw").empty(), $('#womens-slider').addClass('hidden');
+                a = !1, $(".flats").addClass("hidden"), $("#dw").empty();
                 break;
             case "sbutton man":
-                n = !1, $("#dw").empty(), $('#mens-slider').addClass('hidden'), $('#nshop-men').addClass('hidden');
+                n = !1, $("#dw").empty();
                 break;
             case "sbutton man highlight":
-                n = !0, a = !1, $("#dw").empty(), $("#dw").append("*don’t worry, you can shop women once we craft the perfect Gekks for you."), h.siblings().removeClass("highlight"), $(".flats").addClass("hidden"), $('#mens-slider').removeClass('hidden'), $('#womens-slider').addClass('hidden'), $('#mens-slider').removeClass('hidden'), $('#nshop-women').addClass('hidden'), $('#nshop-men').removeClass('hidden');
+                n = !0, a = !1, $("#dw").empty(), $("#dw").append("*don’t worry, you can shop women once we craft the perfect Gekks for you."), h.siblings().removeClass("highlight"), $(".flats").addClass("hidden");
                 break;
             case "sbutton slip highlight":
                 e = 1;
@@ -616,15 +594,5 @@ function feedbackSlide(f) {
 
 
 }); 
-
-  $('.scrollp').on("click", function() { 
-    var wrapper = $('.shoe-wrapper'); 
-    if ($(this).hasClass('rightp')) { 
-      $(wrapper).animate( { scrollLeft: '+=200' });
-    }
-    else {
-      $(wrapper).animate({scrollLeft: '-=200'});  
-    }
-    }); 
 
 </script>
