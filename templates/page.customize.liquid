@@ -259,6 +259,8 @@ body section #intro-title {
 
 @media only screen and (min-width: 801px) {
 .mo-plus { display: none; }
+  .flip-container { display: inline-block; }
+  body section ul .flip-b { width: 300px !important; }
 }
 
 .flip-container {
@@ -364,7 +366,7 @@ transform: rotateY(180deg);
                             <br>mother could love?</li>
                           </div>
                           <div class="back-card">
-                            <li class="sbutton smell flip-b">
+                            <li class="sbutton flip-b">
                             <div>this is the back of the card</div>back of the card is
                             <br>hanging out here</li>                          
                           </div>
@@ -379,7 +381,7 @@ transform: rotateY(180deg);
                           <br>down your heel.</li>
                         </div>
                         <div class="back-card">
-                          <li class="sbutton slip flip-b">
+                          <li class="sbutton flip-b">
                           <div>this is the back of the card</div>back of the card is
                           <br>hanging out here</li>                          </div>
                         </div>
@@ -391,7 +393,7 @@ transform: rotateY(180deg);
                             <div>searching your sock drawer</div>your socks aren't organized, don't lie.</li>
                         </div>
                         <div class="back-card">
-                          <li class="sbutton lost flip-b">
+                          <li class="sbutton flip-b">
                           <div>this is the back of the card</div>back of the card is
                           <br>hanging out here</li>                          </div>
                         </div>
@@ -404,7 +406,7 @@ transform: rotateY(180deg);
                             <br>by a 3-inch tall bear.</li>
                             </div>
                         <div class="back-card">
-                          <li class="sbutton heel flip-b">
+                          <li class="sbutton flip-b">
                           <div>this is the back of the card</div>back of the card is
                           <br>hanging out here</li>                          </div>
                         </div>
@@ -413,66 +415,6 @@ transform: rotateY(180deg);
                     <div class="errors-s" style="height: 5vh;"></div>
                     <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Problems');">solve my problems</div>
                 </div>
-            </section>
-            <section style="display: none;" id="smell-prob-sel">
-            <div>
-              <div id="mult-prob">
-                <h1 id="til">your feet smell... unpleasant?<br>yeah, ours did too. that's why we invented Gekks.</h1>
-                <h1 id="sub-til">how do Gekks <br>prevent odor?</h1>
-              </div>
-              <ul id="problem-info">
-                <li>Gekks are knit with silver antimicrobial odor eliminating yarn</li>
-                <li>same yarn used by the military and NASA to prevent bacteria buildup on long missions</li>
-                <li>our moisture wicking material actively pulls moisture off your feet so you stay dry</li>
-              </ul>
-              <div style="height: 3vh;"></div>
-              <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Smell');">got it!</div>
-              </div>
-            </section>
-            <section style="display: none;" id="slip-prob-sel">
-            <div>
-              <div id="mult-prob">
-                <h1 id="til">so you're tired of adjusting your no-show socks? we get it. that's why we invented Gekks.</h1>
-                <h1 id="sub-til">what's different <br>about Gekks?</h1>
-              </div>
-              <ul id="problem-info">
-                <li>unlike all other no-shows, Gekks lock and stay <b>INSIDE</b> your shoes</li>
-                <li>the back heel is locked to the inside of your shoe so it can’t slip</li>
-                <li>sock comfort in the front, heel blister protection in the back</li>
-              </ul>
-             <div style="height: 3vh;"></div>
-              <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Slip');">got it!</div>
-              </div>
-            </section>
-            <section style="display: none;" id="lost-prob-sel">
-            <div>
-               <div id="mult-prob">
-                <h1 id="til">we get it, organization shouldn’t have to apply to your socks too. that’s why we invented Gekks</h1>
-                <h1 id="sub-til">how are <br>Gekks different?</h1>
-              </div>
-              <ul id="problem-info">
-                <li>unlike all other no-shows, Gekks stay locked <b>INSIDE</b> your shoes.</li>
-                <li>you install them inside your shoes, you don’t put them on your feet</li>
-                <li>the convenience of going barefoot with the protection of a sock</li>
-              </ul>
-              <div style="height: 3vh;"></div>
-              <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Searching');">got it!</div>
-              </div>
-            </section>
-            <section style="display: none;" id="heel-prob-sel">
-            <div>
-            <div id="mult-prob">
-                <h1 id="til">painful blister? Band-Aids® cramping your style? we get it. that’s why we invented Gekks.</h1>
-                <h1 id="sub-til">how do Gekks <br>prevent blisters?</h1>
-              </div>
-              <ul id="problem-info">
-                <li>Gekks lock to the heel of your shoe, providing heel blister protection.</li>
-                <li>they completely cover your toes, giving you the comfort of a sock without the hassle</li>
-                <li>Gekks are strong and won’t tear over time.</li>
-              </ul>
-                <div style="height: 3vh;"></div>
-                <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Blister');">got it!</div>
-              </div>
             </section>
              <section style="display: none;" id="more-than-one-prob-sel">
             <div>
@@ -604,7 +546,7 @@ $(document).on("ready", function() {
             $(".errors-s").append("<p>please select an option</p>")
          }
          else {
-            feedbackSlide(f); 
+            nextSlide(f); 
          }
         }
         f.parent().parent().hasClass("continue") ? nextSlide(f) : "step-two-five" == f.parent().parent().attr("id") ? n || a ? nextSlide(f) : ($(".errors-s").empty(), $(".errors-s").append("<p>please select an option</p>")) : "rcalc" == f.attr("id") ? r + i + l > 0 ? (a ? (c = "women", r + i + l > 1 ? (h = "womens-closet-pack", p = "women's closet pack", d = "welcome to sockless freedom! you’ve been paired with more than one Gekk, so we recommend the closet pack for your best value!", u = "(includes sneaker, loafer and flats)", $("#womens-results").show()) : 1 == r ? (h = "flats-version", p = "ballet flats", d = "our Ballet Flat Gekks are designed to fit perfectly in your flats without showing or moving around while protecting you against that embarassing foot odor.", $("#ballet-results").show()) : 1 == l ? (h = "womens-sneaker-version", p = "sneakers & <br>lace-ups", d = "go sockless with our Gekks that we perfected for your sneakers. install them into your lace-up shoes for the comfort of wearing socks without the hassle.", $("#sneaker-results").show()) : 1 == i && (h = "womens-loafer-version", p = "loafers & <br>slip-ons", d = "our Loafer Gekks are designed to allow you the ease of slipping in and out barefoot while fighting and eliminating the odor of going barefoot!", $("#loaf-results").show())) : n && (c = "men", i + l > 1 ? (h = "mens-closet-pack", p = "men's closet pack", u = "(includes sneaker and loafer)", d = "welcome to sockless freedom! you’ve been paired with more than one Gekk, so we recommend the closet pack for your best value!", $("#mens-results").show()) : 1 == l ? (h = "sneaker-version", p = "sneakers & <br>lace-ups", d = "go sockless with our Gekks that we perfected for your sneakers. install them into your lace-up shoes for the comfort of wearing socks without the hassle.", $("#sneaker-results").show()) : 1 == i && (h = "loafer-version", p = "loafers & <br> slip-ons", d = "our Loafer Gekks are designed to allow you the ease of slipping in and out barefoot while fighting and eliminating the odor of going barefoot!", $("#loaf-results").show())), $("#rtitle").append(p), $("#rprodinfo").append(d), u.length > 1 && $("#rftitle").append(u), f.addClass("clicked"), nextSlide(f)) : ($(".errors-s").empty(), $(".errors-s").append("<p>please select one or more shoe styles</p>")) : "finalresult" == f.attr("id") && (window.location = "/collections/" + c + "/products/" + h + "?sh")
@@ -641,50 +583,32 @@ $(document).on("ready", function() {
             case "sbutton man highlight":
                 n = !0, a = !1, $("#dw").empty(), $("#dw").append("*don’t worry, you can shop women once we craft the perfect Gekks for you."), h.siblings().removeClass("highlight"), $(".flats").addClass("hidden");
                 break;
-            case "sbutton slip highlight":
+            case "sbutton slip flip-b highlight":
                 e = 1;
                 break;
-            case "sbutton lost highlight":
+            case "sbutton lost flip-b highlight":
                 o = 1;
                 break;
-            case "sbutton smell highlight":
+            case "sbutton smell flip-b highlight":
                 s = 1;
                 break;
-            case "sbutton heel highlight":
-                t = 1
+            case "sbutton heel flip-b highlight":
+                t = 1; 
+                break;
+            case "sbutton slip flip-b":
+                e = 0;
+                break;
+            case "sbutton lost flip-b":
+                o = 0;
+                break;
+            case "sbutton smell flip-b":
+                s = 0;
+                break;
+            case "sbutton heel flip-b":
+                t = 0; 
+                break; 
         }
     })
-function feedbackSlide(f) {
-    if ( e + o + s + t > 1 ) {
-       $(f).parent().parent().hide().siblings('#more-than-one-prob-sel').fadeIn("slow")
-       e = 0 
-       o = 0 
-       s = 0 
-       t = 0 
-    }
-    else if (e >= 1){
-     e = 0 
-     $(f).parent().parent().hide().siblings('#slip-prob-sel').fadeIn("slow")
-    }
-    else if (o >= 1) {
-      o = 0 
-      $(f).parent().parent().hide().siblings('#lost-prob-sel').fadeIn("slow")
-    }
-    else if (s >= 1) {
-      s = 0 
-      $(f).parent().parent().hide().siblings('#smell-prob-sel').fadeIn("slow")
-    }
-    else if ( t >= 1 ) {
-      t = 0 
-      $(f).parent().parent().hide().siblings('#heel-prob-sel').fadeIn("slow")
-    }
-    else {
-      $(f).parent().parent().hide().siblings('#step-three').fadeIn("slow")
-      contCount += 16.666666666666668, $("#progress-bar").css("width", contCount + "%")
-    }
-}
-
-
 }); 
 
 $('.flipper').click(function(){
