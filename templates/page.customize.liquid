@@ -142,10 +142,13 @@ body #problem-info li {
     min-height: 46px;
 }
 
-#lost-prob-sel .fbutton, #heel-prob-sel .fbutton, #more-than-one-prob-sel .fbutton, #smell-prob-sel .fbutton, #slip-prob-sel .fbutton{
-    
+#lost-prob-sel .fbutton, #heel-prob-sel .fbutton, #more-than-one-prob-sel .fbutton, #smell-prob-sel .fbutton, #slip-prob-sel .fbutton, #prob-fb-rex .fbutton {
     width: 45%;
 }
+
+#Rex { width: 589px; }
+
+#rex-text { position: absolute; top: 145px; }
 
 body section #til { width: 61%; margin: 0 auto; }
 #problem-info { width: 54%; }
@@ -255,6 +258,14 @@ body section #intro-title {
 @media only screen and (max-width: 800px) {
 .do-plus { display: none; }
 .scrollp {margin-top: 20px !important;}
+
+#Rex { width: 320px;}
+
+#rex-text {
+    position: relative;
+    top: 130px;
+    width: 200px;
+    margin-top: -40px;
 }
 
 @media only screen and (min-width: 801px) {
@@ -412,21 +423,19 @@ margin-top: 5px; }
                         </div>
                     </div>
                     </ul>
-                    <div class="errors-s" style="height: 5vh;"></div>
+                    <div class="errors-s" style="height: 5vh; margin-top: 20px;"></div>
                     <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Problems');">solve my problems</div>
                 </div>
             </section>
-             <section style="display: none;">
+             <section id="prob-fb-rex" class="continue" style="display: none;">
             <div>
-               <div id="mult-prob">
-                <h1 id="sub-til">how are <br>Gekks different?</h1>
-              </div>
-             <ul id="problem-info">
-                <li>unlike all other no-shows, Gekks lock and stay <b>INSIDE</b> your shoes</li>
-                <li>knit with the same odor eliminating yarn used by the military and NASA </li>
-                <li>sock comfort in the front, heel blister protection in the back</li>
-              </ul>
-              <div style="height: 3vh;"></div>
+            <img class="sgblogo" src="{{'blogo.png' | asset_url}}" alt="Gekks" />
+            <center>
+            <h1 id="rex-text">Lorem Ipsum Copy Copy Copy Copy</h1>
+            </center>
+            <img id="Rex" src="{{'Rex.png' | asset_url}}" alt="The Ultimate No-Show Socks"/>
+            <h3> we're the sock your no-shows <br> wish they could be </h3>
+            <div style="height:6vh;"></div>
               <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Searching');">got it!</div>
               </div>
             </section>
