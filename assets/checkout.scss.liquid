@@ -1,7 +1,7 @@
 * {
     font-family: Montserrat, MontserratB !important;
-    color: black !important;
-}
+{% comment %}    color: black !important;
+{% endcomment %}}{% comment %}
 
 html, body { overflow: scroll;} 
 
@@ -826,7 +826,9 @@ body .alt-payment-list__item--amazon:hover {
     box-shadow: none;
 }
 
-@media only screen and (min-width: 1000px) {
+{% endcomment %}
+
+{% comment %}@media only screen and (min-width: 1000px) {
   #fsocial {  
     text-align: center;
     font-size: 20pt;
@@ -839,10 +841,189 @@ body .alt-payment-list__item--amazon:hover {
   display: inline-block; 
   margin: 10px; 
   }
-}
+}{% endcomment %}
 
   #follow-us { display: none; }
 
 
 
-.step__footer__info { display: none; } 
+{% comment %}.step__footer__info { display: none; } 
+{% endcomment %}
+
+{% comment %}
+Pre-Toggle Checkout
+@media only screen and (min-width: 560px) {
+
+  [data-address-field=city] { 
+    width: 20%;
+    margin-right: 40%;
+  }
+
+  [data-address-field=address1] { width: 40%;}
+  
+  .content-box { width: 60%; }
+  
+  [data-address-field=last_name] { 
+    width: 60% !important;
+    margin-right: 100%; 
+  }
+  
+  [data-address-field=country], [data-address-field=province], [data-address-field=zip]{width: 20% !important;}
+  
+  .section--contact-information {
+    .field { width: 60%; }
+    p {display: none; }
+  }
+  
+  .step__footer { 
+    width: 60%;
+    margin-top: 0.5em !important;
+    margin-bottom: 20px;
+  }
+  
+/*   .breadcrumb { 
+    font-size: 20px;
+    font-weight: bold;
+  } */
+  
+  .icon-svg--size-10 {
+    width: 15px;
+    height: 15px;
+   }
+  
+/*   .breadcrumb__item--completed {
+
+    svg { 
+      color: green;
+      background: green;
+    }
+  }
+  
+  .breadcrumb__chevron-icon {
+    color: #999999;
+    margin: 0 0.4em;
+    background: #999999;
+    border-radius: 50%;
+   } */
+  }
+
+td .payment-due__price { letter-spacing: normal }
+
+[data-address-field=first_name] { display: none; }
+
+.floating-labels .field--show-floating-label .field__input { padding: 9px; }
+
+body {
+  font-size: 15px; 
+  h2 { 
+      font-size: 21px;
+      font-weight: bolder;
+    }
+}
+body { font-size: 15px; }
+
+.field__label { display: none; } 
+
+/* .boxshadow .main .field__input { box-shadow: 0 0 0 1px black;} */
+
+.field__input { padding: 9px;}
+
+.order-summary__section__content { padding-top: 64px; }
+
+.step__footer__continue-btn { padding: 16px; }
+
+.section--contact-information p {display: none; }
+
+#section--billing-address__different {
+   [data-address-field=country], [data-address-field=province], [data-address-field=zip], [data-address-field=city]{width: 33% !important; margin-right: 0px;}
+   [data-address-field=last_name] { width: 99% !important;}
+   [data-address-field=address1] { width: 66%;}
+}
+
+.section--payment-method .content-box { width: 100%; }
+
+.btn { min-width: 164px; }
+
+.section--remember-me {display: none;}
+
+@media only screen and (max-width: 559px) {
+  .hidden-on-desktop { display: none; }
+
+ [data-address-field=city] { 
+    width: 40%;
+  }
+
+  [data-address-field=address1] { width: 60%;}
+  
+  [data-address-field=country], [data-address-field=province], [data-address-field=zip]{width: 33.3% !important;}
+
+}
+
+[data-brand-icons-for-gateway='6113457'] { display: none; }
+
+
+.main__footer { display: none; }
+
+
+#ship-sub { 
+    font-size: 13px;
+}
+
+.breadcrumb {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+  width: 100%;
+  max-width: 800px;
+  counter-reset: breadcrumb;
+  position: relative;
+  margin-left: -10%;
+}
+
+.breadcrumb:before {
+  position: absolute;
+  top: 23px;
+  left: 12.5%;
+  content: '';
+  width: 75%;
+  height: 1px;
+  background: black;
+}
+.breadcrumb .breadcrumb__item {
+  float: left;
+  padding-top: 60px;
+  width: 25%;
+  text-align: center;
+  position: relative;
+}
+.breadcrumb .breadcrumb__item:after {
+  counter-increment: breadcrumb;
+  content: counter(breadcrumb);
+  position: absolute;
+  top: 0px;
+  left: calc(50% - 23px);
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border: 3px solid black;
+  border-radius: 50%;
+  line-height: 40px;
+  background: white;
+}
+.breadcrumb .breadcrumb__item--completed:after {
+  background: black;
+  color: white;
+}
+
+svg {display: none !important;}
+
+.input-checkbox:checked, .input-radio:checked {
+    border: none;
+    box-shadow: 0 0 0 10px #5ACBFF inset;
+}
+
+@media (max-width: 999px) {
+body .breadcrumb {
+    margin: auto !important;
+    display: inline-block;
+}}{% endcomment %}
