@@ -35,6 +35,11 @@ b { font-weight: 600; }
     padding: 5px;
 }
 
+.fb-info-text-wrap { width: 350px;}
+
+#rex-icon { width: 150px; }
+
+
 #shoe-slider-wrapper {
     display: inline-block;
     width: 38%;
@@ -142,9 +147,17 @@ body #problem-info li {
     min-height: 46px;
 }
 
-#lost-prob-sel .fbutton, #heel-prob-sel .fbutton, #more-than-one-prob-sel .fbutton, #smell-prob-sel .fbutton, #slip-prob-sel .fbutton{
-    
+#lost-prob-sel .fbutton, #heel-prob-sel .fbutton, #more-than-one-prob-sel .fbutton, #smell-prob-sel .fbutton, #slip-prob-sel .fbutton, #prob-fb-rex .fbutton {
     width: 45%;
+}
+
+#Rex { width: 589px; }
+
+#rex-text {
+    position: relative;
+    top: 210px;
+    margin-top: -50px;
+    width: 430px;
 }
 
 body section #til { width: 61%; margin: 0 auto; }
@@ -255,11 +268,106 @@ body section #intro-title {
 @media only screen and (max-width: 800px) {
 .do-plus { display: none; }
 .scrollp {margin-top: 20px !important;}
+
+.fb-info-text-wrap { width: 250px; }
+
+#rex-icon { width: 100px; }
+
+}
+
+
+.fb-info-text-wrap { margin-bottom: 6vh; }
+
+.fb-info-text-wrap:before {
+    content: open-quote;
+    font-size: 54pt;
+    color: #33ffcc;
+    float: left;
+}
+
+.fb-info-text-wrap:after {
+    content: close-quote;
+    font-size: 54pt; 
+    color: #33ffcc; 
+    float: right;
+}
+
+#prob-fb-rex h2 {
+    font-size: 12pt;
+    letter-spacing: normal;
+    margin-bottom: 0;
+    line-height: 12pt;
+}
+
+#prob-fb-rex h1 { 
+    margin-top: 0;
+ }
+
+#Rex { width: 320px;}
+
+#rex-text {
+    position: relative;
+    top: 130px;
+    width: 200px;
+    margin-top: -40px;
 }
 
 @media only screen and (min-width: 801px) {
 .mo-plus { display: none; }
+  .flip-container { display: inline-block; }
+  body section ul .flip-b { width: 300px !important; }
 }
+
+.flip-container {
+perspective: 1000;
+}
+
+.flipped {
+  -webkit-transform:rotateY(180deg);
+  -moz-transform:rotateY(180deg);
+  -ms-transform:rotateY(180deg);
+  -o-transform:rotateY(180deg);
+  transform:rotateY(180deg);
+}
+
+.flip-container, .front, .back-card {
+    width: 310px;
+    height: 78px;
+}
+.flipper {
+transition: 0.6s;
+transform-style: preserve-3d;
+position: relative;
+}
+
+.front, .back-card {
+backface-visibility: hidden;
+position: absolute;
+top: 0;
+left: 0;
+}
+.front {
+z-index: 2;
+}
+
+body section .flip-b {
+    width: 310px !important;
+    box-sizing: border-box;
+    margin: 10px 5px;
+    height: 68px;
+}
+.back-card {
+transform: rotateY(180deg);
+}
+
+.back-card li div { 
+margin-top: 5px; }
+
+.back-card .sbutton {
+    border: 2px solid #33ffcc;
+    text-align: center;
+}
+
 </style>
   <div>
     <header id="prog-head">
@@ -296,7 +404,7 @@ body section #intro-title {
                     </ul>
                     <div id="dw" style="height: 5vh;"></div>
                     <div class="errors-s" style="height: 5vh;"></div>
-                    <h3 style="font-weight: normal;">did you know that the average person spends a month of their lives searching for socks in their sock drawer?</h3>
+                    <h3 style="font-weight: normal;">did you know that the average person spends a month of their life searching for socks in their sock drawer?</h3>
                     <p id="wot"> what a waste of time.</p>
                     <div class="fbutton" onClick="ga('send', 'event', 'Education', 'Progress', 'Basics');">ready!</div>
                 </div>
@@ -306,93 +414,73 @@ body section #intro-title {
                     <h1 style="margin: 0 2%;">tap your sockless <br>style problems</h1>
                     <h3 style="margin: 0 9%;">select as many as you'd like</h3>
                     <ul>
-                        <li class="sbutton smell" onClick="ga('send', 'event', 'Education', 'Problem', 'Smell');"><img src="{{'Icon-smell.png' | asset_url}}" />
+                      <div class="flip-container">
+                        <div class="flipper">
+                          <div class="front">
+                            <li class="sbutton smell flip-b" onClick="ga('send', 'event', 'Education', 'Problem', 'Smell');"><img src="{{'Icon-smell.png' | asset_url}}" />
                             <div>your feet smelling like... yeah</div>got stench not even your
                             <br>mother could love?</li>
-                        <li class="sbutton slip" onClick="ga('send', 'event', 'Education', 'Problem', 'Slip');"><img src="{{'Icon-sock-adjust.png' | asset_url}}" />
-                            <div>constant sock adjustment</div>your "no slip" no-shows slip
-                            <br>down your heel.</li>
-                        <li class="sbutton lost" onClick="ga('send', 'event', 'Education', 'Problem', 'Search');"><img src="{{'Icon-sock-drawer.png' | asset_url}}" />
+                          </div>
+                          <div class="back-card">
+                            <li class="sbutton flip-b">
+                            <div>knit with odor eliminating yarn</div>(the same yarn used by the military and NASA</li>
+                          </div> 
+                        </div>
+                    </div>
+                    <div class="flip-container">
+                      <div class="flipper">
+                        <div class="front">
+                          <li class="sbutton slip flip-b" onClick="ga('send', 'event', 'Education', 'Problem', 'Slip');"><img src="{{'Icon-sock-adjust.png' | asset_url}}" />
+                          <div>constant sock adjustment</div>
+                          your "no slip" no-shows slip
+                          <br>down your heel.</li>
+                        </div>
+                        <div class="back-card">
+                          <li class="sbutton flip-b">
+                          <div>unlike all other no-shows</div>Gekks lock and stay <b>INSIDE</b> your shoes</li> 
+                          </div>
+                        </div> 
+                    </div>
+                    <div class="flip-container">
+                      <div class="flipper">
+                        <div class="front">
+                        <li class="sbutton lost flip-b" onClick="ga('send', 'event', 'Education', 'Problem', 'Search');"><img src="{{'Icon-sock-drawer.png' | asset_url}}" />
                             <div>searching your sock drawer</div>your socks aren't organized, don't lie.</li>
-                        <li class="sbutton heel" onClick="ga('send', 'event', 'Education', 'Problem', 'Blister');"><img src="{{'Icon-blister.svg' | asset_url}}" />
+                        </div>
+                        <div class="back-card">
+                          <li class="sbutton flip-b">
+                          <div>Gekks stay in your shoes</div>never search for socks again</li></div>
+                        </div>
+                    </div>
+                    <div class="flip-container">
+                      <div class="flipper">
+                        <div class="front">
+                        <li class="sbutton heel flip-b" onClick="ga('send', 'event', 'Education', 'Problem', 'Blister');"><img src="{{'Icon-blister.svg' | asset_url}}" />
                             <div>heel blisters</div>your heels look like you got attacked
                             <br>by a 3-inch tall bear.</li>
+                            </div>
+                        <div class="back-card">
+                          <li class="sbutton flip-b">
+                          <div>sock comfort in the front</div>heel blister protection in the back</li></div>
+                        </div>
+                    </div>
                     </ul>
-                    <div class="errors-s" style="height: 5vh;"></div>
+                    <div class="errors-s" style="height: 5vh; margin-top: 20px;"></div>
                     <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Problems');">solve my problems</div>
                 </div>
             </section>
-            <section style="display: none;" id="smell-prob-sel">
+             <section id="prob-fb-rex" class="continue" style="display: none;">
             <div>
-              <div id="mult-prob">
-                <h1 id="til">your feet smell... unpleasant?<br>yeah, ours did too. that's why we invented Gekks.</h1>
-                <h1 id="sub-til">how do Gekks <br>prevent odor?</h1>
-              </div>
-              <ul id="problem-info">
-                <li>Gekks are knit with silver antimicrobial odor eliminating yarn</li>
-                <li>same yarn used by the military and NASA to prevent bacteria buildup on long missions</li>
-                <li>our moisture wicking material actively pulls moisture off your feet so you stay dry</li>
-              </ul>
-              <div style="height: 3vh;"></div>
-              <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Smell');">got it!</div>
-              </div>
-            </section>
-            <section style="display: none;" id="slip-prob-sel">
-            <div>
-              <div id="mult-prob">
-                <h1 id="til">so you're tired of adjusting your no-show socks? we get it. that's why we invented Gekks.</h1>
-                <h1 id="sub-til">what's different <br>about Gekks?</h1>
-              </div>
-              <ul id="problem-info">
-                <li>unlike all other no-shows, Gekks lock and stay <b>INSIDE</b> your shoes</li>
-                <li>the back heel is locked to the inside of your shoe so it can’t slip</li>
-                <li>sock comfort in the front, heel blister protection in the back</li>
-              </ul>
-             <div style="height: 3vh;"></div>
-              <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Slip');">got it!</div>
-              </div>
-            </section>
-            <section style="display: none;" id="lost-prob-sel">
-            <div>
-               <div id="mult-prob">
-                <h1 id="til">we get it, organization shouldn’t have to apply to your socks too. that’s why we invented Gekks</h1>
-                <h1 id="sub-til">how are <br>Gekks different?</h1>
-              </div>
-              <ul id="problem-info">
-                <li>unlike all other no-shows, Gekks stay locked <b>INSIDE</b> your shoes.</li>
-                <li>you install them inside your shoes, you don’t put them on your feet</li>
-                <li>the convenience of going barefoot with the protection of a sock</li>
-              </ul>
-              <div style="height: 3vh;"></div>
-              <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Searching');">got it!</div>
-              </div>
-            </section>
-            <section style="display: none;" id="heel-prob-sel">
-            <div>
-            <div id="mult-prob">
-                <h1 id="til">painful blister? Band-Aids® cramping your style? we get it. that’s why we invented Gekks.</h1>
-                <h1 id="sub-til">how do Gekks <br>prevent blisters?</h1>
-              </div>
-              <ul id="problem-info">
-                <li>Gekks lock to the heel of your shoe, providing heel blister protection.</li>
-                <li>they completely cover your toes, giving you the comfort of a sock without the hassle</li>
-                <li>Gekks are strong and won’t tear over time.</li>
-              </ul>
-                <div style="height: 3vh;"></div>
-                <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Blister');">got it!</div>
-              </div>
-            </section>
-             <section style="display: none;" id="more-than-one-prob-sel">
-            <div>
-               <div id="mult-prob">
-                <h1 id="sub-til">how are <br>Gekks different?</h1>
-              </div>
-             <ul id="problem-info">
-                <li>unlike all other no-shows, Gekks lock and stay <b>INSIDE</b> your shoes</li>
-                <li>knit with the same odor eliminating yarn used by the military and NASA </li>
-                <li>sock comfort in the front, heel blister protection in the back</li>
-              </ul>
-              <div style="height: 3vh;"></div>
+            <img class="sgblogo" src="{{'blogo.png' | asset_url}}" alt="Gekks" />
+            <center>
+            <img id="rex-icon" src="{{'sock-adjustment(2).gif' | asset_url}}" alt="The Ultimate No-Show Socks"/>
+            <div class="fb-info-text-wrap">
+            <h3 class="fb-info-text">I walk around like everything is fine, but deep down, inside my shoe, my sock is sliding off.</h3>
+            </div>
+            </center>
+            <h2> we could relate, so we</h2>
+            <h1> invented Gekks </h1>
+            <div style="height:6vh;"></div>
               <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Education', 'Progress', 'Searching');">got it!</div>
               </div>
             </section>
@@ -411,11 +499,11 @@ body section #intro-title {
                     <h1>what shoe styles do you like to look sockless in?</h1>
                     <ul>
                         <li class="sbutton flats" onClick="ga('send', 'event', 'Education', 'Style', 'Flats');"><img src="{{'Flats-Icon.svg' | asset_url}}" />
-                            <div>flats</div>ballet flats, short loafer, mary jane, etc.</li>
+                        <div>flats</div>ballet flats, short loafer, mary jane, etc.</li>
                         <li class="sbutton loaf" onClick="ga('send', 'event', 'Education', 'Style', 'Loafer');"><img src="{{'Icon-loafers.svg' | asset_url}}" />
-                            <div>loafers & slip-ons</div>boat shoes, lace-less shoes</li>
+                          <div>loafers & slip-ons</div>boat shoes, lace-less shoes</li>
                         <li class="sbutton sn" onClick="ga('send', 'event', 'Education', 'Style', 'Sneaker');"><img src="{{'Icon-sneakers.svg' | asset_url}}" />
-                            <div>sneakers & lace-ups</div>tennis shoes, shoes with laces, etc.</li>
+                          <div>sneakers & lace-ups</div>tennis shoes, shoes with laces, etc.</li>
                     </ul>
                     <div class="errors-s" style="height: 5vh;"></div>
                     <div class="fbutton" id="rcalc" onClick="ga('send', 'event', 'Education', 'Progress', 'Style');">show my results</div>
@@ -512,7 +600,7 @@ $(document).on("ready", function() {
             $(".errors-s").append("<p>please select an option</p>")
          }
          else {
-            feedbackSlide(f); 
+            nextSlide(f); 
          }
         }
         f.parent().parent().hasClass("continue") ? nextSlide(f) : "step-two-five" == f.parent().parent().attr("id") ? n || a ? nextSlide(f) : ($(".errors-s").empty(), $(".errors-s").append("<p>please select an option</p>")) : "rcalc" == f.attr("id") ? r + i + l > 0 ? (a ? (c = "women", r + i + l > 1 ? (h = "womens-closet-pack", p = "women's closet pack", d = "welcome to sockless freedom! you’ve been paired with more than one Gekk, so we recommend the closet pack for your best value!", u = "(includes sneaker, loafer and flats)", $("#womens-results").show()) : 1 == r ? (h = "flats-version", p = "ballet flats", d = "our Ballet Flat Gekks are designed to fit perfectly in your flats without showing or moving around while protecting you against that embarassing foot odor.", $("#ballet-results").show()) : 1 == l ? (h = "womens-sneaker-version", p = "sneakers & <br>lace-ups", d = "go sockless with our Gekks that we perfected for your sneakers. install them into your lace-up shoes for the comfort of wearing socks without the hassle.", $("#sneaker-results").show()) : 1 == i && (h = "womens-loafer-version", p = "loafers & <br>slip-ons", d = "our Loafer Gekks are designed to allow you the ease of slipping in and out barefoot while fighting and eliminating the odor of going barefoot!", $("#loaf-results").show())) : n && (c = "men", i + l > 1 ? (h = "mens-closet-pack", p = "men's closet pack", u = "(includes sneaker and loafer)", d = "welcome to sockless freedom! you’ve been paired with more than one Gekk, so we recommend the closet pack for your best value!", $("#mens-results").show()) : 1 == l ? (h = "sneaker-version", p = "sneakers & <br>lace-ups", d = "go sockless with our Gekks that we perfected for your sneakers. install them into your lace-up shoes for the comfort of wearing socks without the hassle.", $("#sneaker-results").show()) : 1 == i && (h = "loafer-version", p = "loafers & <br> slip-ons", d = "our Loafer Gekks are designed to allow you the ease of slipping in and out barefoot while fighting and eliminating the odor of going barefoot!", $("#loaf-results").show())), $("#rtitle").append(p), $("#rprodinfo").append(d), u.length > 1 && $("#rftitle").append(u), f.addClass("clicked"), nextSlide(f)) : ($(".errors-s").empty(), $(".errors-s").append("<p>please select one or more shoe styles</p>")) : "finalresult" == f.attr("id") && (window.location = "/collections/" + c + "/products/" + h + "?sh")
@@ -549,50 +637,49 @@ $(document).on("ready", function() {
             case "sbutton man highlight":
                 n = !0, a = !1, $("#dw").empty(), $("#dw").append("*don’t worry, you can shop women once we craft the perfect Gekks for you."), h.siblings().removeClass("highlight"), $(".flats").addClass("hidden");
                 break;
-            case "sbutton slip highlight":
+            case "sbutton slip flip-b highlight":
                 e = 1;
                 break;
-            case "sbutton lost highlight":
+            case "sbutton lost flip-b highlight":
                 o = 1;
                 break;
-            case "sbutton smell highlight":
+            case "sbutton smell flip-b highlight":
                 s = 1;
                 break;
-            case "sbutton heel highlight":
-                t = 1
+            case "sbutton heel flip-b highlight":
+                t = 1; 
+                break;
+            case "sbutton slip flip-b":
+                e = 0;
+                break;
+            case "sbutton lost flip-b":
+                o = 0;
+                break;
+            case "sbutton smell flip-b":
+                s = 0;
+                break;
+            case "sbutton heel flip-b":
+                t = 0; 
+                break; 
         }
     })
-function feedbackSlide(f) {
-    if ( e + o + s + t > 1 ) {
-       $(f).parent().parent().hide().siblings('#more-than-one-prob-sel').fadeIn("slow")
-       e = 0 
-       o = 0 
-       s = 0 
-       t = 0 
-    }
-    else if (e >= 1){
-     e = 0 
-     $(f).parent().parent().hide().siblings('#slip-prob-sel').fadeIn("slow")
-    }
-    else if (o >= 1) {
-      o = 0 
-      $(f).parent().parent().hide().siblings('#lost-prob-sel').fadeIn("slow")
-    }
-    else if (s >= 1) {
-      s = 0 
-      $(f).parent().parent().hide().siblings('#smell-prob-sel').fadeIn("slow")
-    }
-    else if ( t >= 1 ) {
-      t = 0 
-      $(f).parent().parent().hide().siblings('#heel-prob-sel').fadeIn("slow")
-    }
-    else {
-      $(f).parent().parent().hide().siblings('#step-three').fadeIn("slow")
-      contCount += 16.666666666666668, $("#progress-bar").css("width", contCount + "%")
-    }
-}
-
-
 }); 
+
+$('.flipper').click(function(){
+    // UX option 1 - odd clicks flip, even un-selects
+    if ( $(this).children().children().first().hasClass('highlight')) {
+    $(this).toggleClass('flipped');  
+  } 
+//  
+// UX option 2 - you can only flip once and you can't unselect it because IDK
+    // if (!($(this).hasClass('flipped'))){
+    //     $(this).addClass('flipped')
+    // }
+});
+
+// UX option 3 - the click that flips it back also unselects it (this seems like the worst one)
+// $('.back-card').click(function(){
+//     $(this).parent().children().children().first('sbutton').removeClass('highlight'); 
+// })
 
 </script>
