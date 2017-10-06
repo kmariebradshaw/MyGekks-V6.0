@@ -263,6 +263,7 @@ body section #intro-title {
 @media only screen and (max-width: 800px) {
 .do-plus { display: none; }
 .scrollp {margin-top: 20px !important;}
+}
 
 #Rex { width: 320px;}
 
@@ -298,13 +299,11 @@ perspective: 1000;
 .flipper {
 transition: 0.6s;
 transform-style: preserve-3d;
-
 position: relative;
 }
 
 .front, .back-card {
 backface-visibility: hidden;
-
 position: absolute;
 top: 0;
 left: 0;
@@ -386,7 +385,7 @@ margin-top: 5px; }
                           </div>
                           <div class="back-card">
                             <li class="sbutton flip-b">
-                            <div>knit with odor eliminating yarn</div>(the same yarn used by the military and NASA)</li>                          
+                            <div>knit with odor eliminating yarn</div>(the same yarn used by the military and NASA</li>
                           </div> 
                         </div>
                     </div>
@@ -459,11 +458,11 @@ margin-top: 5px; }
                     <h1>what shoe styles do you like to look sockless in?</h1>
                     <ul>
                         <li class="sbutton flats" onClick="ga('send', 'event', 'Education', 'Style', 'Flats');"><img src="{{'Flats-Icon.svg' | asset_url}}" />
-                            <div>flats</div>ballet flats, short loafer, mary jane, etc.</li>
+                        <div>flats</div>ballet flats, short loafer, mary jane, etc.</li>
                         <li class="sbutton loaf" onClick="ga('send', 'event', 'Education', 'Style', 'Loafer');"><img src="{{'Icon-loafers.svg' | asset_url}}" />
-                            <div>loafers & slip-ons</div>boat shoes, lace-less shoes</li>
+                          <div>loafers & slip-ons</div>boat shoes, lace-less shoes</li>
                         <li class="sbutton sn" onClick="ga('send', 'event', 'Education', 'Style', 'Sneaker');"><img src="{{'Icon-sneakers.svg' | asset_url}}" />
-                            <div>sneakers & lace-ups</div>tennis shoes, shoes with laces, etc.</li>
+                          <div>sneakers & lace-ups</div>tennis shoes, shoes with laces, etc.</li>
                     </ul>
                     <div class="errors-s" style="height: 5vh;"></div>
                     <div class="fbutton" id="rcalc" onClick="ga('send', 'event', 'Education', 'Progress', 'Style');">show my results</div>
