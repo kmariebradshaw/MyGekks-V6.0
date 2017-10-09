@@ -35,6 +35,14 @@ b { font-weight: 600; }
     padding: 5px;
 }
 
+body #page-flow-wrap:after, .clearfix:after {
+   content: " " !important;
+   visibility: hidden !important;
+   display: block !important;
+   height: 0 !important;
+   clear: both !important;
+}
+
 .fb-info-text-wrap { width: 350px;}
 
 #rex-icon { width: 150px; }
@@ -67,11 +75,10 @@ footer ul { column-count: 2; }
 #result-info-flow h1 { 
 font-size: 11pt; font-weight: lighter; }
 
-body section #step-five { 
-max-width: 1366px;
-width: 100vw;
-position: absolute;
-left: 0 ;
+body section #step-five {
+    max-width: 1366px;
+    width: 100vw;
+    margin-left: calc((-100vw + 650px)/2);
 }
 #review-slide {
     width: 26% !important;
@@ -193,8 +200,9 @@ nav ul { margin-top: 0; }
 #close { display: none; }
 section {
     text-align: center;
-    min-height: 110vh;
-    max-width: 650px;
+/*    min-height: 110vh;
+*/    max-width: 650px;
+min-height: 0;
     display: block;
 }
 
@@ -525,7 +533,7 @@ margin-top: 5px; }
             </section>
  
             <section id="step-five" style="display:none;">
-                <div>
+                <div class="">
                     <div id="result-info-flow">
                     <h1>based on your answers,<br>the perfect Gekks for you are...</h1>
                     <h1 id="rtitle"></h1>
