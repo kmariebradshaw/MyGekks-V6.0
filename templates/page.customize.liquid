@@ -618,7 +618,7 @@ $(document).on("ready", function() {
     $(".fbutton").on("click", function() {
         var step = $(this).parent().parent().attr('id'); 
         var stepTime = new Date().getTime(); 
-        var elapsedTime = (stepTime - startTime) / 1000 
+        var elapsedTime = (stepTime - startTime)
         ga('send', 'timing', 'Customize Flow', step, elapsedTime);
         var f = $(this);
         if (f.hasClass('spec-prob-fb')) { 
