@@ -613,8 +613,13 @@ $(document).on("ready", function() {
         c = "",
         p = "",
         d = "",
+        startTime = new Date().getTime();
         u = "";
     $(".fbutton").on("click", function() {
+        var step = $(this).parent().parent().attr('id'); 
+        var stepTime = new Date().getTime(); 
+        var elapsedTime = (stepTime - startTime) / 1000 
+        ga('send', 'timing', 'Customize Flow', step, elapsedTime);
         var f = $(this);
         if (f.hasClass('spec-prob-fb')) { 
          if (e + s + o + t == 0 && f.parent().parent().hasClass('prob-select-first')) {
