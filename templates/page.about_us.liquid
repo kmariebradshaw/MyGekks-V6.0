@@ -1,3 +1,106 @@
+<style>
+@media only screen and (max-width: 455px) {
+  .timeline { width: 320px; }
+}
+
+@media only screen and (min-width: 456px) and (max-width: 588px) {
+  .timeline { 
+    width: 456px; 
+    height: 1993.05px;
+  }
+  .col-1 { left: 70px;}
+  .col-2 {}
+  .row-1 { margin-top: ; }
+  .row-2 {}
+  .row-3 {}
+  .row-4 {}
+  .row-5 {}
+  .row-6 {}
+  .row-7 {}
+  .row-8 {}
+
+  #t1 {
+    top: 170px;
+    left: 56px;
+}
+  #t2 {
+    top: 180px;
+    left: 135px;
+}
+ #t3 {
+    top: 435px;
+    left: -30px;
+}
+  #t4 {top: 175px;}
+  #t5 {top: 175px;}
+  #t6 {top: 175px;}
+  #t7 {top: 175px;}
+  #t8 {top: 175px;}
+  #t9 {top: 175px;}
+  #t10 {top: 175px;}
+  #t11 {top: 175px;}
+  #t12 {top: 175px;}
+  #t13 {top: 175px;}
+  #t14 {top: 175px;}
+  #t15 {top: 175px;}
+  #t16 
+  .timeline-text { padding: 10px; }
+  .timeline-year { font-size: 18pt; }
+  .timeline-expo { font-size: 8pt; }
+
+}
+
+@media only screen and (min-width: 589px) and (max-width: 848px) {
+ .timeline { width: 589px; }
+
+}
+
+@media only screen and (min-width: 849px) and (max-width: 1107px) {
+ .timeline { width: 849px; }
+
+}
+
+@media only screen and (min-width: 1108px) and (max-width: 1365px) {
+ .timeline { width: 1108px; }
+
+}
+
+@media only screen and (min-width: 1366px) {
+ .timeline { width: 1366px; }
+
+}
+
+.timeline-year, .timeline-expo, .timeline-text { 
+  display: inline-block; 
+  line-height: 1; 
+  letter-spacing: normal; 
+  text-transform: none;
+}
+
+.timeline-text { 
+  text-align: center;
+  position: relative;
+ }
+
+.timeline-year { font-weight: 700; }
+.timeline-expo { font-weight: lighter; }
+
+@media only screen and (max-width: 588px) {
+  .timeline { background-image: url("{{'about-us-mobile.jpg' | asset_url }}"); }
+}
+
+@media only screen and (min-width: 589px) {
+  .timeline { background-image: url("{{'about-us-desktop.jpg' | asset_url }}"); }
+}
+
+.timeline {
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+</style>
+
 <main id="page">	     
   <section class="content">
     <div class="wrap">
@@ -10,8 +113,78 @@
 
       </div>
 <h1 style="text-align: center;">our story</h1>
-<img src="{{'Website-Timeline2.jpg' | asset_url}}" alt="Our Timeline" class="tw do"/>
-<img src="{{'Website-Timeline-MOBILE.jpg' | asset_url}}" alt="Our Timeline" class="tw mo"/>
+{% comment %}<img src="{{'about-us-desktop.jpg' | asset_url}}" alt="Our Timeline" class="tw do" id="about-us-desktop"/>
+<img src="{{'about-us-mobile.jpg' | asset_url}}" alt="Our Timeline" class="tw mo" id="about-us-mobile"/>{% endcomment %}
+<div class="timeline">
+
+<div class="timeline-text" id="t1">
+<h1 class="timeline-year">1995</h1><br>
+<p class="timeline-expo">Mom dresses all <br> brothers the same</p>
+</div>
+<div class="timeline-text" id="t2">
+<h1 class="timeline-year">2005</h1><br>
+<p class="timeline-expo">Justin and Christian join a<br> fraternity in college and wear<br> smelly boat shoes</p>
+</div>
+<div class="timeline-text" id="t3">
+<h1 class="timeline-year">2005/2007</h1><br>
+<p class="timeline-expo">Justin and Christian begin<br> their finance careers -<br> quickly get tired of <br>being number monekys on the <br>computer all day long</p>
+</div>
+<div class="timeline-text" id="t4">
+<h1 class="timeline-year">2014</h1><br>
+<p class="timeline-expo">Christian quits his job<br> to solely focus on<br> launching Gekks on<br> Kickstarter</p>
+</div>
+{% comment %}<div class="timeline-text" id="t5">
+<h1 class="timeline-year">2014</h1><br>
+<p class="timeline-expo">Justin calls <br> Christian while he is <br> working on a Saturday<br>(see finance monkey)<br> and convinces him there<br> is a large market<br>for Gekks</p>
+</div>
+<div class="timeline-text" id="t6">
+<h1 class="timeline-year">2013</h1><br>
+<p class="timeline-expo">Justin moves to NYC and is annoyed by his<br>sticky boat shoes on hot summer days, and <br> wants a better solution to no-show socks. He<br> buys a sewing machine and plays with silicone<br> adhesive in his kitchen (against his wife's <br> wishes) trying to stick a sock inside a shoe</p>
+</div>
+<div class="timeline-text" id="t7">
+<h1 class="timeline-year">2014</h1><br>
+<p class="timeline-expo">Kickstarter project <br> raises $100,000 of <br> pre-sales in 30 days</p>
+</div>
+<div class="timeline-text" id="t8">
+<h1 class="timeline-year">2014</h1><br>
+<p class="timeline-expo">Justin and Christian live in a small<br> town in upstate New York for three<br> months while programming a silicone<br> coating machine that manufactures<br> the first batch of Gekks</p>
+</div>
+<div class="timeline-text" id="t9">
+<h1 class="timeline-year">2014</h1><br>
+<p class="timeline-expo">Justin and his wife<br> move back to Chicago<br> and have Isabella</p>
+</div>
+<div class="timeline-text" id="t10">
+<h1 class="timeline-year">2015</h1><br>
+<p class="timeline-expo">Real Simple, WhoWhatWear,<br> SheFinds and Inc. Magazine<br>endorse Gekks as a great <br> solution to pair with <br>different types of <br> stylish shoes<br></p>
+</div>
+<div class="timeline-text" id="t11">
+<h1 class="timeline-year">2015</h1><br>
+<p class="timeline-expo">Manufacturing is<br> moved back to<br>Chicago so that Justin<br> and Christian can<br> oversee the quality<br> and speed of the <br> production line</p>
+</div>
+<div class="timeline-text" id="t12">
+<h1 class="timeline-year">2015</h1><br>
+<p class="timeline-expo">Manufacturing problems<br>convince Justin, Christian<br> and George, their oldest<br> brother, to drive a Uhaul to<br> NY to pick up their silicon<br> coating machines in the <br>middle of the night and drive <br> back to Chicago<br>(see article <br>in Inc. Magazine)</p>
+</div>
+<div class="timeline-text" id="t13">
+<h1 class="timeline-year">2015</h1><br>
+<p class="timeline-expo">Publications such as Maxim,<br> Vogue and Total Frat Move<br> endorse Gekks as a great<br> solution to going sockless</p>
+</div>
+<div class="timeline-text" id="t14">
+<h1 class="timeline-year">2016</h1><br>
+<p class="timeline-expo">To reach a broader<br> market, Gekks develop<br> and launch a new <br> fastening system for flats,<br>loafers and sneakers that <br> include leather, cloth and <br>vinyl interiors such as<br>Tieks, Toms, Converse, <br> Adidas and Nike</p>
+</div>
+<div class="timeline-text" id="t15">
+<h1 class="timeline-year">2016</h1><br>
+<p class="timeline-expo">Justin and Christian have boys<br> within a month of each other;<br> wives convince them to launch<br> Baby Gekks (in process)</p>
+</div>
+<div class="timeline-text" id="t16">
+<h1 class="timeline-year">2017</h1><br>
+<p class="timeline-expo">Justin and Christian hard at <br> work developing Gekks for <br> babies, Gekks for kids, Gekks for<br> high heels and a cool, futuristic<br> fastening system... more to come</p>
+</div>
+{% endcomment %}
+
+
+</div>
     </div>
   </section>
 </main>
