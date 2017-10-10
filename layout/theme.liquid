@@ -17,7 +17,7 @@
     {% else %}
     <meta name="description" content="{{ product.description | strip_html | strip_newlines | truncate: maxmeta | escape }}">
     {% endif %}
-    {% elseif page_description %}
+    {% elsif page_description %}
   <meta name="description" content="{{ page_description | escape }}">
   
 
@@ -44,7 +44,9 @@
     <script type="text/javascript" src="{{ 'instafeed.min.js' | asset_url }}"></script>
 
     {% include 'ajax-cart-template' %}
-    
+
+
+
     <script async>
       jQuery(function($) {
         ajaxCart.init({
@@ -132,6 +134,44 @@
 }(document, 'script', 'facebook-jssdk'));</script>
   </head>
   <body class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '/', '-' | split: '.' }} {% if template == 'index' or page.handle == 'store' %}zoom-aware{% endif %}">
+
+      {% comment %}Welcome Pop-Up{% endcomment %}
+
+      <div class="klaviyo_modal" id="newsletter_popup2" style="display:none;">
+   <div class="klaviyo_inner">
+   <a href="#" class="klaviyo_close_modal klaviyo_header_close">×</a>
+   <form action="//manage.kmail-lists.com/subscriptions/subscribe" method="POST" novalidate="novalidate" class="klaviyo_subscription_form">
+      <input type="hidden" name="g" value="Ai9wnf">
+      <div class="klaviyo_fieldset">
+        <p class="klaviyo_header">want a discount?</p>
+        <p class="klaviyo_subheader">Enter your email to instantly unlock a new customer coupon.</p>
+      </div>
+      <div class="klaviyo_fieldset">
+      <div class="klaviyo_field_group">
+        <input type="email" id="newsletter_popup_$email" placeholder="email" name="email"></div>
+      </div> 
+      <div class="klaviyo_fine_print"></div>
+      <div class="klaviyo_form_actions">
+          <button type="submit" class="klaviyo_submit_button">
+          <span>give me my discount!</span>
+          </button>
+      </div>
+      <div class="klaviyo_below_submit" ></div>
+   </form>
+   <div class="error_message" ></div>
+   <div class="success_message" ></div>
+   </div>
+</div>
+ 
+<script>
+   KlaviyoSubscribe.attachToModalForm('#newsletter_popup2', {
+  delay_seconds: 1,
+}); 
+</script>
+
+
+
+
     <header>
       <div class="wrap cbb-ignored-image" style="text-align: center;"><span class="banner">
         <a href="/collections/women/products/womens-closet-pack" onClick="ga('send', 'event', 'Banner', 'Click', 'Upgrade to Closet Pack');">
@@ -212,6 +252,7 @@
         {% if settings.mobile_landing_page == 'true' %} <a href="/pages/store" class="button blue-white mobile">go to store</a> {% endif %}
       </div>
     </header>
+
     {% if shop.metafields.locksmith.active %}{% include 'locksmith' %}{% else %}{{ content_for_layout }}{% endif %}
     <footer>
       <div class="wrap">
