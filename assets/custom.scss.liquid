@@ -3534,4 +3534,133 @@ main.customer input[type=submit] {
 }
 
 
+/* Klaviyo Pop-Ups */
+
+@media only screen and (max-width: 480px) {
+  body .klaviyo_modal .klinner { 
+    width: 90% !important; 
+    min-width: 300px;
+.klaviyo_subheader {font-size: 8pt;}
+     span {font-size: 9pt;}
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 588px) {
+body .klaviyo_modal .klinner {
+    width: 450px;
+    margin-left: -225px !important;
+    .klaviyo_subheader {font-size: 11px;}
+     span {font-size: 10pt;}
+}
+}
+  
+@media only screen and (max-width: 588px) {
+  body .klaviyo_modal .klinner { 
+    .klaviyo_header {font-size: 25px;}
+    p { font-size: 8pt; }
+  }
+}
+
+@media only screen and (min-width: 589px) {
+  body .klaviyo_modal .klinner { 
+    width: 500px !important; 
+    margin-left: -250px !important;
+    .klaviyo_subheader {font-size: 13px;}
+    span {font-size: 12pt;}
+    .klaviyo_header {font-size: 30pt;}
+    .khalf   {
+    padding: 20px;
+   }
+  }
+
+/*    .half-p { 
+    height: 450px; 
+    overflow: hidden;
+    .pop-image { height: 450px; }
+  }*/
+}
+
+body .klaviyo_modal .klinner { 
+  border-radius: 0 !important;
+  padding: 0 !important;
+  font-family:MontserratB!important;
+  form {overflow: hidden !important;}
+ .error_message { padding-top: 0; }
+  .kclose{
+    background: darkgray;
+    border-radius: 100%;
+    margin: auto;
+    line-height: 25px;
+    vertical-align: middle;
+    color: rgba(255,255,255,0.9);
+    font-size: 28px;
+    font-weight: 300;
+    font-family: "Courier New", "Courier", "Arial";
+    text-align: center;
+    width: 25px;
+  }
+
+em { font-weight: bold; }
+   .klaviyo_form_actions {
+    border-top: none !important;
+    padding-top: 12px !important;
+    margin: 10px 0 0 0;
+}
+  .klaviyo_subheader {
+    color: black;
+    font-weight: normal;
+  }
+
+  .klaviyo_fieldset { padding: 10px 0 0; }
+
+  input[type=email] {
+    border: 1px solid #33ffcc !important;
+    border-radius: 10px !important;
+    height: 30px !important;
+  }
+  .klaviyo_submit_button {
+    height: auto;
+    background-color: white !important;
+    border-radius: 20px;
+    border: 2px solid black;
+    background-image: none;
+    span {
+    color: black;
+    background: white;
+    border-radius: 20px;
+    height: 22px;
+    line-height: 11px;
+    font-weight: normal;
+}
+  }
+}
+
+body .khalf {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    .klaviyo_header {
+    font-weight: bolder;
+    line-height: 1.2;
+    }
+}
+
+/*.half-p {
+    width: 47%;
+    display: inline-block;
+}*/
+
+.kbelow {
+    text-align: center;
+    margin-top: 12px;
+    line-height: 1.4;
+    font-weight: lighter;
+}
+
+.pop-image {
+    width: 49%;
+    margin-bottom: -12px;
+}
 
