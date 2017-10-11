@@ -142,38 +142,41 @@
    <a href="#" class="klaviyo_close_modal klaviyo_header_close kclose">×</a>
    <form action="//manage.kmail-lists.com/subscriptions/subscribe" method="POST" novalidate="novalidate" class="klaviyo_subscription_form">
       <input type="hidden" name="g" value="Ai9wnf">
-{% comment %}      <div class="half-p">
-{% endcomment %}      <img src="{{'pop-up.jpg' | asset_url}}" alt="Weekly Shoe Giveaways" class="pop-image"/> 
-{% comment %}      </div>
-{% endcomment %}      <div class="khalf">
+    <img src="{{'pop-up.jpg' | asset_url}}" alt="Weekly Shoe Giveaways" class="pop-image hide_on_submit"/> 
+   <div class="khalf hide_on_submit">
       <div class="klaviyo_fieldset">
-        <p class="klaviyo_header">want a discount?</p> 
-        <p class="klaviyo_subheader">Enter your email to instantly unlock a new customer coupon.</p>
+        <p class="klaviyo_header hide_on_submit">want a <br>discount?</p> 
+        <p class="klaviyo_subheader hide_on_submit">Enter your email to instantly unlock a new customer coupon.</p>
       </div>
-      <div class="klaviyo_fieldset">
+      <div class="klaviyo_fieldset hide_on_submit">
       <div class="klaviyo_field_group">
         <input type="email" id="newsletter_popup_$email" placeholder="email" name="email"></div>
       </div> 
       <div class="klaviyo_fine_print"></div>
-      <div class="klaviyo_form_actions">
+      <div class="klaviyo_form_actions hide_on_submit">
           <button type="submit" class="klaviyo_submit_button">
-          <span>give me my discount!</span>
+          <span>give me my discount</span>
           </button>
       </div>
       <div class="kbelow">
-      <p>We give away <em>FREE</em> shoes every week so be sure to follow us on social for your chance to win!</p>
+      <p>We give away <em>FREE</em> shoes<br> every week so be sure to<br> follow us on social for your<br> chance to win!</p>
       </div>
       <div class="klaviyo_below_submit" ></div>
       </div>
    </form>
+  <div class="success_message" ></div>
+
    <div class="error_message" ></div>
-   <div class="success_message" ></div>
    </div>
 </div>
  
 <script>
    KlaviyoSubscribe.attachToModalForm('#newsletter_popup2', {
   delay_seconds: 1,
+  success_message: "<div class='success_feedback'><div class='klaviyo_header'><em>Thank you!</em></div><div class='klaviyo_subheader'>Use the discount code below<br> to receive 15% off orders over $60 USD</div><div class='klaviyo_header'>GEKKS60</div></div>",
+   success: function ($form) {
+  $form.find('.hide_on_submit').hide();
+  },
 }); 
 </script>
 
