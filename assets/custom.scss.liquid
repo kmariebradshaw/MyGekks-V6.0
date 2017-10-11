@@ -3539,8 +3539,8 @@ main.customer input[type=submit] {
 @media only screen and (max-width: 480px) {
   body .klaviyo_modal .klinner { 
     width: 90% !important; 
-    min-width: 300px;
-.klaviyo_subheader {font-size: 8pt;}
+/*    min-width: 300px;
+*/.klaviyo_subheader {font-size: 8pt;}
      span {font-size: 9pt;}
   }
 }
@@ -3570,13 +3570,100 @@ body .klaviyo_modal .klinner {
     .khalf   {
     padding: 20px;
    }
-  }
+   .kbelow p { font-size: 13px; }
+  } 
 
 /*    .half-p { 
     height: 450px; 
     overflow: hidden;
     .pop-image { height: 450px; }
   }*/
+}
+
+@media only screen and (max-width: 351px) {
+  body .klaviyo_modal .klinner .kbelow p { font-size: 7pt !important; margin-bottom: 10px;}
+  body .khalf {
+    padding-top: 10px !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    width: 51% !important;
+}
+  body .klinner .pop-image {
+    width: 54%;
+    margin-bottom: -12px;
+    margin-left: -20px;
+    min-height: 261px;
+  }
+}
+
+.success_feedback {
+    padding: 20px;
+    .klaviyo_header, .klaviyo_subheader { margin: 20px !important; }
+}
+@media only screen and (min-width: 352px) and (max-width: 469px) {
+body .klinner .pop-image {
+    width: 50%;
+    margin-left: -10px;
+}
+}
+
+@media only screen and (max-width: 399px) {
+body .klaviyo_modal .klinner .klaviyo_header {
+    font-size: 14pt;
+}
+body .khalf {
+    padding-top: 10px !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    padding-bottom: 10px;
+}
+}
+@media only screen and (min-width: 400px) and (max-width: 469px) {
+  body .klaviyo_modal .klinner .klaviyo_header {
+    font-size: 18pt;
+}
+}
+@media only screen and (max-width: 469px) {
+
+
+/*body .klaviyo_modal .klinner { width: 300px !important; }
+*/body .klaviyo_modal .klinner .kclose {
+    background: darkgray;
+    border-radius: 100%;
+    margin: auto;
+    line-height: 19px !important;
+    vertical-align: middle;
+    color: rgba(255,255,255,0.9);
+    font-size: 20px !important;
+    font-weight: 300;
+    font-family: "Courier New", "Courier", "Arial";
+    text-align: center;
+    width: 20px !important;
+}
+
+body .klaviyo_modal .klinner .klaviyo_subheader {
+    color: black;
+    font-weight: normal;
+    line-height: 1;
+}
+body .klaviyo_modal .klinner .klaviyo_fieldset {
+    padding: 0 !important;
+}
+body .klaviyo_modal .klinner .khalf .klaviyo_form_actions {
+    border-top: none !important;
+    padding-top: 0px !important;
+    margin: 10px 0 0 0;
+}
+body .klaviyo_modal .klinner .klaviyo_submit_button span { font-size: 7pt; }
+
+.klinner input[type=email] {
+  font-size: 12px;
+  }
+
+  .klaviyo_modal .klaviyo_header_close {
+    top: 5px !important;
+    right: 5px !important;
+}
 }
 
 body .klaviyo_modal .klinner { 
