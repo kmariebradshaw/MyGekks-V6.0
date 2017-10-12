@@ -68,6 +68,7 @@
       <div style="position: fixed; top:0; right: 0; border: 1px solid lightgray; border-radius: 50%;">X</div>
     </div>
     {% include 'referafriend' %}
+    {% include 'klaviyo-pop' %}
     <script src="{{  'api.jquery.js' | shopify_asset_url }}" async></script>
 
     {% if template contains 'customers' %}
@@ -136,118 +137,6 @@
   </head>
   <body class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '/', '-' | split: '.' }} {% if template == 'index' or page.handle == 'store' %}zoom-aware{% endif %}">
 
-      {% comment %}Welcome Pop-Up{% endcomment %}
-
-  <div class="klaviyo_modal" id="newsletter_popup2" style="display:none;">
-   <div class="klaviyo_inner klinner">
-   <a href="#" class="klaviyo_close_modal klaviyo_header_close kclose">×</a>
-   <form action="//manage.kmail-lists.com/subscriptions/subscribe" method="POST" novalidate="novalidate" class="klaviyo_subscription_form">
-      <input type="hidden" name="g" value="Ai9wnf">
-    <img src="{{'pop-up.jpg' | asset_url}}" alt="Weekly Shoe Giveaways" class="pop-image hide_on_submit"/> 
-   <div class="khalf hide_on_submit">
-      <div class="klaviyo_fieldset">
-        <p class="klaviyo_header hide_on_submit">want a <br>discount?</p> 
-        <p class="klaviyo_subheader hide_on_submit">Enter your email to instantly unlock a new customer coupon.</p>
-      </div>
-      <div class="klaviyo_fieldset hide_on_submit">
-      <div class="klaviyo_field_group">
-        <input type="email" id="newsletter_popup_$email" placeholder="email" name="email"></div>
-      </div> 
-      <div class="klaviyo_fine_print"></div>
-      <div class="klaviyo_form_actions hide_on_submit">
-          <button type="submit" class="klaviyo_submit_button">
-          <span>give me my discount</span>
-          </button>
-      </div>
-      <div class="kbelow">
-      <p>We give away <em>FREE</em> shoes<br> every week so be sure to<br> follow us on social for your<br> chance to win!</p>
-      </div>
-      <div class="klaviyo_below_submit" ></div>
-      </div>
-   </form>
-  <div class="success_message" ></div>
-  <div class="error_message" ></div>
-
-   </div>
-</div>
- 
-<script>
-$(document).ready(function(){ 
- setTimeout(function() {
-if ($('.klaviyo_modal:visible').length == 0) {
-   KlaviyoSubscribe.attachToModalForm('#newsletter_popup2', {
-  delay_seconds: 0,
-  success_message: "<div class='success_feedback'><div class='klaviyo_header'><em>Thank you!</em></div><div class='klaviyo_subheader'>Use the discount code below<br> to receive 15% off orders over $60 USD</div><div class='klaviyo_header'>GEKKS60</div></div>",
-   success: function ($form) {
-  $form.find('.hide_on_submit').hide();
-  },
-}); 
-};
-}, 5000);
-}); 
-</script>
-
-<div class="klaviyo_modal" id="exit_offer" style="display:none;">
-   <div class="klaviyo_inner exitpop">
-   <a href="#" class="klaviyo_close_modal klaviyo_header_close kclose">×</a>
-   <form action="//manage.kmail-lists.com/subscriptions/subscribe" method="POST" novalidate="novalidate" class="klaviyo_subscription_form">
-      <input type="hidden" name="g" value="Ai9wnf"> 
-   <div class="hide_on_submit">
-      <div class="klaviyo_fieldset">
-        <p class="klaviyo_header hide_on_submit extra-title">wait!</p> 
-        <p class="klaviyo_subheader hide_on_submit">Get 10% off your first $30 order, and the latest discounts right to your inbox</p>
-      </div>
-      <div class="klaviyo_fieldset hide_on_submit">
-      <div class="klaviyo_field_group">
-        <input type="email" id="newsletter_popup_$email" placeholder="Email" name="email"></div>
-      </div> 
-      <div class="klaviyo_fine_print"></div>
-      <div class="klaviyo_form_actions hide_on_submit">
-          <button type="submit" class="klaviyo_submit_button">
-          <span>Get my discount!</span>
-          </button>
-      </div>
-      <div class="klaviyo_below_submit" ></div>
-      </div>
-   </form>
-  <div class="success_message" ></div>
-  <div class="error_message" ></div>
-
-   </div>
-</div>
-
-<script>
-$(document).ready(function(){
-  var executed = false 
-  if (!sessionStorage.exitAttempted) {
-    console.log('not attempted')
-   $(document).on('mouseleave', leaveFromTop);
-      function leaveFromTop(e){
-        if ($('.klaviyo_modal:visible').length == 0) {
-          console.log('hidden')
-        if( e.clientY < 0 ) {
-          console.log('mouseout')
-          if (!executed) {
-            console.log('not executed')
-            KlaviyoSubscribe.attachToModalForm('#exit_offer', {
-              success_message: "<div class='success_feedback'><div class='klaviyo_header'><em>Thank you!</em></div><div class='klaviyo_subheader'>Use the discount code below<br> to receive 10% off your first order over $30 USD</div><div class='klaviyo_header'>GEKKS10</div></div>",
-              ignore_cookie: true, 
-              delay_seconds: 0.1,
-              success: function ($form) {
-              $form.find('.hide_on_submit').hide();
-              },
-            }); 
-            executed = true 
-            sessionStorage.exitAttempted = 1          
-          };
-        };
-      };
-    };
-  };
-});
-
-
-</script>
 
     <header>
       <div class="wrap cbb-ignored-image" style="text-align: center;"><span class="banner">
@@ -343,7 +232,6 @@ $(document).ready(function(){
             </nav>
           </div>
           <div class="half">
-
             <a href="#"id="referafriend" onclick="ga('send', 'event', 'Refer', 'Footer', 'Click');">refer a friend!</a>
             <div id="psocial">
               <h3 id="fsocial">follow us on social!</h3>
@@ -381,6 +269,6 @@ $(document).ready(function(){
     {% if template == 'product' %}<script src="//www.codeblackbelt.com/js/modules/cool-image-magnifier/main.min.js?shop=my-gekks.myshopify.com" async></script>{% endif %}
     <script>$(window).width()>800&&($(".collection").hover(function(){$(".icon-nav").addClass('ib')},function(){$(".icon-nav").removeClass('ib')}),$(".collection-m").hover(function(){$(".icon-nav-m").addClass('ib')},function(){$(".icon-nav-m").removeClass('ib')})); </script>
     <script>var offset=$(".user-info").offset(),height=$(".user-info").height(),width=$(".user-info").width(),top=offset.top+height+50+"px",right=offset.left+width-170+"px";$(window).width()>1366&&$("#CartContainer").css({position:"fixed",left:right,top:top});</script>
-    <script>$("#referafriend").click(function(){event.preventDefault(),/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)?document.getElementById("k_id_modal").style.display="inline-block":Privy.show(251797)});</script>
+    <script>$("#referafriend").click(function(){event.preventDefault(),/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)?document.getElementById("k_id_modal").style.display="inline-block":document.getElementById("desktop_refer_k").style.display="inline-block"});</script>
   </body>
 </html>
