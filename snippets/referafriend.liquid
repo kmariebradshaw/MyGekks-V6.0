@@ -7,7 +7,7 @@
   });
   KlaviyoSubscribe.attachToForms('#email_signup-desktop', {
       hide_form_on_success: true, 
-      success_message: "<div class='success_feedback' style='margin-top: -360px;'><div class='klaviyo_header'><em>Thank you!</em></div><div class='klaviyo_subheader'>Your friend will receive their<br>code shortly. In the <br>meantime, here is yours!</div><div class='klaviyo_header'>GKK82030</div></div>",       
+      success_message: "<div class='success_feedback' style='margin-top: -360px;'><div class='klaviyo_header'><b>Thank you!</b></div><div class='klaviyo_subheader'>Your friend will receive their<br>code shortly. In the <br>meantime, here is yours!</div><div class='klaviyo_header'>GKK82030</div></div>",       
       success: function ($form) {
          $form.find('.hide_on_submit').hide();
       },
@@ -37,13 +37,6 @@
             <span style="background: gray;box-shadow: none;" id="submit-span">Submit</span>
           </button>
         </div>
-     <div id="follow-us">
-      <h3 id="fsocial">follow us on social!</h3>
-      <ul class="social-pop">
-        <li><div class="fb-like" data-href="https://www.facebook.com/GekksLowCutLiners/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div></li>
-        <li><a href="{{ settings.instagram_link }}" title="{{ shop.name }} on Instagram" target="_blank"><img src="{{'instagram-new-icon.png' | asset_url}}" alt="Instagram" style="max-height: 30px;"/></a></li>
-      </ul>
-    </div>
         <div class="klaviyo_below_submit"></div>
       </form>
       <div id="nophone" style="display: none;">please text a friend before submitting</div>
