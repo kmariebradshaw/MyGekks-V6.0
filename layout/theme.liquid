@@ -40,8 +40,9 @@
     <script src="{{ 'modernizr.min.js' | asset_url }}" defer></script>
     <script src="{{ 'handlebars.min.js' | asset_url }}" defer></script>
     <script src="{{ 'slick.min.js' | asset_url }}" defer></script>
+    <script src="{{'klaviyo.js' | asset_url}}"></script>
     <script src="{{ 'jquery.easing.1.3.min.js' | asset_url }}" defer></script>
-    <script type="text/javascript" src="{{ 'instafeed.min.js' | asset_url }}"></script>
+    <script type="text/javascript" src="{{ 'instafeed.min.js' | asset_url }}"></script>  
 
     {% include 'ajax-cart-template' %}
 
@@ -137,7 +138,7 @@
 
       {% comment %}Welcome Pop-Up{% endcomment %}
 
-      <div class="klaviyo_modal" id="newsletter_popup2" style="display:none;">
+  <div class="klaviyo_modal" id="newsletter_popup2" style="display:none;">
    <div class="klaviyo_inner klinner">
    <a href="#" class="klaviyo_close_modal klaviyo_header_close kclose">×</a>
    <form action="//manage.kmail-lists.com/subscriptions/subscribe" method="POST" novalidate="novalidate" class="klaviyo_subscription_form">
@@ -165,8 +166,8 @@
       </div>
    </form>
   <div class="success_message" ></div>
+  <div class="error_message" ></div>
 
-   <div class="error_message" ></div>
    </div>
 </div>
  
