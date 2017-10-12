@@ -173,7 +173,7 @@
  
 <script>
    KlaviyoSubscribe.attachToModalForm('#newsletter_popup2', {
-  delay_seconds: 1,
+  delay_seconds: 5,
   success_message: "<div class='success_feedback'><div class='klaviyo_header'><em>Thank you!</em></div><div class='klaviyo_subheader'>Use the discount code below<br> to receive 15% off orders over $60 USD</div><div class='klaviyo_header'>GEKKS60</div></div>",
    success: function ($form) {
   $form.find('.hide_on_submit').hide();
@@ -181,8 +181,67 @@
 }); 
 </script>
 
+<div class="klaviyo_modal" id="exit_offer" style="display:none;">
+   <div class="klaviyo_inner exitpop">
+   <a href="#" class="klaviyo_close_modal klaviyo_header_close kclose">×</a>
+   <form action="//manage.kmail-lists.com/subscriptions/subscribe" method="POST" novalidate="novalidate" class="klaviyo_subscription_form">
+      <input type="hidden" name="g" value="Ai9wnf"> 
+   <div class="hide_on_submit">
+      <div class="klaviyo_fieldset">
+        <p class="klaviyo_header hide_on_submit extra-title">wait!</p> 
+        <p class="klaviyo_subheader hide_on_submit">Get 10% off your first $30 order, and the latest discounts right to your inbox</p>
+      </div>
+      <div class="klaviyo_fieldset hide_on_submit">
+      <div class="klaviyo_field_group">
+        <input type="email" id="newsletter_popup_$email" placeholder="Email" name="email"></div>
+      </div> 
+      <div class="klaviyo_fine_print"></div>
+      <div class="klaviyo_form_actions hide_on_submit">
+          <button type="submit" class="klaviyo_submit_button">
+          <span>Get my discount!</span>
+          </button>
+      </div>
+      <div class="klaviyo_below_submit" ></div>
+      </div>
+   </form>
+  <div class="success_message" ></div>
+  <div class="error_message" ></div>
+
+   </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  var executed = false 
+  if (!sessionStorage.exitAttempted) {
+    console.log('not attempted')
+   $(document).on('mouseleave', leaveFromTop);
+      function leaveFromTop(e){
+        if ($('.klaviyo_modal:visible').length == 0) {
+          console.log('hidden')
+        if( e.clientY < 0 ) {
+          console.log('mouseout')
+          if (!executed) {
+            console.log('not executed')
+            KlaviyoSubscribe.attachToModalForm('#exit_offer', {
+              success_message: "<div class='success_feedback'><div class='klaviyo_header'><em>Thank you!</em></div><div class='klaviyo_subheader'>Use the discount code below<br> to receive 10% off your first order over $30 USD</div><div class='klaviyo_header'>GEKKS10</div></div>",
+              ignore_cookie: true, 
+              delay_seconds: 0.1,
+              success: function ($form) {
+              $form.find('.hide_on_submit').hide();
+              },
+            }); 
+            executed = true 
+            sessionStorage.exitAttempted = 1          
+          };
+        };
+      };
+    };
+  };
+});
 
 
+</script>
 
     <header>
       <div class="wrap cbb-ignored-image" style="text-align: center;"><span class="banner">
