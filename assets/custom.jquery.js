@@ -1,50 +1,56 @@
-    // $(function() {
-    //     // Cookies
-    //     function setCookie(name, days) {
-    //         if (days) {
-    //           document.
-    //             var date = new Date();
-    //             date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-    //             var expires = "; expires=" + date.toGMTString();
-    //         }
-    //         else var expires = "";
+   function createCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
 
-    //         document.cookie = name + "=" + expires + "; path=/";
-    //     }
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
 
-    //     function getCookie(name) {
-    //         var nameEQ = name + "=";
-    //         var ca = document.cookie.split(';');
-    //         for (var i = 0; i < ca.length; i++) {
-    //             var c = ca[i];
-    //             while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-    //             if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-    //         }
-    //         return null;
-    //     }
-
-    //     var myCookie = getCookie("GekksVisit");
-    //     if (myCookie == null) {
-    //      $(document).on('mouseleave', leaveFromTop);
-    //        var executed = false;  
-    //        if (!executed) {
-    //         function leaveFromTop(e){
-    //           if( e.clientY < 0 ) {
-    //            $('#exit_offer').fadeIn();
-    //           }
-    //         }
-    //       }
-    //         setCookie("GekksVisit", 7);
-    //     }
-    //     else {
-    //         $('.mydiv').css('display','none');
-    //     }
-    // });
-
+function deleteCookie(name) {
+  document.cookie = name +'=; Path=/; Expires=Tues, 14 July 1992 00:00:01 GMT;';
+}
 
 if(window.location.href.indexOf("countdown") > -1) {
   localStorage.setItem("timer", true);
 }
+
+$(document).ready(function(){
+  if (!sessionStorage.getItem('visitLogic')) {
+  var flowFinish = readCookie('flowFinish')
+  var gekksVisit = readCookie('gekksVisit')
+  if ((!flowFinish) && (!gekksVisit)){
+    console.log('literally no cookies')
+    createCookie("gekksVisit", "remarketing", 7)
+    createCookie("flowFinish", "learnMore", 14)
+    if (!(window.location.href.indexOf("?sh=d") > -1)) {
+          window.location.href="/pages/customize"
+    };
+  }
+  else if ((flowFinish) || (gekksVisit)) {
+    KlaviyoSubscribe.attachToModalForm('#remarketing-popup', {
+      delay_seconds: 0,
+      success_url: '?countdown-started',
+      ignore_cookie: true, 
+    }); 
+  }
+  sessionStorage.setItem('visitLogic', true)
+}
+})
+
+
 
 
 $(document).ready(function(){

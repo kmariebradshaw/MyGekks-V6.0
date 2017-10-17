@@ -1463,6 +1463,7 @@ body > footer .social {
     display: block;
     text-align: center;
     padding: 40px 0;
+    cursor: pointer;
 }
 
 .ba-slider {
@@ -3644,7 +3645,7 @@ body .khalf {
 body .klaviyo_modal .klinner .klaviyo_subheader {
     color: black;
     font-weight: normal;
-    line-height: 1;
+    line-height: normal;
 }
 body .klaviyo_modal .klinner .klaviyo_fieldset {
     padding: 0 !important;
@@ -3656,9 +3657,12 @@ body .klaviyo_modal .klinner .khalf .klaviyo_form_actions {
 }
 body .klaviyo_modal .klinner .klaviyo_submit_button span { font-size: 7pt; }
 
+
 .klinner input[type=email] {
-  font-size: 12px;
+  font-size: 8pt !important;
   }
+
+
 
   .klaviyo_modal .klaviyo_header_close {
     top: 5px !important;
@@ -3695,6 +3699,7 @@ em { font-weight: bold; }
   .klaviyo_subheader {
     color: black;
     font-weight: normal;
+    line-height: normal !important;
   }
 
   .klaviyo_fieldset { padding: 10px 0 0; }
@@ -3702,7 +3707,9 @@ em { font-weight: bold; }
   input[type=email] {
     border: 1px solid #33ffcc !important;
     border-radius: 10px !important;
-    height: 30px !important;
+    height: 35px !important;
+    line-height: normal !important;
+    color: black !important;
   }
   .klaviyo_submit_button {
     height: auto;
@@ -3720,6 +3727,8 @@ em { font-weight: bold; }
 }
   }
 }
+
+
 
 body .khalf {
     display: inline-block;
@@ -3801,3 +3810,71 @@ body .klaviyo_modal .exitpop {
 }
 
 body .klaviyo_modal .exitpop {  font-family:MontserratB!important;}
+
+@media only screen and (max-width: 400px) {
+  .remarketing-pop form {
+    .no-thanks p { font-size: 11pt !important; }
+  .klaviyo_header {
+    font-size: 20pt !important; 
+    line-height: 30px !important; 
+  }
+}
+}
+.remarketing-pop {
+    background: url("{{'interactive-background.jpg' | asset_url}}") !important;
+
+form {
+  .klaviyo_subheader {
+    text-align: left; 
+    color: black; 
+  }
+  .klaviyo_header {
+    text-align: left;
+    font-size: 26pt; 
+    font-weight: bolder; 
+    line-height: 40px; 
+  }
+
+  input[type=email]{ 
+    border: 2px solid black !important; 
+    height: 50px !important; 
+    background: white !important;
+  }
+
+  button {
+    width: 50% !important;
+    float: right;
+    background: #33ffcc !important;
+      span {
+        background: #33ffcc !important;
+        color: black !important;
+        height: auto !important;
+        line-height: 1 !important;
+        font-size: 12pt !important;
+        font-weight: normal !important;
+        text-transform: none !important;
+     }
+  }
+
+  .no-thanks {
+    width: 48%;
+    float: left;
+    background: lightgray;
+    cursor: pointer;
+    height: 55px;
+    p {
+    padding: 7px;
+    line-height: normal;
+    text-align: center;
+    font-size: 12pt;
+    }
+  }
+}
+}
+
+
+
+
+body .klaviyo_modal form input[type=email] { line-height: normal !important; }
+
+

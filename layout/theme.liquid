@@ -232,7 +232,7 @@
             </nav>
           </div>
           <div class="half">
-            <a href="#"id="referafriend" onclick="ga('send', 'event', 'Refer', 'Footer', 'Click');">refer a friend!</a>
+            <div id="referafriend" onclick="ga('send', 'event', 'Refer', 'Footer', 'Click');">refer a friend!</div>
             <div id="psocial">
               <h3 id="fsocial">follow us on social!</h3>
               <ul class="social">
@@ -269,6 +269,6 @@
     {% if template == 'product' %}<script src="//www.codeblackbelt.com/js/modules/cool-image-magnifier/main.min.js?shop=my-gekks.myshopify.com" async></script>{% endif %}
     <script>$(window).width()>800&&($(".collection").hover(function(){$(".icon-nav").addClass('ib')},function(){$(".icon-nav").removeClass('ib')}),$(".collection-m").hover(function(){$(".icon-nav-m").addClass('ib')},function(){$(".icon-nav-m").removeClass('ib')})); </script>
     <script>var offset=$(".user-info").offset(),height=$(".user-info").height(),width=$(".user-info").width(),top=offset.top+height+50+"px",right=offset.left+width-170+"px";$(window).width()>1366&&$("#CartContainer").css({position:"fixed",left:right,top:top});</script>
-    <script>$("#referafriend").click(function(){event.preventDefault(),/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)?document.getElementById("k_id_modal").style.display="inline-block":document.getElementById("desktop_refer_k").style.display="inline-block"});</script>
+    <script>$("#referafriend").click(function(){/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)?document.getElementById("k_id_modal").style.display="inline-block":document.getElementById("desktop_refer_k").style.display="inline-block"});</script>
   </body>
 </html>
