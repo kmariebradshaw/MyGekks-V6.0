@@ -147,6 +147,7 @@
       var fs = window.RequestFileSystem || window.webkitRequestFileSystem;
       if (fs) {
        sessionStorage.alreadyClicked = 1; 
+         sessionStorage.visitLogic = true; 
       } 
     });
     </script>
@@ -165,7 +166,6 @@ $(document).ready(function(){
   createCookie("gekksVisit", "remarketing", 7)
   // createCookie("pushtoFlow", "redirect", 14)
   createCookie("flowFinish", "learnMore", 14)
-  sessionStorage.visitLogic = true; 
 })
 </script>
       <div style="display:inline;">

@@ -32,7 +32,6 @@ $(document).ready(function(){
   var flowFinish = readCookie('flowFinish')
   var gekksVisit = readCookie('gekksVisit')
   if ((!flowFinish) && (!gekksVisit)){
-    console.log('literally no cookies')
     createCookie("gekksVisit", "remarketing", 7)
     createCookie("flowFinish", "learnMore", 14)
     if (!(window.location.href.indexOf("?sh=d") > -1)) {
