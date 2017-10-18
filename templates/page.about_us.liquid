@@ -1,6 +1,84 @@
 <style>
 @media only screen and (max-width: 455px) {
-  .timeline { width: 320px; }
+  .timeline { width: 320px; height: 1400px;}
+   .timeline-text { padding: 5px; }
+  .timeline-year { font-size: 12pt; }
+  .timeline-expo { font-size: 7pt; }
+  #t1 {
+    top: 125px;
+  }
+  #t2 {
+    top: 134px;
+    left: 22px;
+  }
+  #t3 {
+    top: 235px;
+    left: 125px;
+  }
+
+  #t4{
+    top: 346px;
+    left: -10px;
+  }
+  #t5 {
+    top: 267px;
+    left: 15px;
+  }
+
+  #t6 {
+    top: 150px;
+    right: 132px;
+  }
+
+  #t7 {
+    top: 328px;
+    left: 152px;
+  }
+
+  #t8 {
+    top: 355px;
+    right: 123px;
+  }
+
+  #t9 {
+    top: 441px;
+    left: -2px;
+  }
+
+  #t10  {
+    top: 596px;
+    left: -135px;
+}
+
+ #t11 {
+    top: 420px;
+    left: 145px;
+}
+
+
+#t12 {
+    top: 270px;
+    right: -12px;
+}
+
+#t13  {
+    top: 481px;
+    left: -9px;
+}
+
+#t14 {
+    top: 473px;
+}
+
+#t15 {
+    top: 600px;
+    left: 153px;
+}
+
+#t16 {
+    top: 608px;
+    right: 153px;
+}
 }
 
 @media only screen and (min-width: 456px) and (max-width: 588px) {
@@ -8,42 +86,71 @@
     width: 456px; 
     height: 1993.05px;
   }
-  .col-1 { left: 70px;}
-  .col-2 {}
-  .row-1 { margin-top: ; }
-  .row-2 {}
-  .row-3 {}
-  .row-4 {}
-  .row-5 {}
-  .row-6 {}
-  .row-7 {}
-  .row-8 {}
 
-  #t1 {
-    top: 170px;
-    left: 56px;
-}
-  #t2 {
+ #t1 {
     top: 180px;
-    left: 135px;
+    left: -17px;
 }
- #t3 {
-    top: 435px;
-    left: -30px;
+#t2 {
+    top: 190px;
+    left: 37px;
 }
-  #t4 {top: 175px;}
-  #t5 {top: 175px;}
-  #t6 {top: 175px;}
-  #t7 {top: 175px;}
-  #t8 {top: 175px;}
-  #t9 {top: 175px;}
-  #t10 {top: 175px;}
-  #t11 {top: 175px;}
-  #t12 {top: 175px;}
-  #t13 {top: 175px;}
-  #t14 {top: 175px;}
-  #t15 {top: 175px;}
-  #t16 
+#t3 {
+    top: 345px;
+    left: 167px;
+}
+#t4 {
+    top: 508px;
+    left: 3px;
+}
+#t5 {
+    top: 393px;
+    left: 2px;
+}
+#t6 {
+    top: 240px;
+    left: -180px;
+}
+#t7 {
+    top: 515px;
+    left: 204px;
+}
+#t8 {
+    top: 547px;
+    left: -169px;
+}
+#t9 {
+    top: 677px;
+    right: -49px;
+}  
+#t10 {
+    top: 888px;
+    left: -109px;
+}
+#t11 {
+    top: 824px;
+    left: -61px;
+}
+#t12 {
+    top: 450px;
+    right: -185px;
+}
+#t13 {
+    top: 922px;
+    left: -203px;
+}
+#t14 {
+    top: 765px;
+    left: 192px;
+}
+#t15 {
+    top: 1063px;
+    left: 18px;
+}
+#t16 {
+    top: 969px;
+    right: 109px;
+}
   .timeline-text { padding: 10px; }
   .timeline-year { font-size: 18pt; }
   .timeline-expo { font-size: 8pt; }
@@ -94,8 +201,9 @@
 }
 
 .timeline {
-  background-size: contain;
+  background-size: 100%;
   background-repeat: no-repeat;
+  margin: 0 auto;
 }
 
 
@@ -133,13 +241,13 @@
 <h1 class="timeline-year">2014</h1><br>
 <p class="timeline-expo">Christian quits his job<br> to solely focus on<br> launching Gekks on<br> Kickstarter</p>
 </div>
-{% comment %}<div class="timeline-text" id="t5">
+<div class="timeline-text" id="t5">
 <h1 class="timeline-year">2014</h1><br>
-<p class="timeline-expo">Justin calls <br> Christian while he is <br> working on a Saturday<br>(see finance monkey)<br> and convinces him there<br> is a large market<br>for Gekks</p>
+<p class="timeline-expo">Justin calls <br class="do"> Christian<br class="mo">while he is <br class="do"> working <br class="mo"> on a Saturday<br class="do"><br class="mo"> (see finance monkey)<br> and convinces him<br class="mo">  there<br class="do"> is a <br class="mo">large market<br>for Gekks</p>
 </div>
 <div class="timeline-text" id="t6">
 <h1 class="timeline-year">2013</h1><br>
-<p class="timeline-expo">Justin moves to NYC and is annoyed by his<br>sticky boat shoes on hot summer days, and <br> wants a better solution to no-show socks. He<br> buys a sewing machine and plays with silicone<br> adhesive in his kitchen (against his wife's <br> wishes) trying to stick a sock inside a shoe</p>
+<p class="timeline-expo">Justin moves to NYC and is annoyed<br class="mo"> by his<br class="do">sticky boat shoes on hot<br class="mo"> summer days, and <br class="do"> wants a better<br class="mo"> solution to no-show socks. He<br class="do"> buys a<br class="mo"> sewing machine and plays with<br class="mo"> silicone<br class="do"> adhesive in his kitchen<br class="mo"> (against his wife's <br class="do"> wishes) trying to<br class="mo"> stick a sock inside a shoe</p>
 </div>
 <div class="timeline-text" id="t7">
 <h1 class="timeline-year">2014</h1><br>
@@ -147,8 +255,9 @@
 </div>
 <div class="timeline-text" id="t8">
 <h1 class="timeline-year">2014</h1><br>
-<p class="timeline-expo">Justin and Christian live in a small<br> town in upstate New York for three<br> months while programming a silicone<br> coating machine that manufactures<br> the first batch of Gekks</p>
+<p class="timeline-expo">Justin and Christian live in a small<br> town in upstate New York for <br class="mo">three<br class="do"> months while programming<br class="mo"> a silicone<br class="do"> coating machine that<br class="mo"> manufactures<br class="do"> the first<br class="mo"> batch of Gekks</p>
 </div>
+
 <div class="timeline-text" id="t9">
 <h1 class="timeline-year">2014</h1><br>
 <p class="timeline-expo">Justin and his wife<br> move back to Chicago<br> and have Isabella</p>
@@ -181,7 +290,7 @@
 <h1 class="timeline-year">2017</h1><br>
 <p class="timeline-expo">Justin and Christian hard at <br> work developing Gekks for <br> babies, Gekks for kids, Gekks for<br> high heels and a cool, futuristic<br> fastening system... more to come</p>
 </div>
-{% endcomment %}
+
 
 
 </div>
