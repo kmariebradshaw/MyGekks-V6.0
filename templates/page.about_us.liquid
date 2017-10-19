@@ -159,7 +159,7 @@
 
 }
 
-@media only screen and (min-width: 589px) and (max-width: 848px) {
+@media only screen and (min-width: 589px) and (max-width: 680px) {
  .timeline { width: 589px; height: 1500px;}
   .timeline-text { padding: 10px; }
   .timeline-year { font-size: 20pt; }
@@ -229,8 +229,77 @@
     right: 109px;
     left: 0;
 }
+}
 
-
+@media only screen and (min-width: 681px) and (max-width: 848px) {
+  .timeline { width: 681px; height: 1700px;}
+  .timeline-text { padding: 10px; }
+  .timeline-year { font-size: 20pt; }
+  .timeline-expo { font-size: 8pt; }
+ #t1 {
+    top: 156px;
+    left: 56px;
+}
+ #t2 {
+    top: 163px;
+    left: 104px;
+}
+ #t3 {
+    left: 120px;
+    top: 185px;
+}
+#t4 {
+    right: 437px;
+    top: 334px;
+}
+#t5 {
+    top: 218px;
+    left: 200px;
+}
+#t6 {
+    top: 331px;
+    left: 184px;
+}
+#t7 {
+    top: 571px;
+    right: 402px;
+}
+#t8 {
+    top: 459px;
+    left: 231px;
+}
+#t9 {
+    top: 444px;
+    left: 247px;
+}
+#t10 {
+    top: 722px;
+    right: 301px;
+}
+#t11 {
+    top: 675px;
+    right: 269px;
+}
+#t12 {
+    top: 525px;
+    left: 368px;
+}
+#t13 {
+    top: 842px;
+    right: 196px;
+}
+#t14 {
+    top: 762px;
+    right: 179px;
+}
+#t15 {
+    top: 732px;
+    left: 300px;
+}
+#t16 {
+    top: 1020px;
+    right: 94px;
+}
 }
 
 @media only screen and (min-width: 849px) and (max-width: 1107px) {
@@ -288,10 +357,10 @@
       </header> -->
       <div class="page" style="text-align:center;">
         <img src="{{'About-Us.jpg' | asset_url}}" alt="Justin and Christian" id="jac" />
-          <p style="font-weight: 300">Brothers Justin and Christian</p>
+          <p id="brother-description" style="font-weight: 300">Brothers Justin and Christian</p>
 
       </div>
-<h1 style="text-align: center;">our story</h1> 
+<h1 id="gekks-story" style="text-align: center;">our story</h1> 
 {% comment %}<img src="{{'about-us-desktop.jpg' | asset_url}}" alt="Our Timeline" class="tw do" id="about-us-desktop"/>
 <img src="{{'about-us-mobile.jpg' | asset_url}}" alt="Our Timeline" class="tw mo" id="about-us-mobile"/>{% endcomment %}
 <div class="timeline">
