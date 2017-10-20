@@ -538,10 +538,14 @@
 .timeline-expo { font-weight: lighter; }
 
 @media only screen and (max-width: 588px) {
-  .timeline { background-image: url("{{'about-us-mobile.jpg' | asset_url }}"); }
+  .timeline { background-image: url("{{'about-us-mobile2.jpg' | asset_url }}"); }
 }
 
-@media only screen and (min-width: 589px) {
+@media only screen and (min-width: 589px) and (max-width: 680px) {
+  .timeline { background-image: url("{{'about-us-desktop2.jpg' | asset_url }}"); }
+}
+
+@media only screen and (min-width: 681px) {
   .timeline { background-image: url("{{'about-us-desktop.jpg' | asset_url }}"); }
 }
 
