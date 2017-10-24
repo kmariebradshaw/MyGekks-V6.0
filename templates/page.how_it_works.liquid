@@ -500,6 +500,81 @@ th { padding: 20px 10px !important; border: 1px solid white !important;}
 table tbody td {
     border: 1px solid white !important;
 }
+
+.hiw-bullets li:nth-of-type(1):before{ content: "1"; }
+.hiw-bullets li:nth-of-type(2):before{ content: "2"; }
+.hiw-bullets li:nth-of-type(3):before{ content: "3"; }
+.hiw-bullets li:nth-of-type(4):before{ content: "4"; }
+
+.hiw-bullets li:before{
+  vertical-align: top;
+  line-height: inherit;
+  float: left;
+  color: #33ffcc;
+  font-weight: 700;
+}
+
+.hiw-bullets {
+    color: white;
+    font-weight: lighter;
+    letter-spacing: normal;
+    line-height: 1;
+    display: inline-block;
+}
+
+.hiw-bullets li {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+@media only screen and (max-width: 588px) {
+ .hiw-bullets li {
+    width: 67%;
+    max-width: 200px;
+    margin: 10px 23%;
+}
+  .hiw-bullets li:before {
+    font-size: 55pt;
+    margin-top: -18px;
+    margin-right: 25px;
+  }
+  .hiw-bullets {
+    font-size: 9pt;
+    margin: 30px auto;
+  }
+}
+
+@media only screen and (min-width: 589px) and (max-width: 1080px) {
+  .hiw-bullets {
+    font-size: 11pt;
+    margin: 50px auto;
+  }
+  .hiw-bullets li {
+    width: 40%;
+    margin-bottom: 40px;
+  }
+  .hiw-bullets li:before {
+    font-size: 50pt;
+    margin-top: -14px;
+    margin-right: 10px;
+  }
+}
+@media only screen and (min-width: 1081px) {
+  .hiw-bullets li:before{
+    font-size: 93pt;
+    margin-top: -23px;
+    margin-right: 25px;
+  }
+  .hiw-bullets {
+    font-size: 20pt;
+    margin: 50px auto;
+  }
+  .hiw-bullets li {
+    width: 40%;
+    margin-bottom: 40px;
+  }
+}
 </style>
 
 <main>
@@ -663,8 +738,12 @@ $('body').on('click touchend', function(e) {
   </div>
  <div id="infographic-hiw" class="darkgray">
    <h1>here's how it works...</h1>
-   <img src="{{'HIW-explaination.jpg' | asset_url }}" id="hiw-explained" class="tw do" />
-   <img src="{{'HIW-explaination-m.jpg' | asset_url }}" id="hiw-explained" class="tw mo" />
+   <ul class="hiw-bullets">
+    <li>Choose between ballet <br class="do">flats, loafers, sneakers or <br class="do"> all three pairs of Gekks.</li>
+    <li>When your package <br class="do">arrives, install gripper set<br class="do"> into your shoe. </li>
+    <li>Place Gekks into <br class="do"> your shose and <br class="do"> secure onto grippers.</li>
+    <li>Slip your foot into<br class="do"> your shoe and go!</li>
+   </ul>
   </div>
  
   <div id="size-order">
