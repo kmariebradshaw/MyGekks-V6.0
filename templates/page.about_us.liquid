@@ -87,7 +87,7 @@
         height: 1993.05px
     }
 
-    html:lang(en)>body .timeline-text { padding: 10px 8.65px !important;  } 
+    .safari .timeline-text { padding: 10px 8.65px !important;  } 
     #t1 {
         top: 179px;
         left: -17px
@@ -257,7 +257,7 @@
     .timeline-text {
         padding: 10px
     }
-    html:lang(en)>body .timeline-text { padding: 10px 8px !important;  } 
+    .safari .timeline-text { padding: 10px 8px !important;  } 
 
     .timeline-year {
         font-size: 20pt;
@@ -343,7 +343,7 @@
         padding: 15px
     }
 
-        html:lang(en)>body .timeline-text { padding: 15px 16px !important;  } 
+    .safari .timeline-text { padding: 15px 16px !important;  } 
 
     .timeline-year {
         font-size: 22pt;
@@ -629,7 +629,21 @@
 
 {% comment %}html:lang(en)>body  .classname {} 
 {% endcomment %}  
-
+<script>
+$(document).ready(function(){
+if (navigator.userAgent.search("MSIE") >= 0) {
+}
+else if (navigator.userAgent.search("Chrome") >= 0) {
+}
+else if (navigator.userAgent.search("Firefox") >= 0) {
+}
+else if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
+  $('.timeline').addClass('safari'); 
+}
+else if (navigator.userAgent.search("Opera") >= 0) {
+}
+});
+</script>
 <main id="page">	     
   <section class="content">
     <div class="wrap">
