@@ -473,6 +473,33 @@ transform: translateY(45deg);
 
 .b-title { white-space: nowrap; }
 }
+
+td, th { vertical-align: middle; text-align: center;}
+
+.table-title { font-weight: bolder; }
+td { font-weight: lighter;  }
+@media only screen and (min-width: 1081px) {
+  table td, table th{ font-size: 20pt !important; }
+}
+
+@media only screen and (max-width: 1080px) and (min-width: 925px) {
+  body table tbody td, body table tbody th{ padding: 15px 10px !important; font-size: 16pt !important; }
+}
+@media only screen and (min-width: 589px) and (max-width: 924px) {
+  body table tbody td, body table tbody th{ padding: 5px !important; font-size: 11pt !important; }
+}
+@media only screen and (max-width: 588px) {
+  body table tbody td, body table tbody th{ padding: 5px !important; font-size: 10pt !important; }
+}
+
+.lg { background-color: #f2f2f2 !important; }
+.dg, .table-title { background-color: #d8d8d8; }
+
+th { padding: 20px 10px !important; border: 1px solid white !important;}
+
+table tbody td {
+    border: 1px solid white !important;
+}
 </style>
 
 <main>
@@ -649,7 +676,40 @@ $('body').on('click touchend', function(e) {
   
 
 <div id="size">
-    <img src="{{'Website-SizeChart2.jpg' | asset_url }}" class="tw"/>
+  <table>
+    <tr>
+      <th colspan="2" class="blank-row"></th>
+      <th class="t-size table-title">small</th>
+      <th class="t-size table-title">medium</th>
+      <th class="t-size table-title">large</th>
+    </tr>
+    <tr class="lg">
+      <td rowspan="2" class="table-title">mens</td>
+      <td class="table-title lg">US</td>
+      <td>6.5 - 8</td>
+      <td>8.5 - 11</td>
+      <td>11.5+</td>
+    </tr>
+    <tr class="dg">
+      <td class="table-title">UK</td>
+      <td>39 - 41</td>
+      <td>42 - 44</td>
+      <td> 44+ </td>
+    </tr>
+    <tr class="lg">
+      <td rowspan="2" class="table-title">womens</td>
+      <td class="table-title lg">US</td>
+      <td>5 - 6.5</td>
+      <td>7 - 8.5</td>
+      <td>9 - 11.5</td>
+    </tr>
+    <tr class="dg">
+      <td class="table-title">UK</td>
+      <td>35 - 37</td>
+      <td>38 - 39</td>
+      <td>40 - 42</td>
+    </tr>
+  </table>
 </div>
 
   </div>
