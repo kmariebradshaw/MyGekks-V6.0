@@ -595,6 +595,14 @@ $(document).ready(function(){
   }
 });
 
+$(window).on('resize', function(){
+  if ($(window).width() > 1366) {
+    $('body section #step-five').css('margin-left', '-358px')
+  }
+  else 
+    $('body section #step-five').css('margin-left', '')
+
+})
 function nextSlide(e) {
     $(window).scrollTop(0), e.parent().parent().hide().next().fadeIn("slow"), contCount += 16.666666666666668, $("#progress-bar").css("width", contCount + "%")
 }
@@ -694,20 +702,10 @@ $(document).on("ready", function() {
 }); 
 
 $('.flipper').click(function(){
-    // UX option 1 - odd clicks flip, even un-selects
     if ( $(this).children().children().first().hasClass('highlight')) {
     $(this).toggleClass('flipped');  
   } 
-//  
-// UX option 2 - you can only flip once and you can't unselect it because IDK
-    // if (!($(this).hasClass('flipped'))){
-    //     $(this).addClass('flipped')
-    // }
 });
 
-// UX option 3 - the click that flips it back also unselects it (this seems like the worst one)
-// $('.back-card').click(function(){
-//     $(this).parent().children().children().first('sbutton').removeClass('highlight'); 
-// })
 
 </script>

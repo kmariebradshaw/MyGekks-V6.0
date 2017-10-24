@@ -1,9 +1,17 @@
 <script type="text/javascript" src="//www.klaviyo.com/media/js/public/klaviyo_subscribe.js"></script>
-  <script type="text/javascript">
+  
+<script type="text/javascript">
     KlaviyoSubscribe.attachToForms('#email_signup', {
       hide_form_on_success: true, 
        success_message: "your discount code is on its way!"
-});
+  });
+  KlaviyoSubscribe.attachToForms('#email_signup-desktop', {
+      hide_form_on_success: true, 
+      success_message: "<div class='success_feedback' style='margin-top: -360px;'><div class='klaviyo_header'><b>Thank you!</b></div><div class='klaviyo_subheader'>Your friend will receive their<br>code shortly. In the <br>meantime, here is yours!</div><div class='klaviyo_header'>GKK82030</div></div>",       
+      success: function ($form) {
+         $form.find('.hide_on_submit').hide();
+      },
+  });
 </script>
 
 <div class="klaviyo_modal" id="k_id_modal" style="display:none;">
@@ -29,13 +37,6 @@
             <span style="background: gray;box-shadow: none;" id="submit-span">Submit</span>
           </button>
         </div>
-     <div id="follow-us">
-      <h3 id="fsocial">follow us on social!</h3>
-      <ul class="social-pop">
-        <li><div class="fb-like" data-href="https://www.facebook.com/GekksLowCutLiners/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div></li>
-        <li><a href="{{ settings.instagram_link }}" title="{{ shop.name }} on Instagram" target="_blank"><img src="{{'instagram-new-icon.png' | asset_url}}" alt="Instagram" style="max-height: 30px;"/></a></li>
-      </ul>
-    </div>
         <div class="klaviyo_below_submit"></div>
       </form>
       <div id="nophone" style="display: none;">please text a friend before submitting</div>
@@ -43,9 +44,76 @@
       <div class="success_message" style="font-size: 14pt;" ></div>
     </div>
   </div>
+{% comment %}Desktop{% endcomment %}
+  <div class="klaviyo_modal" id="desktop_refer_k" style="display:none;">
+    <div class="klaviyo_inner">
+   <a href="#" class="klaviyo_close_modal klaviyo_header_close kclose">×</a>
+    
+     <form id="email_signup-desktop" class="klaviyo_styling klaviyo_standard_embed_Qs4S7M " action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" novalidate="novalidate">
+  <input type="hidden" name="g" value="Qs4S7M">
+        <div class="klaviyo_fieldset hide_on_submit" style="text-align: center;">
+          <p style="margin-bottom: 15px;text-align:center;">refer a friend</p>
+          <h1 id="ref-deal">Give $5, Get $5</h1>
+          <p id="ref-exp">give a friend $5 off their first order, and you'll get $5 off your next order! Enter <em>your friend's</em> email below. </p>
+          <div class="klaviyo_field_group hide_on_submit">
+            <input type="email" value="" name="email" id="k_id_email" placeholder="Email" />
+          </div>
+        </div>
+        <div class="klaviyo_form_actions hide_on_submit">
+          <button type="submit" class="klaviyo_submit_button" style="background-image: none;background-color: transparent !important;height: 55px;">
+            <span style="background: #33ffcc; color: black; box-shadow: none;" id="submit-span">Submit</span>
+          </button>
+        </div>
+        <div class="klaviyo_below_submit"></div>
+      </form>
+      <div class="error_message" style="text-tranform:lowercase;"></div>
+      <div class="success_message" ></div>
+    </div>
+  </div>
+
 
 <style>
 
+@media only screen and (min-width: 470px) {
+  #desktop_refer_k .success_message .klaviyo_header {
+    font-size: 34pt;
+    font-weight: bolder;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: #222;
+}
+}
+
+@media only screen and (max-width: 469px) {
+    #desktop_refer_k .success_message .klaviyo_header {
+    font-size: 24pt;
+    font-weight: bolder;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: #222;
+  }
+
+  #desktop_refer_k .success_message .klaviyo_subheader {font-size: 11pt;}
+}
+
+#desktop_refer_k .klaviyo_inner form { margin: 0 auto !important; }
+#desktop_refer_k .klaviyo_inner { width: auto !important; }
+@media only screen and (max-width: 400px) {
+  body #desktop_refer_k form #ref-deal { text-transform: none !important; font-size: 19pt !important; }
+}
+#desktop_refer_k form {
+  min-height: 360px !important;
+}
+
+#desktop_refer_k form #ref-deal { text-transform: none !important; font-size: 24pt !important; }
+
+#desktop_refer_k form #k_id_email {
+    max-width: 90%;
+    margin: 10px;
+    height: 40px !important;
+}
 #text-friend {
     width: 90%;
     margin: 0 auto;
@@ -54,6 +122,13 @@
     text-align: center;
     padding: 10px;
 }
+
+.klaviyo_modal .klaviyo_header_close {
+    top: 5px !important;
+    right: 13px !important;
+}
+
+#desktop_refer_k form .klaviyo_fieldset { padding: 0; }
 
 #text-friend img { vertical-align: middle; } 
 
@@ -138,8 +213,7 @@ body .klaviyo_modal .success_message {
 
       else {
         setTimeout(function() {
-          Privy.show(248582);
-          console.log('referapal');
+         document.getElementById("desktop_refer_k").style.display = "inline-block";
         }, 5000)
       }
      }
@@ -164,14 +238,14 @@ body .klaviyo_modal .success_message {
 
     }); 
 
-    $('.klaviyo_submit_button').click(function(){
+    $('#k_id_modal .klaviyo_submit_button ').click(function(){
       if (text < 1) { 
         event.preventDefault();
         $('#nophone').show();
       }
     });
     $('.klaviyo_header_close').on('click', function() {
-      $('#k_id_modal').hide();
+      $(this).parent().parent().hide();
     });
 
 
