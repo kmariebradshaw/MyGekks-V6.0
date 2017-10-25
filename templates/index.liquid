@@ -1,5 +1,79 @@
 <style>#ctadb{width: 40%; height: 100px; margin: 50px 0; line-height: 100px; font-size: 24pt;}#ctadb:first-of-type{margin-right: 3%;}#sub-head{text-align: center;margin-top:0;}#slid-b{margin-top: 20px;}#newsletter{background-color: transparent}#masonry ul{position: absolute; width: 100%; max-width: 1366px; overflow: hidden;}.w-control-bar__region--right{display: none !important;}#gia{background-image: url("{{'gekksloading.gif' | asset_url}}"); background-repeat: no-repeat; background-position: center;margin-bottom:0;}
 
+#vogue-quote-text {
+  letter-spacing: normal;
+  font-weight: lighter;
+  text-transform: none !important;
+  text-align: center;
+  line-height: 0.4;
+  margin-left: -25px;
+}
+
+#vogue-quote-text:after {
+    content: close-quote;
+    margin-left: 18px;
+}
+
+#vogue-quote-text:before { content: open-quote; }
+
+#vogue-quote-text:before, #vogue-quote-text:after {
+  font-weight: bolder;
+  position: relative;
+}
+
+#vogue-quote-text div {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 801px) {
+  #vogue-quote-text div { margin-left: 90px; }
+  #vogue-quote-text:before {
+    font-size: 90pt;
+    top: 52px;
+  }
+  #vogue-quote-text:after { 
+    font-size: 90pt;
+    top: 50px;
+  }
+  #vogue-quote-text { margin-left: -25px; }
+}
+@media only screen and (min-width: 589px) and (max-width: 800px) {
+  #vogue-quote-text {
+    font-size: 35px;
+    margin-left: -25px;
+  }
+  #vogue-quote-text:before {
+    font-size: 65pt;
+    top: 36px;
+  }
+  #vogue-quote-text:after {
+    font-size: 65pt;
+    top: 33px;
+    margin-left: 16px;
+  }
+  #vogue-quote-text div {margin-left: 70px !important;}
+}
+@media only screen and (max-width: 450px) {
+  #vogue-quote-text {
+    margin-left: -15px; 
+    font-size: 12pt;
+  }
+  #vogue-quote-text:before, #vogue-quote-text:after {font-size: 30pt ;}
+  #vogue-quote-text:before {top: 17px; }
+  #vogue-quote-text:after {top: 15px; margin-left: 5px;}
+  #vogue-quote-text div {margin-left: 40px ;}
+}
+@media only screen and (min-width: 451px) and (max-width: 588px) {
+  #vogue-quote-text {
+    margin-left: -25px;
+    font-size: 16pt;
+  } 
+  #vogue-quote-text:before, #vogue-quote-text:after {font-size: 50pt ;}
+  #vogue-quote-text:before {top: 31px; }
+  #vogue-quote-text:after {top: 29px; margin-left: 5px;}
+  #vogue-quote-text div {margin-left: 60px ;}
+}
 </style>
 <div class="index-sections"> <div id="additional-sections"> <div class="cbb-ignored-image">
 <img src="{{'atfstatic.jpg' | asset_url }}" alt="Socks, Reinvented" class="fw" />
@@ -54,9 +128,8 @@ j.Lb(t,0),j.$Css(t,"backgroundColor","#000"))):"IMG"==h&&"image"==j.$AttributeEx
     <a href="/collections/women/products/select" class="button double" id="ctadb" onclick="ga('send', 'event', 'Call To Action', 'Click', 'Shop Now CTA');">Shop Now</a> <a href="/pages/learn-more" class="button double" id="ctadb" onclick="ga('send', 'event', 'Call To Action', 'Click', 'Learn More CTA');">Learn More</a>
 </div>
 
-<img src="{{'VOGUE-quote.jpg' | asset_url}}" alt="Vogue - 'you will never understand how you lived without it" class="fw" />
-
-
+<h2 id="vogue-quote-text"> You will never understand<br><div> how you lived without it </div></h2>
+<img src="{{'VOGUE-quote-signature.png' | asset_url}}" alt="Vogue" class="fw"/> 
 
 {% comment %} start instagram feed {% endcomment %}
 {% comment %}<script type="text/javascript">
