@@ -68,7 +68,7 @@ $coupon = getParameterByName('coupon');
 console.log($coupon)
 
 if($coupon){
-  createCookie('discountCode', $coupon, { expires: 7 });
+  createCookie('discountCode', $coupon, { expires: 2 });
 }
 
 $discountCode = readCookie('discountCode');
