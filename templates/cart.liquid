@@ -15,6 +15,7 @@
         {% endif %}
 
         <form action="/cart" method="post" class="clearfix">
+        <input class="js-form-discount" type="hidden" name="discount" value="" >
           <div class="twothirds">
             <table>
               <thead>
@@ -78,7 +79,7 @@
                 {{ content_for_additional_checkout_buttons }}
               </p>
               {% endif %}
-              <p>
+              <p> 
                 <input type="submit" id="checkout" name="checkout" value="Checkout" style="margin-top: -10px; width: 100%;">
               </p>
             </center>
@@ -93,6 +94,7 @@
             {% endif %}
           </div>
         </form> 
+
         {% comment %} {% include 'gsx'%}{% endcomment%}
 
       </div>

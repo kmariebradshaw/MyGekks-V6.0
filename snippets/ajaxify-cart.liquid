@@ -85,7 +85,7 @@ Shopify.AjaxifyCart = (function($) {
           type: 'post',
           data: $addToCartForm.serialize(),
           success: function(itemData) {
-            // Re-enable add to cart button.
+            // Re-enable add to cart button. 
             $addToCartBtn.addClass('inverted');
             _setText($addToCartBtn, _config.addedToCartBtnLabel);
             _showFeedback('success',' Added to cart! <a href="/cart">View Cart</a>.<br>{% if product.collections.first.title == "Women" %}Shop for your <a href="/collections/men/products/mens-closet-pack">Man</a>, <a href="/collections/women/products/womens-closet-pack">Bestie</a>, <a href="/collections/women/products/womens-closet-pack">Girl</a>, <a href="/collections/men/products/mens-closet-pack">Boy</a>. {%else%}Shop for your <a href="/collections/women/products/womens-closet-pack">Girl</a>, <a href="/collections/men/products/mens-closet-pack">Boy</a>.{%endif%}',$addToCartForm);

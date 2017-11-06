@@ -6,7 +6,7 @@
                                          h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                                          (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
                                         })(window,document.documentElement,'async-hide','dataLayer',4000,
-                                           {'GTM-5NSXTXW':true});</script>
+                                            {'GTM-5NSXTXW':true});</script>
     <meta charset="utf-8">
     <meta name="robots" content="index, follow, archive">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
@@ -124,6 +124,9 @@
   b.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'a.klaviyo.com/media/js/analytics/analytics.js';
   var a = document.getElementsByTagName('script')[0]; a.parentNode.insertBefore(b, a);
   })();
+  </script>
+<script type="text/javascript">
+
 </script>
 <script type="application/javascript">(function(w,d,t,r,u){w[u]=w[u]||[];w[u].push({'projectId':'10000','properties':{'pixelId':'10035757'}});var s=d.createElement(t);s.src=r;s.async=true;s.onload=s.onreadystatechange=function(){var y,rs=this.readyState,c=w[u];if(rs&&rs!="complete"&&rs!="loaded"){return}try{y=YAHOO.ywa.I13N.fireBeacon;w[u]=[];w[u].push=function(p){y([p])};y(c)}catch(e){}};var scr=d.getElementsByTagName(t)[0],par=scr.parentNode;par.insertBefore(s,scr)})(window,document,"script","https://s.yimg.com/wi/ytc.js","dotq");</script>
     <div id="fb-root"></div>
@@ -136,8 +139,6 @@
 }(document, 'script', 'facebook-jssdk'));</script>
   </head>
   <body class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '/', '-' | split: '.' }} {% if template == 'index' or page.handle == 'store' %}zoom-aware{% endif %}">
-
-
     <header>
       <div class="wrap cbb-ignored-image" style="text-align: center;"><span class="banner">
         <a href="/collections/women/products/womens-closet-pack" onClick="ga('send', 'event', 'Banner', 'Click', 'Upgrade to Closet Pack');">
@@ -270,5 +271,6 @@
     <script>$(window).width()>800&&($(".collection").hover(function(){$(".icon-nav").addClass('ib')},function(){$(".icon-nav").removeClass('ib')}),$(".collection-m").hover(function(){$(".icon-nav-m").addClass('ib')},function(){$(".icon-nav-m").removeClass('ib')})); </script>
     <script>var offset=$(".user-info").offset(),height=$(".user-info").height(),width=$(".user-info").width(),top=offset.top+height+50+"px",right=offset.left+width-170+"px";$(window).width()>1366&&$("#CartContainer").css({position:"fixed",left:right,top:top});</script>
     <script>$("#referafriend").click(function(){/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)?document.getElementById("k_id_modal").style.display="inline-block":document.getElementById("desktop_refer_k").style.display="inline-block"});</script>
+
   </body>
 </html>
