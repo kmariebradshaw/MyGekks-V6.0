@@ -3,8 +3,8 @@
           <div id="close-cart" onclick="parentNode.style.display='none'">X</div>
 
     <form action="/cart" method="post" novalidate class="cart ajaxcart">
-    
-      <div class="ajaxcart__inner">
+      <input class="js-form-discount" type="hidden" name="discount" value="" >
+      <div class="ajaxcart__inner"> 
         {{#items}}
         <div class="ajaxcart__product">
           <div class="ajaxcart__row" data-line="{{line}}">
@@ -80,7 +80,6 @@
         <button type="submit" class="btn btn--secondary btn--full cart__checkout btn" name="checkout" style="margin-top: 0.5em;">
           {% endraw %}Checkout{% raw %}
         </button>
-        
       </div>
     </form>
   {% endraw %}

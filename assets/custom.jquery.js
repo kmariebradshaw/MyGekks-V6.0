@@ -61,6 +61,8 @@ function getParameterByName(name, url) {
   if (!results[2]) return '';
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
+
+function checkForDiscount() {
 $discountInput = $("input.js-form-discount");
 $coupon = getParameterByName('coupon');
 console.log($coupon)
@@ -70,13 +72,16 @@ if($coupon){
 }
 
 $discountCode = readCookie('discountCode');
+console.log($discountCode)
 
 if($discountCode){
   if ($discountInput.length > 0) { 
     $discountInput.val( $discountCode );
   }
 }
+}; 
 
+checkForDiscount(); 
 
 $(document).ready(function(){
   if (localStorage.getItem("timer")){    
