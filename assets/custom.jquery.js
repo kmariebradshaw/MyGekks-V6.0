@@ -28,6 +28,7 @@ if(window.location.href.indexOf("countdown") > -1) {
 }
 
 $(document).ready(function(){
+  var remarketingPop = readCookie('remarketingPop')
   if (!sessionStorage.getItem('visitLogic')) {
   var flowFinish = readCookie('flowFinish')
   var gekksVisit = readCookie('gekksVisit')
@@ -39,11 +40,14 @@ $(document).ready(function(){
     };
   }
   else if ((flowFinish) || (gekksVisit)) {
+    if (!remarketingPop) {
     KlaviyoSubscribe.attachToModalForm('#remarketing-popup', {
       delay_seconds: 0,
       success_url: '?countdown-started',
       ignore_cookie: true, 
     }); 
+    createCookie('remarketingPop', true, { expires: 7 });
+  } 
   }
   sessionStorage.setItem('visitLogic', true)
 }
@@ -65,14 +69,12 @@ function getParameterByName(name, url) {
 function checkForDiscount() {
 $discountInput = $("input.js-form-discount");
 $coupon = getParameterByName('coupon');
-console.log($coupon)
 
 if($coupon){
   createCookie('discountCode', $coupon, { expires: 2 });
 }
 
 $discountCode = readCookie('discountCode');
-console.log($discountCode)
 
 if($discountCode){
   if ($discountInput.length > 0) { 
