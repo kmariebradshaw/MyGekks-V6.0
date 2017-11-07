@@ -62,7 +62,6 @@
                             </div><br>
                       	        <button type="submit" name="add" id="add-to-cart-{{ product.id }} add-cart" class="onsubbutton" style="margin-top: 15px; min-width: 200px !important;"><span>{{ settings.add_to_cart_text }}</span></button>
                     <div class="price{% if product.price < product.compare_at_price_max %} sale{% endif %}" itemprop="price" content="{{ product.compare_at_price | money_without_currency }}">
-  <!--                     <p id="value-prop-lb" onclick="Privy.show(260325)">?</p> -->
                                       <span id="product-price-{{ product.id }}">{{ product.price | money }}</span>
                                   {% if product.price < product.compare_at_price_max and product.type == "Closet Pack" %}<span id="compare-price-{{ product.id }}">{{ product.compare_at_price | money }}</span>{% endif %}
                              </div>  
