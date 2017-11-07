@@ -29,7 +29,7 @@ if(window.location.href.indexOf("countdown") > -1) {
 
 $(document).ready(function(){
   var flowFinish = readCookie('flowFinish')
-  var gekksVisit = readCookie('gekksVisit∂')
+  var gekksVisit = readCookie('gekksVisit')
   if ((!flowFinish) && (!gekksVisit)){
     createCookie("gekksVisit", "remarketing", 7)
     createCookie("flowFinish", "learnMore", 14)
