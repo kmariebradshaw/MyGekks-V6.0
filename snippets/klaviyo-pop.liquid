@@ -103,35 +103,4 @@ $(document).ready(function(){
 });
 </script>
 
-{% comment %} Remarketing {% endcomment %}
 
-<div class="klaviyo_modal" id="remarketing-popup" style="display:none;">
-   <div class="klaviyo_inner remarketing-pop">
-   <a href="#" class="klaviyo_close_modal klaviyo_header_close kclose">×</a>
-   <form action="//manage.kmail-lists.com/subscriptions/subscribe" method="POST" novalidate="novalidate" class="klaviyo_subscription_form">
-      <input type="hidden" name="g" value="Ai9wnf"> 
-   <div class="hide_on_submit">
-      <div class="klaviyo_fieldset">
-        <p class="klaviyo_header hide_on_submit">Welcome Back!<br> Here's a flash<br>offer just for you!</p> 
-        <p class="klaviyo_subheader hide_on_submit">20% off orders over<br> $20 for the next 20 minutes</p>
-      </div>
-      <div class="klaviyo_fieldset hide_on_submit">
-      <div class="klaviyo_field_group">
-        <input type="email" id="newsletter_popup_$email" placeholder="Email" name="email"></div>
-      </div> 
-      <div class="klaviyo_fine_print"></div>
-      <div class="klaviyo_form_actions hide_on_submit">
-        <div class="no-thanks klaviyo_close_modal">
-          <p>No thanks, I'll pay full price</p>
-        </div>
-          <button type="submit" class="klaviyo_submit_button">
-          <span>Yes! Start the Clock</span>
-          </button>
-      </div>
-      <div class="klaviyo_below_submit" ></div>
-      </div>
-   </form>
-  <div class="success_message" ></div>
-  <div class="error_message" ></div>
-   </div>
-</div>
