@@ -596,18 +596,23 @@ $(document).ready(function(){
 });
 
 $(window).on('resize', function(){
+  stepFivePosition(); 
+})
+
+function stepFivePosition(){   
   if ($(window).width() > 1366) {
     $('body section #step-five').css('margin-left', '-358px')
   }
-  else 
+  else {
     $('body section #step-five').css('margin-left', '')
-
-})
+  }
+}
 function nextSlide(e) {
     $(window).scrollTop(0), e.parent().parent().hide().next().fadeIn("slow"), contCount += 16.666666666666668, $("#progress-bar").css("width", contCount + "%")
 }
 var contCount = 16.666666666666;
 $(document).on("ready", function() {
+  stepFivePosition(); 
     var e = 0,
         s = 0,
         o = 0,
