@@ -142,15 +142,6 @@
     </script>
     <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
     </script>
-    <script>
-    $(document).ready(function() {
-      var fs = window.RequestFileSystem || window.webkitRequestFileSystem;
-      if (fs) {
-       sessionStorage.alreadyClicked = 1; 
-         sessionStorage.visitLogic = true; 
-      } 
-    });
-    </script>
 <script>
    function createCookie(name,value,days) {
     var expires = "";
@@ -162,11 +153,10 @@
     document.cookie = name + "=" + value + expires + "; path=/";
   }
 
-$(document).ready(function(){
-  createCookie("gekksVisit", "remarketing", 7)
-  // createCookie("pushtoFlow", "redirect", 14)
-  createCookie("flowFinish", "learnMore", 14)
-})
+  $(document).ready(function(){
+    createCookie("gekksVisit", "remarketing", 7)
+    createCookie("flowFinish", "learnMore", 14)
+  })
 </script>
       <div style="display:inline;">
         <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/973442114/?value=0&amp;guid=ON&amp;script=0"/>

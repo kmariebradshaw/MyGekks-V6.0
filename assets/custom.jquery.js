@@ -28,10 +28,8 @@ if(window.location.href.indexOf("countdown") > -1) {
 }
 
 $(document).ready(function(){
-  var remarketingPop = readCookie('remarketingPop')
-  if (!sessionStorage.getItem('visitLogic')) {
   var flowFinish = readCookie('flowFinish')
-  var gekksVisit = readCookie('gekksVisit')
+  var gekksVisit = readCookie('gekksVisit∂')
   if ((!flowFinish) && (!gekksVisit)){
     createCookie("gekksVisit", "remarketing", 7)
     createCookie("flowFinish", "learnMore", 14)
@@ -39,18 +37,6 @@ $(document).ready(function(){
           window.location.href="/pages/customize"
     };
   }
-  else if ((flowFinish) || (gekksVisit)) {
-    if (!remarketingPop) {
-    KlaviyoSubscribe.attachToModalForm('#remarketing-popup', {
-      delay_seconds: 0,
-      success_url: '?countdown-started',
-      ignore_cookie: true, 
-    }); 
-    createCookie('remarketingPop', true, { expires: 7 });
-  } 
-  }
-  sessionStorage.setItem('visitLogic', true)
-}
 })
 
 function getParameterByName(name, url) {
