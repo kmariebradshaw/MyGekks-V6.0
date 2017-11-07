@@ -69,11 +69,14 @@ if($discountCode){
 }
 }; 
 
-checkForDiscount(); 
+$(document).ready(function(){
+  checkForDiscount(); 
+}); 
 
 $(document).ready(function(){
   if (localStorage.getItem("timer")){    
     $('span a h4').hide();
+    $('#activate-countdown').hide(); 
     $('#countdown').show();
     var minutesleft = 20;
     var secondsleft = 0; 
@@ -101,7 +104,6 @@ $(document).ready(function(){
       
       if(now >= end || localStorage.getItem("end") == "Invalid Date") { 
         $('#countdown').hide();
-       
         clearTimeout(interval);
         localStorage.setItem("end", null)
         localStorage.clear()
@@ -114,4 +116,9 @@ $(document).ready(function(){
     }
     var interval = setInterval(counter, 1000);
   }
+     else if (localStorage.getItem("activate")) {
+      $('span a h4').hide(); 
+      $('#countdown').hide(); 
+      $('#activate-countdown').show(); 
+    }
 });

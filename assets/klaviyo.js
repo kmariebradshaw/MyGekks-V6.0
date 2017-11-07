@@ -1,5 +1,6 @@
 var KlaviyoSubscribe = KlaviyoSubscribe || {};
 (function() {
+    var successSubmit = false
     if (!KlaviyoSubscribe._loaded) {
         KlaviyoSubscribe._loaded = !0;
         var m = {
@@ -202,7 +203,7 @@ var KlaviyoSubscribe = KlaviyoSubscribe || {};
                                 fbq('track', 'CompleteRegistration', {currency: 'USD', value: 0});
                                 a.parent().find(".success_message, .error_message").hide();
                                 a.find(".klaviyo_submit_button").attr("disabled", !1);
-                                c.success ? (KlaviyoSubscribe.setClosedModalCookie(), e = a.find(".success_message").show(), e.length || (e = a.parent().find(".success_message").show()), window._learnq &&
+                                c.success ? (KlaviyoSubscribe.setClosedModalCookie(), e = a.find(".success_message").show(), successSubmit = true, e.length || (e = a.parent().find(".success_message").show()), window._learnq &&
                                     _learnq.push && (g = a.find('[name="email"]').val()) && (_learnq.push(["identify", {
                                         $email: g
                                     }]), _learnq.push(["trackActivity"])), b.success_url ? window.location = b.success_url : (!0 !== b.custom_success_message && e.html(b.success_message || '<div class="klaviyo_header">Thanks for subscribing!</div><div class="klaviyo_subheader">Check your email for a confirmation message.</div>').end(), !0 === b.hide_form_on_success && (a.find(".klaviyo_field_group input, .klaviyo_form_actions").hide(), a.is(".klaviyo_horizontal_form") &&
@@ -287,10 +288,20 @@ var KlaviyoSubscribe = KlaviyoSubscribe || {};
             KlaviyoSubscribe.setHasClosedModalCookieName(b.has_closed_modal_cookie_name);
             KlaviyoSubscribe.executeWhenRequirementsLoaded(function() {
                 var c = jQuery(a);
+                var activeModalId = c.attr("id");
                 KlaviyoSubscribe.attachToForms(jQuery(a).find(".klaviyo_subscription_form"), b);
                 c.delegate(".klaviyo_close_modal", "click", function(a) {
                     a.preventDefault();
                     c.hide();
+                    if (activeModalId == "newsletter_popup2") {
+                        if (!successSubmit) {
+                          localStorage.setItem("activate", true);
+                          setTimeout(function() {
+                            $('span a h4').hide(); 
+                            $('#activate-countdown').show();
+                          }, 15000); 
+                        }   
+                    }                    
                     KlaviyoSubscribe.setClosedModalCookie()
                 });
                 c.click(function(a) {
