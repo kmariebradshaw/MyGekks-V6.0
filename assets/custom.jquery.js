@@ -69,12 +69,7 @@ if($discountCode){
 }
 }; 
 
-$(document).ready(function(){
-  checkForDiscount(); 
-}); 
-
-$(document).ready(function(){
-  if (localStorage.getItem("timer")){    
+function discountTimedBanner(){
     $('span a h4').hide();
     $('#activate-countdown').hide(); 
     $('#countdown').show();
@@ -115,10 +110,21 @@ $(document).ready(function(){
       }
     }
     var interval = setInterval(counter, 1000);
+}
+
+$('#activate-timer').click(function(){
+  discountTimedBanner(); 
+  localStorage.setItem("timer", true);
+});
+
+$(document).ready(function(){
+  checkForDiscount(); 
+  if (localStorage.getItem("timer")){    
+    discountTimedBanner(); 
   }
-     else if (localStorage.getItem("activate")) {
-      $('span a h4').hide(); 
-      $('#countdown').hide(); 
-      $('#activate-countdown').show(); 
-    }
+  else if (localStorage.getItem("activate")) {
+    $('span a h4').hide(); 
+    $('#countdown').hide(); 
+    $('#activate-countdown').show(); 
+  }
 });
