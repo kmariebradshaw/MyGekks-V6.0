@@ -52,6 +52,14 @@ function getParameterByName(name, url) {
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
+function countdownActive(){
+    localStorage.setItem("activate", true);
+    setTimeout(function() {
+      $('span a h4').hide(); 
+      $('#activate-countdown').show();
+    }, 15000); 
+}
+
 function checkForDiscount() {
 $discountInput = $("input.js-form-discount");
 $coupon = getParameterByName('coupon');

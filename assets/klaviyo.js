@@ -276,6 +276,7 @@ var KlaviyoSubscribe = KlaviyoSubscribe || {};
             c.find(".klaviyo_fine_print").html(a);
             return c
         };
+
         KlaviyoSubscribe.attachToModalForm = function(a, b) {
             b = b || {};
             b.pages = b.pages || [];
@@ -292,29 +293,20 @@ var KlaviyoSubscribe = KlaviyoSubscribe || {};
                 KlaviyoSubscribe.attachToForms(jQuery(a).find(".klaviyo_subscription_form"), b);
                 c.delegate(".klaviyo_close_modal", "click", function(a) {
                     a.preventDefault();
-                    c.hide();
-                    if (activeModalId == "newsletter_popup2") {
-                        if (!successSubmit) {
-                          localStorage.setItem("activate", true);
-                          setTimeout(function() {
-                            $('span a h4').hide(); 
-                            $('#activate-countdown').show();
-                          }, 15000); 
-                        }    
-                    }                    
+                    c.hide();                  
                     KlaviyoSubscribe.setClosedModalCookie()
+                    if ((activeModalId == "newsletter_popup2") && !successSubmit){
+                        countdownActive(); 
+                    }
                 });
                 c.click(function(a) {
-                    a.currentTarget === a.target && (c.hide(), KlaviyoSubscribe.setClosedModalCookie())
-                      if (activeModalId == "newsletter_popup2") {
-                        if (!successSubmit) {
-                          localStorage.setItem("activate", true);
-                          setTimeout(function() {
-                            $('span a h4').hide(); 
-                            $('#activate-countdown').show();
-                          }, 15000); 
-                        }   
-                    }        
+                 if (a.currentTarget === a.target){ 
+                    c.hide(); 
+                    KlaviyoSubscribe.setClosedModalCookie(); 
+                    if ((activeModalId == "newsletter_popup2") && !successSubmit){
+                        countdownActive(); 
+                    }                  
+                 }    
                 });
                 KlaviyoSubscribe._canShowElem(b) && jQuery(function() {
                     setTimeout(function() {
