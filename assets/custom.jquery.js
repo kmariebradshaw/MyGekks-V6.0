@@ -52,6 +52,14 @@ function getParameterByName(name, url) {
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
+function countdownActive(){
+    localStorage.setItem("activate", true);
+    setTimeout(function() {
+      $('span a h4').hide(); 
+      $('#activate-countdown').show();
+    }, 15000); 
+}
+
 function checkForDiscount() {
 $discountInput = $("input.js-form-discount");
 $coupon = getParameterByName('coupon');
@@ -69,11 +77,9 @@ if($discountCode){
 }
 }; 
 
-checkForDiscount(); 
-
-$(document).ready(function(){
-  if (localStorage.getItem("timer")){    
+function discountTimedBanner(){
     $('span a h4').hide();
+    $('#activate-countdown').hide(); 
     $('#countdown').show();
     var minutesleft = 20;
     var secondsleft = 0; 
@@ -101,7 +107,6 @@ $(document).ready(function(){
       
       if(now >= end || localStorage.getItem("end") == "Invalid Date") { 
         $('#countdown').hide();
-       
         clearTimeout(interval);
         localStorage.setItem("end", null)
         localStorage.clear()
@@ -113,5 +118,21 @@ $(document).ready(function(){
       }
     }
     var interval = setInterval(counter, 1000);
+}
+
+$('#activate-timer').click(function(){
+  discountTimedBanner(); 
+  localStorage.setItem("timer", true);
+});
+
+$(document).ready(function(){
+  checkForDiscount(); 
+  if (localStorage.getItem("timer")){    
+    discountTimedBanner(); 
+  }
+  else if (localStorage.getItem("activate")) {
+    $('span a h4').hide(); 
+    $('#countdown').hide(); 
+    $('#activate-countdown').show(); 
   }
 });
