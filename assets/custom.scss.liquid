@@ -3671,6 +3671,21 @@ display: inline-block;
   cursor: pointer; 
   background: #33ffcc; 
   padding: 5px; 
-  margin: 5px; 
+  margin: 0 0 5px; 
   &:hover { color: white; }
+}
+
+@media only screen and (max-width: 588px) {
+  #activate-timer {
+    display: inline-block;
+    cursor: pointer;
+    background: #33ffcc;
+    padding: 0 5px;
+    margin: 0 0 2px;
+  }
+  #activate-countdown { margin-top: 2px;}
+}
+
+@media only screen and (max-width: 350px) {
+  body #activate-countdown { font-size: 11px ; }
 }
