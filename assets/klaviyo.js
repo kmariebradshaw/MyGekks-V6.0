@@ -300,12 +300,21 @@ var KlaviyoSubscribe = KlaviyoSubscribe || {};
                             $('span a h4').hide(); 
                             $('#activate-countdown').show();
                           }, 15000); 
-                        }   
+                        }    
                     }                    
                     KlaviyoSubscribe.setClosedModalCookie()
                 });
                 c.click(function(a) {
                     a.currentTarget === a.target && (c.hide(), KlaviyoSubscribe.setClosedModalCookie())
+                      if (activeModalId == "newsletter_popup2") {
+                        if (!successSubmit) {
+                          localStorage.setItem("activate", true);
+                          setTimeout(function() {
+                            $('span a h4').hide(); 
+                            $('#activate-countdown').show();
+                          }, 15000); 
+                        }   
+                    }        
                 });
                 KlaviyoSubscribe._canShowElem(b) && jQuery(function() {
                     setTimeout(function() {
