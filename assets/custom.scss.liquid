@@ -3698,6 +3698,44 @@ body .klaviyo_modal .exitpop .extra-title {
 {% comment %}holiday landing / flow / for her{% endcomment %}
 
 
+@media only screen and (max-width: 420px) {
+  #atf-holiday {
+    h1 { 
+      font-size: 15pt;  
+      #gtitle {
+        font-size: 30pt; 
+      }
+    }
+    h4 { font-size: 12pt; }
+  }
+}
+
+@media only screen and (min-width: 421px) and (max-width: 588px) {
+    #atf-holiday {
+    h1 { 
+      font-size: 20pt; 
+      #gtitle {
+        font-size: 40pt; 
+      }
+    }
+    h4 { font-size: 16pt; }
+  }
+}
+
+@media only screen and (min-width: 589px) and (max-width: 800px) {
+  #atf-holiday {
+    h1 { 
+      font-size: 28pt; 
+      #gtitle {
+        font-size: 60pt; 
+      }
+    }
+    h4 { font-size: 20pt; }
+    .holiday-fbutton { padding: 20px;  }
+  }
+}
+
+
 @media only screen and (max-width: 800px) {
   .do-plus { display: none; } 
   #holiday-information { display: none; }
@@ -3711,16 +3749,11 @@ body .klaviyo_modal .exitpop .extra-title {
     justify-content: center;
     flex-direction: column; 
     h1 {
-    font-size: 15pt;
-    line-height: normal;
-    margin-bottom: 50px;
-      #gtitle { 
-        font-size: 30pt; 
-        margin-left: -5px; 
-      }
+      line-height: normal;
+      margin-bottom: 50px;
+      #gtitle { margin-left: -5px; }
     }
     h4 {
-      font-size: 12pt; 
       margin-bottom: 70px;
       line-height: normal;  
     }
