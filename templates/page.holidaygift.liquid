@@ -1,26 +1,34 @@
 {% layout 'theme.flow' %} 
-    <main id="page">	     
-		<div class="">
-			<section id="holiday-hero">
-				<div id="atf-holiday">
-					<h1>
-						<div id="gtitle">Gekks</div><br class="mo-plus">
-						are socks <br class="mo-plus">
-						that stick <br class="mo-plus">
-						and stay <br class="mo-plus">
-						inside <br class="mo-plus">
-						your shoes.
-					</h1>
-					<h4>give her the gift that<br class="mo-plus"> will end heel blisters <br class="mo-plus">and sock slippage.</h4>
-				</div>
+<style>
+	#someone-purchased { display: none !important; }
+</style>	
+	<div class="">
+		<section id="holiday-hero">
+			<div id="atf-holiday">
+				<h1>
+					<div id="gtitle">Gekks</div><br class="mo-plus">
+					are socks <br class="mo-plus">
+					that stick <br class="mo-plus">
+					and stay <br class="mo-plus">
+					inside <br class="mo-plus">
+					your shoes.
+				</h1>
+				<h4>give her the gift that<br class="mo-plus"> will end heel blisters <br class="mo-plus">and sock slippage.</h4>
 				<div class="holiday-fbutton mo-plus">show me</div>
+			</div>
 			</section>
-			<section id="holiday-information">
-				<img src="{{'Timelinefinal1.gif'|asset_url}}" alt="The Ultimate No-Show Sock for Ballet Flats, Loafers, and Sneakers" class="fw"/>
-				<div id="cta-holiday">
-					<a href="/products/womens-closet-pack"><h2>shop now</h2
-					></a>
-				</div>
-			</section>
-		</div>
-    </main>
+		<section id="holiday-information">
+			<img src="{{'Timelinefinal1.gif'|asset_url}}" alt="The Ultimate No-Show Sock for Ballet Flats, Loafers, and Sneakers" class="fw"/>
+			<div id="cta-holiday">
+				<a href="/products/womens-closet-pack"><h2>shop now</h2
+				></a>
+			</div>
+		</section>
+	</div>
+
+<script>
+	$('.holiday-button').click(function(){
+		$('#holiday-hero').fadeOut(); 
+		$('#holiday-information').fadeIn(); 
+	});
+</script>

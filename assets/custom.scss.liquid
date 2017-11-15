@@ -3701,10 +3701,43 @@ body .klaviyo_modal .exitpop .extra-title {
 @media only screen and (max-width: 800px) {
   .do-plus { display: none; } 
   #holiday-information { display: none; }
+  #atf-holiday { 
+    background-image: url("{{'holiday-hero-m.jpg'| aseet_url}}");
+    height: 100vh; 
+    background-color: #33ffcc;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    h1 {
+    font-size: 15pt;
+    line-height: normal;
+    margin-bottom: 50px;
+      #gtitle { 
+        font-size: 30pt; 
+        margin-left: -5px; 
+      }
+    }
+    h4 {
+      font-size: 12pt; 
+      margin-bottom: 70px;
+      line-height: normal;  
+    }
+  }
+
 }
 
 @media only screen and(min-width: 801px) {
   .mo-plus {display: none; }
+  #holiday-hero { padding-top: 100px; }
+  #atf-holiday {
+    background-image: url("{{'for-her-hero.jpg'| asset_url }}");
+    height: 0;
+    padding-top: 45%; 
+    margin-bottom: 45px;
+    h1 { margin-top: -27%; }
+  }
 }
 
   #cta-holiday { 
@@ -3722,18 +3755,13 @@ body .klaviyo_modal .exitpop .extra-title {
   }
 
   #atf-holiday  {
-    background-image: url("{{'for-her-hero.jpg'| asset_url }}");
     background-size: 100%;
     background-repeat: no-repeat;
     width: 100%; 
-    height: 0;
-    padding-top: 45%; 
     text-align: center;
     letter-spacing: normal;
-    margin-bottom: 45px;
     h1 {
       text-align: center;
-      margin-top: -27%; 
       text-transform: none !important;
       font-weight: bolder; 
     }
@@ -3762,7 +3790,7 @@ body .klaviyo_modal .exitpop .extra-title {
     }
    }
 
-   #gtitle { display: inline-block; }
+  #gtitle { display: inline-block; }
   .holiday-fbutton {
       background-color: #000;
       color: #fff;
