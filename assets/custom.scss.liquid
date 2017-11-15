@@ -3695,10 +3695,18 @@ body .klaviyo_modal .exitpop .extra-title {
 }
 }
 
-@media only screen and (max-width: 800px) {
-.do-plus { display: none; } }
-
 {% comment %}holiday landing / flow / for her{% endcomment %}
+
+
+@media only screen and (max-width: 800px) {
+  .do-plus { display: none; } 
+  #holiday-information { display: none; }
+}
+
+@media only screen and(min-width: 801px) {
+  .mo-plus {display: none; }
+}
+
   #cta-holiday { 
     background-color: #33ffcc;
     width: 100%;
@@ -3753,3 +3761,16 @@ body .klaviyo_modal .exitpop .extra-title {
       h4 { font-size: 16pt; margin-top: -20px; }
     }
    }
+
+   #gtitle { display: inline-block; }
+  .holiday-fbutton {
+      background-color: #000;
+      color: #fff;
+      padding: 10px;
+      font-size: 16pt;
+      text-align: center;
+      margin: 0 auto;
+      width: 50%;
+      cursor: pointer;
+  }
+
