@@ -33,7 +33,8 @@ $(document).ready(function(){
   if ((!flowFinish) && (!gekksVisit)){
     createCookie("gekksVisit", "remarketing", 7)
     createCookie("flowFinish", "learnMore", 14)
-    if (!(window.location.href.indexOf("?sh=d") > -1)) {
+    if (!(window.location.href.indexOf("?sh=d") > -1) && ( on_index == true
+)) {
           window.location.href="/pages/customize"
     };
   }
