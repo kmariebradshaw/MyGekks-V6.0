@@ -43,11 +43,6 @@
     width: 90%;
     cursor: pointer;
 }
-#discount-atf { 
-    max-height: 50vh;
-    overflow: hidden; 
-    margin: 20px 0;
-}
 
 .discount-box p { 
     margin-top: -20px;
@@ -55,26 +50,12 @@
     font-weight: lighter;
 }
 
-#discount-cta h2 {
-    display: inline-block;
-    margin: 50px;
-    border: 5px solid black;
-    padding: 30px;
-    text-decoration: underline;
-    letter-spacing: normal;
-    width: 40%;
-}
-
-#discount-cta { text-align: center; margin-bottom: 20px;}
-
 @media only screen and (max-width: 1023px) and (min-width: 800px) {
-    #discount-cta h2 { font-size: 24pt; margin: 20px;}
     #best-deals { font-size: 32pt; }
 }
 
 @media only screen and (max-width: 799px) and (min-width: 589px) {
     #best-deals { font-size: 22pt; }
-    #discount-cta h2 { font-size: 19pt; padding: 10px; margin: 20px; }
 }
 
 @media only screen and (max-width: 588px) and (min-width: 481px) {
@@ -85,12 +66,6 @@
     }
 
     .discount-box h4 { font-size: 16pt; }
-    #discount-cta h2 {
-        font-size: 14pt;
-        margin: 10px;
-        padding: 10px;
-        border: 2px solid black;
-    }
 }
 
 @media only screen and (min-width: 400px) and (max-width: 480px) {
@@ -100,12 +75,6 @@
         margin: 20px 0;
     }
     .discount-box h4 { font-size: 12pt; }
-    #discount-cta h2 {
-        font-size: 12pt;
-        margin: 10px;
-        padding: 10px;
-        border: 3px solid black;
-    }
 }
 
 @media only screen and (max-width: 400px) {
@@ -116,12 +85,6 @@
     }
     .discount-box h4 { font-size: 10pt;}
     .discount-box p { font-size: 9pt; }
-    #discount-cta h2 { 
-        font-size: 10pt;
-        margin: 10px;
-        padding: 10px;
-        border: 2px solid black;
-    }
 }
 
 .discount-code {
@@ -133,7 +96,7 @@
 <header>
     <h1 id="best-deals">The Perfect Gift at the Perfect Price</h1>
 </header>
-<div id="discount-atf">
+<div class="discount-atf">
     <img src="{{'blackfriday.gif' | asset_url }}" alt="Black Friday Deals" class="fw" />
 </div>
     <h2 id="free-ship-weekend">Free Shipping<br> All Season</h2>
@@ -155,7 +118,7 @@
         <h3>code: <div class="discount-code">WINTER25</div></h3>
         <p class="copy-fb" style="visibility: hidden;">copied!</p>
     </div>
-    <div id="discount-cta">
+    <div class="discount-cta">
     <a href="/products/womens-closet-pack" class="d-button double"><h2>shop women</h2></a> 
     <a href="/products/mens-closet-pack" class="d-button double"><h2>shop men</h2></a>
     </div>
