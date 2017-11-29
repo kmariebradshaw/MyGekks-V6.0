@@ -4,4 +4,4 @@ assets/custom.scss.liquid:
 layout/theme.liquid:
   development: 2017-11-29T10:25:53-06:00   fca2b48d7a4aafb34f549afb8a780ab7
 templates/page.discounts.liquid:
-  development: 2017-11-29T11:51:54-06:00   eca6cb7c869b9c143ea0cf516cc4a28d
+  development: 2017-11-29T11:53:26-06:00   ef13d55394e57847d5cc27131da3c56b
