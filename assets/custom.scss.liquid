@@ -3884,17 +3884,38 @@ body .klaviyo_modal .exitpop .extra-title {
    }
 
  
+@media only screen and (min-width: 701px) {
+  span a .holiday-deals-cta {
+    background-image: url("{{'Website-Banner.jpg' | asset_url }}");
+    font-size: 14pt !important; 
+        letter-spacing: 4px;
 
-span a .holiday-deals-cta {
-    margin: 0px -20px;
-    padding: 6px 0 0; 
-    border-bottom: none;
-    background-image: url("{{'Website-Banner.jpg' | asset_url }}"); 
-    background-size: fill; 
-    background-repeat: no-repeat; 
+  }
 }
 
+@media only screen and (min-width: 451px) and (max-width: 700px) {
+  span a .holiday-deals-cta {
+    background-image: url("{{'Website-Banner(700px).jpg' | asset_url }}");
+    font-size: 10pt !important; 
+  }
+}
 
+@media only screen and (max-width: 450px) {
+  span a .holiday-deals-cta {
+    background-image: url("{{'Website-Banner(450px).jpg' | asset_url }}");
+    font-size: 8pt !important; 
+  }
+}
+span a .holiday-deals-cta {
+    margin: 0px -20px;
+    padding: 7px 0 0;
+    border-bottom: none;
+    background-repeat: no-repeat;
+    font-weight: bolder;
+    background-position: center;
+    text-transform: uppercase !important;
+    margin-top: -4px;
+}
 .discount-atf { 
     max-height: 50vh;
     overflow: hidden; 
