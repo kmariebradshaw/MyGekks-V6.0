@@ -20,7 +20,7 @@
     {% elsif page_description %}
   <meta name="description" content="{{ page_description | escape }}">
   
-
+ 
     {% else %}
     <meta name="description" content="{{ shop.description }}">
     {% endif %}
@@ -140,9 +140,14 @@
   </head>
   <body class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '/', '-' | split: '.' }} {% if template == 'index' or page.handle == 'store' %}zoom-aware{% endif %}">
     <header>
-      <div class="wrap cbb-ignored-image" style="text-align: center;"><span class="banner">
-        <a href="/products/womens-closet-pack" onClick="ga('send', 'event', 'Banner', 'Click', 'Upgrade to Closet Pack');">
-          <h4>$5 off & Free Shipping on Women's Closet Pack</h4>
+      <div class="wrap cbb-ignored-image" style="text-align: center;">
+        <span class="banner">
+        <a href="/pages/discounts" onClick="ga('send', 'event', 'Banner', 'Click', 'Upgrade to Closet Pack');">
+          {% if template == 'page.discounts' %}
+            <h4 class="holiday-deals-cta">Holiday Deals are Here</h4>
+          {% else %}
+            <h4 class="holiday-deals-cta">see our Holiday Deals</h4>
+          {% endif %}
         </a>
         <h4 id="activate-countdown" style="display: none;">20% off orders $20+ for 20 minutes! <div id="activate-timer">Click to Activate</div></h4>
         <h4 id="countdown" style="display:none;">hurry! flash sale ends in <div id="divCounter" style="display:inline-block"></div> <b style="font-weight:bold">use code: TWENTY</b></h4>

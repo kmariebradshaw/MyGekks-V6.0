@@ -1,3 +1,8 @@
+@font-face { 
+  font-family: Magenta; 
+  src: url("{{'Holiday-Regular.woff' | asset_url}}")
+}
+
 /* 
    Swatches Styles
 */
@@ -3884,4 +3889,87 @@ body .klaviyo_modal .exitpop .extra-title {
    }
 
  
+@media only screen and (min-width: 701px) {
+  span a .holiday-deals-cta {
+    background-image: url("{{'Website-Banner.jpg' | asset_url }}");
+    font-size: 14pt !important; 
+        letter-spacing: 4px;
 
+  }
+}
+
+@media only screen and (min-width: 451px) and (max-width: 700px) {
+  span a .holiday-deals-cta {
+    background-image: url("{{'Website-Banner(700px).jpg' | asset_url }}");
+    font-size: 10pt !important; 
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  span a .holiday-deals-cta {
+    background-image: url("{{'Website-Banner(450px).jpg' | asset_url }}");
+    font-size: 8pt !important; 
+  }
+}
+span a .holiday-deals-cta {
+    margin: 0px -20px;
+    padding: 7px 0 0;
+    border-bottom: none;
+    background-repeat: no-repeat;
+    font-weight: bolder;
+    background-position: center;
+    text-transform: uppercase !important;
+    margin-top: -4px;
+}
+.discount-atf { 
+    max-height: 50vh;
+    overflow: hidden; 
+    margin: 20px 0;
+}
+
+.discount-cta h2 {
+    display: inline-block;
+    margin: 50px;
+    border: 5px solid black;
+    padding: 30px;
+    text-decoration: underline;
+    letter-spacing: normal;
+    width: 40%;
+}
+
+.discount-cta { text-align: center; margin-bottom: 20px;}
+
+@media only screen and (max-width: 1023px) and (min-width: 800px) {
+    .discount-cta h2 { font-size: 24pt; margin: 20px;}
+}
+
+@media only screen and (max-width: 799px) and (min-width: 589px) {
+    .discount-cta h2 { font-size: 19pt; padding: 10px; margin: 20px; }
+}
+
+@media only screen and (max-width: 588px) and (min-width: 481px) {
+    .discount-cta h2 {
+        font-size: 14pt;
+        margin: 10px;
+        padding: 10px;
+        border: 2px solid black;
+    }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 480px) {
+    .discount-cta h2 {
+        font-size: 12pt;
+        margin: 10px;
+        padding: 10px;
+        border: 3px solid black;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .discount-cta h2 { 
+        font-size: 10pt;
+        margin: 10px;
+        padding: 10px;
+        border: 2px solid black;
+    }
+}
