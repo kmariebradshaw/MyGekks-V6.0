@@ -143,7 +143,11 @@
       <div class="wrap cbb-ignored-image" style="text-align: center;">
         <span class="banner">
         <a href="/pages/discounts" onClick="ga('send', 'event', 'Banner', 'Click', 'Upgrade to Closet Pack');">
-          <h4 class="holiday-deals-cta">see our Holiday Deals</h4>
+          {% if template == 'page.discounts' %}
+            <h4 class="holiday-deals-cta">Holiday Deals are Here</h4>
+          {% else %}
+            <h4 class="holiday-deals-cta">see our Holiday Deals</h4>
+          {% endif %}
         </a>
         <h4 id="activate-countdown" style="display: none;">20% off orders $20+ for 20 minutes! <div id="activate-timer">Click to Activate</div></h4>
         <h4 id="countdown" style="display:none;">hurry! flash sale ends in <div id="divCounter" style="display:inline-block"></div> <b style="font-weight:bold">use code: TWENTY</b></h4>
