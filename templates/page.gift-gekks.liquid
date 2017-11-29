@@ -1,10 +1,30 @@
 <style>
+h2 { text-align: center; font-weight: bolder; letter-spacing: normal; }
+h5 { text-align: center; font-weight: lighter; letter-spacing: normal; line-height: normal;margin-top:10px; }
+.discount-cta h2 { font-weight: normal; }
+.discount-cta h2:hover { color: #33ffcc; }
+form {
+    width: 50%;
+    text-align: center;
+}
+
+form input, textarea {
+    border: 2px solid #d3d3d3 !important;
+}
+
+#wishlist-note { width: 242px; }
 </style>    
 
 <main id="page">	     
-<div class="discount-atf">
-    <img src="{{'' | asset_url }}" alt="Black Friday Deals" class="fw" />
-</div>
+    <h2>Get the Socks <br>
+     You Actually Want</h2>
+    <h5>Email your friends & family <br>to let them know you want Gekks this year</h5>
+    <form>
+    <input type="text" placeholder="Your Name"><br>
+    <input type="email" placeholder="Email">
+    <textarea id="wishlist-note" placeholder="Note"></textarea>
+    </form>        
+    <h2>Or Treat Yourself</h2>
     <div class="discount-cta">
     <a href="/products/womens-closet-pack" class="d-button double"><h2>shop women</h2></a> 
     <a href="/products/mens-closet-pack" class="d-button double"><h2>shop men</h2></a>
