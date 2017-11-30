@@ -294,18 +294,12 @@ var KlaviyoSubscribe = KlaviyoSubscribe || {};
                 c.delegate(".klaviyo_close_modal", "click", function(a) {
                     a.preventDefault();
                     c.hide();                  
-                    KlaviyoSubscribe.setClosedModalCookie()
-                    if ((activeModalId == "newsletter_popup2") && !successSubmit){
-                        countdownActive(); 
-                    }
+                    KlaviyoSubscribe.setClosedModalCookie();
                 });
                 c.click(function(a) {
                  if (a.currentTarget === a.target){ 
                     c.hide(); 
-                    KlaviyoSubscribe.setClosedModalCookie(); 
-                    if ((activeModalId == "newsletter_popup2") && !successSubmit){
-                        countdownActive(); 
-                    }                  
+                    KlaviyoSubscribe.setClosedModalCookie();                 
                  }    
                 });
                 KlaviyoSubscribe._canShowElem(b) && jQuery(function() {
