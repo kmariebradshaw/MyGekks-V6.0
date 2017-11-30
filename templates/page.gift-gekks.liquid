@@ -17,10 +17,10 @@ form input, textarea {
     margin-bottom: 0px !important;
 }
 
-form { margin: 50px; }
+form { margin: 50px; margin-bottom: 50px !important;}
 
 #wishlist-note { width: 242px; padding: 7px 9px; font-size: 14px;}
-#preview { width: 49%; display:inline-block; }
+#preview { width: 49%; display:inline-block; vertical-align: top; }
 .email-preview { width: 90%; margin: 20px auto; overflow: hidden; }
 
 body #page form .klaviyo_form_actions button{
@@ -31,6 +31,8 @@ body #page form .klaviyo_form_actions button{
     font-size: 18pt;
     margin-top: 20px;
 }
+
+#to-wish, #from-wish { display: inline-block; }
 </style>    
 
 <main id="page">	     
@@ -41,8 +43,8 @@ body #page form .klaviyo_form_actions button{
         <input type="hidden" name="g" value="NHr8RS">
         <input type="hidden" name="$fields" value="friendsName, note"/>
         <div id="form-half">      
-            <input type="text" value="" name="friendsName" placeholder="Your Name"><br>
-            <input type="email" value="" name="email" id="k_id_email" placeholder="Email" /><br>
+            <input type="text" value="" name="friendsName" id="your_name" placeholder="Your Name"><br>
+            <input type="email" value="" name="email" id="friends_email" placeholder="Email" /><br>
             <textarea id="wishlist-note" value="" name="note" placeholder="Note"></textarea>
             <div class="klaviyo_messages">
             <div class="success_message" style="display:none;"></div>
@@ -54,17 +56,30 @@ body #page form .klaviyo_form_actions button{
         </div>
         <div id="preview">
             <div class="email-preview">
+                To: <div id="to-wish"> </div> 
                 <img src="{{'placeholder.png' | asset_url}}" />
+                <p id="note-wish" style="display: none;"></p>
+                From: <div id="from-wish"></div>
             </div>
         </div> 
     </form> 
 
-{% comment %}change success message {% endcomment %}
-
-<script type="text/javascript" src="//www.klaviyo.com/media/js/public/klaviyo_subscribe.js"></script>
+{% comment %} display error messages {% endcomment %}
 <script type="text/javascript">
   KlaviyoSubscribe.attachToForms('#wishlist_signup', {
+    success_message: "Your message has been sent!"
   });
+
+  $("#friends_email").keyup(function() {
+    $('#to-wish').text(this.value);  
+  }); 
+  $("#your_name").keyup(function() {
+    $('#from-wish').text(this.value); 
+  }); 
+  $("#wishlist-note").keyup(function() {
+    $('#note-wish').show(); 
+    $('#note-wish').text(this.value); 
+  }); 
 </script>  
 
     <h2>Or Treat Yourself</h2>
