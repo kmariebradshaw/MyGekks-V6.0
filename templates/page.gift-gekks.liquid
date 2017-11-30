@@ -7,6 +7,7 @@ h5 { text-align: center; font-weight: lighter; letter-spacing: normal; line-heig
     width: 49%;
     text-align: center;
     display: inline-block;
+    vertical-align: middle;
 }
 
 form input, textarea {
@@ -20,7 +21,7 @@ form input, textarea {
 form { margin: 50px; margin-bottom: 50px !important;}
 
 #wishlist-note { width: 242px; padding: 7px 9px; font-size: 14px;}
-#preview { width: 49%; display:inline-block; vertical-align: top; }
+#preview { width: 49%; display:inline-block; vertical-align: middle; }
 .email-preview { width: 90%; margin: 20px auto; overflow: hidden; }
 
 body #page form .klaviyo_form_actions button{
@@ -32,7 +33,15 @@ body #page form .klaviyo_form_actions button{
     margin-top: 20px;
 }
 
+#note-wish {
+    max-width: 90%;
+    text-align: center;
+    padding-bottom: 0px;
+    margin: 5px auto;
+}
+
 #to-wish, #from-wish { display: inline-block; }
+.email-preview img { max-width: 100%; }
 </style>    
 
 <main id="page">	     
@@ -57,8 +66,9 @@ body #page form .klaviyo_form_actions button{
         <div id="preview">
             <div class="email-preview">
                 To: <div id="to-wish"> </div> 
-                <img src="{{'placeholder.png' | asset_url}}" />
+                <img src="{{'preview-email-header.png' | asset_url}}" />
                 <p id="note-wish" style="display: none;"></p>
+                <img src="{{'preview-email-footer.png' | asset_url}}" /> 
                 From: <div id="from-wish"></div>
             </div>
         </div> 
