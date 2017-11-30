@@ -36,6 +36,13 @@ body #page form .klaviyo_form_actions button{
     margin: 5px auto;
 }
 
+textarea {
+    font-family: MontserratB !important;
+}
+:placeholder-shown {
+    font-family: MontserratB !important;
+}
+
 #page { max-width: 1100px; margin: 0 auto; }
 
 #to-wish, #from-wish { display: inline-block; }
@@ -57,22 +64,28 @@ body #page form .klaviyo_form_actions button{
     }
     form { margin: 10px; margin-bottom: 10px !important; }
 }
+
+@media only screen and (max-width: 450px) {
+    #page h5 {font-size: 8pt;}
+}
+
+#page .error_message { font-weight: bolder; color: maroon; margin-top: -10px; }
+#page .error_message, .success_message { text-align: center; }
 </style>    
 
 <main id="page">	     
     <h2>Get the Socks <br>
      You Actually Want</h2>
-    <h5>Email your friends & family <br>to let them know you want Gekks this year</h5>
+    <h5>Email your friends & family to let them know you want <br> Gekks this year by entering your information below.<br><p style="margin-top: 7px;"> You press send, we will send the email!</p></h5>
     <form style="max-width: none !important;" id="wishlist_signup" class="klaviyo_styling klaviyo_standard_embed_NHr8RS" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" novalidate="novalidate">
         <input type="hidden" name="g" value="NHr8RS">
         <input type="hidden" name="$fields" value="friendsName, note"/>
         <div id="form-half">      
             <input type="text" value="" name="friendsName" id="your_name" placeholder="Your Name"><br>
-            <input type="email" value="" name="email" id="friends_email" placeholder="Email" /><br>
-            <textarea id="wishlist-note" value="" name="note" placeholder="Note"></textarea>
+            <input type="email" value="" name="email" id="friends_email" placeholder="Recipient Email" /><br>
+            <textarea id="wishlist-note" value="" name="note" placeholder="Let them know what size and style you want!"></textarea>
             <div class="klaviyo_messages">
-            <div class="success_message" style="display:none;"></div>
-            <div class="error_message" style="display:none;"></div>
+            <div class="success_message do" style="display:none;"></div>
     </div>
     <div class="klaviyo_form_actions do">
         <button type="submit" class="klaviyo_submit_button">Send!</button>
@@ -81,18 +94,18 @@ body #page form .klaviyo_form_actions button{
         <div id="preview">
             <div class="email-preview">
                 To: <div id="to-wish"> </div> 
-                <img src="{{'preview-email-header.png' | asset_url}}" />
+                <img src="{{'email-preview-header.png' | asset_url}}" />
                 <p id="note-wish" style="display: none;"></p>
                 <img src="{{'preview-email-footer.png' | asset_url}}" /> 
                 From: <div id="from-wish"></div>
             </div>
         </div> 
+     <div class="success_message mo" style="display:none;"></div>
     <div class="klaviyo_form_actions mo">
         <button type="submit" class="klaviyo_submit_button">Send!</button>
     </div>
     </form> 
-
-{% comment %} display error messages {% endcomment %}
+ <div class="error_message" style="display:none;"></div>
 <script type="text/javascript">
   KlaviyoSubscribe.attachToForms('#wishlist_signup', {
     success_message: "Your message has been sent!"

@@ -34,8 +34,8 @@ $(document).ready(function(){
     createCookie("gekksVisit", "remarketing", 7)
     createCookie("flowFinish", "learnMore", 14)
     if (!(window.location.href.indexOf("?sh=d") > -1) && ( on_index == true
-)) {
-          window.location.href="/pages/customize"
+    )) {
+      window.location.href="/pages/customize"
     };
   }
 })
@@ -126,8 +126,14 @@ $('#activate-timer').click(function(){
   localStorage.setItem("timer", true);
 });
 
+function flashBlink() {
+  $('#blink-banner').toggleClass("text-green"); 
+  console.log('blink')
+}
+var clr = setInterval(flashBlink, 1000);
+
 $(document).ready(function(){
-  checkForDiscount(); 
+  checkForDiscount();
   if (localStorage.getItem("timer")){    
     discountTimedBanner(); 
   }
