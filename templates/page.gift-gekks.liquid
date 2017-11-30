@@ -1,29 +1,71 @@
 <style>
-h2 { text-align: center; font-weight: bolder; letter-spacing: normal; }
-h5 { text-align: center; font-weight: lighter; letter-spacing: normal; line-height: normal;margin-top:10px; }
+h2 { text-align: center; font-weight: bolder; letter-spacing: normal; margin-top: 20px;}
+h5 { text-align: center; font-weight: lighter; letter-spacing: normal; line-height: normal;margin-top:10px;}
 .discount-cta h2 { font-weight: normal; }
 .discount-cta h2:hover { color: #33ffcc; }
-form {
-    width: 50%;
+#form-half {
+    width: 49%;
     text-align: center;
+    display: inline-block;
 }
 
 form input, textarea {
     border: 2px solid #d3d3d3 !important;
+    width: 90% !important;
+    height: 50px !important;
+    margin: 10px auto;
+    margin-bottom: 0px !important;
 }
 
-#wishlist-note { width: 242px; }
+form { margin: 50px; }
+
+#wishlist-note { width: 242px; padding: 7px 9px; font-size: 14px;}
+#preview { width: 49%; display:inline-block; }
+.email-preview { width: 90%; margin: 20px auto; overflow: hidden; }
+
+body #page form .klaviyo_form_actions button{
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+    height: 50px;
+    font-size: 18pt;
+    margin-top: 20px;
+}
 </style>    
 
 <main id="page">	     
     <h2>Get the Socks <br>
      You Actually Want</h2>
     <h5>Email your friends & family <br>to let them know you want Gekks this year</h5>
-    <form>
-    <input type="text" placeholder="Your Name"><br>
-    <input type="email" placeholder="Email">
-    <textarea id="wishlist-note" placeholder="Note"></textarea>
-    </form>        
+    <form style="max-width: none !important;" id="email_signup" class="klaviyo_styling klaviyo_standard_embed_NHr8RS" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" novalidate="novalidate">
+        <input type="hidden" name="g" value="NHr8RS">
+        <div id="form-half">      
+            <input type="text" placeholder="Your Name"><br>
+            <input type="email" value="" name="email" id="k_id_email" placeholder="Email" /><br>
+            <textarea id="wishlist-note" placeholder="Note"></textarea>
+            <div class="klaviyo_messages">
+            <div class="success_message" style="display:none;"></div>
+            <div class="error_message" style="display:none;"></div>
+    </div>
+    <div class="klaviyo_form_actions">
+        <button type="submit" class="klaviyo_submit_button">Send!</button>
+    </div>
+        </div>
+        <div id="preview">
+            <div class="email-preview">
+                <img src="{{'placeholder.png' | asset_url}}" />
+            </div>
+        </div> 
+    </form> 
+
+
+<script type="text/javascript" src="//www.klaviyo.com/media/js/public/klaviyo_subscribe.js"></script>
+<script type="text/javascript">
+  KlaviyoSubscribe.attachToForms('#email_signup', {
+    hide_form_on_success: false
+  });
+</script>  
+
     <h2>Or Treat Yourself</h2>
     <div class="discount-cta">
     <a href="/products/womens-closet-pack" class="d-button double"><h2>shop women</h2></a> 
