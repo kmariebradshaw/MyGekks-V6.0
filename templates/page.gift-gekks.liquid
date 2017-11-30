@@ -3,12 +3,11 @@ h2 { text-align: center; font-weight: bolder; letter-spacing: normal; margin-top
 h5 { text-align: center; font-weight: lighter; letter-spacing: normal; line-height: normal;margin-top:10px;}
 .discount-cta h2 { font-weight: normal; }
 .discount-cta h2:hover { color: #33ffcc; }
-#form-half {
-    width: 49%;
-    text-align: center;
+#form-half, #preview {
     display: inline-block;
-    vertical-align: middle;
 }
+
+#form-half { text-align: center; }
 
 form input, textarea {
     border: 2px solid #d3d3d3 !important;
@@ -18,10 +17,7 @@ form input, textarea {
     margin-bottom: 0px !important;
 }
 
-form { margin: 50px; margin-bottom: 50px !important;}
-
-#wishlist-note { width: 242px; padding: 7px 9px; font-size: 14px;}
-#preview { width: 49%; display:inline-block; vertical-align: middle; }
+#wishlist-note { padding: 7px 9px; font-size: 14px;}
 .email-preview { width: 90%; margin: 20px auto; overflow: hidden; }
 
 body #page form .klaviyo_form_actions button{
@@ -45,7 +41,22 @@ body #page form .klaviyo_form_actions button{
 #to-wish, #from-wish { display: inline-block; }
 .email-preview img { max-width: 100%; }
 
+@media only screen and (min-width: 589px) {
+    #form-half, #preview {
+        width: 49%;
+        vertical-align: middle;
+    }
+    form { margin: 50px; margin-bottom: 50px !important;}
 
+}
+
+@media only screen and (max-width: 588px) {
+     #form-half, #preview {
+        width: 100%;
+        vertical-align: middle;
+    }
+    form { margin: 10px; margin-bottom: 10px !important; }
+}
 </style>    
 
 <main id="page">	     
@@ -63,7 +74,7 @@ body #page form .klaviyo_form_actions button{
             <div class="success_message" style="display:none;"></div>
             <div class="error_message" style="display:none;"></div>
     </div>
-    <div class="klaviyo_form_actions">
+    <div class="klaviyo_form_actions do">
         <button type="submit" class="klaviyo_submit_button">Send!</button>
     </div>
         </div>
@@ -76,6 +87,9 @@ body #page form .klaviyo_form_actions button{
                 From: <div id="from-wish"></div>
             </div>
         </div> 
+    <div class="klaviyo_form_actions mo">
+        <button type="submit" class="klaviyo_submit_button">Send!</button>
+    </div>
     </form> 
 
 {% comment %} display error messages {% endcomment %}
