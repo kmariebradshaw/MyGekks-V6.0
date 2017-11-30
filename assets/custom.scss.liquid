@@ -311,12 +311,12 @@ body > footer .clearfix + p {
 }
 
 main {
-    padding-top: 120px !important;
+    padding-top: 150px !important;
 }
 
 @media only screen and (max-width: 800px) {
     body main {
-        padding-top: 100px !important;
+        padding-top: 130px !important;
     }
     body > header div.wrap {
         height: 65px;
@@ -3896,12 +3896,21 @@ body .klaviyo_modal .exitpop .extra-title {
         letter-spacing: 4px;
 
   }
+    span a .sub-banner-header {
+    font-size: 12pt !important; 
+  }
 }
-
+  span a .sub-banner-header {
+    text-transform: uppercase !important;
+    font-weight: normal; 
+  }
 @media only screen and (min-width: 451px) and (max-width: 700px) {
   span a .holiday-deals-cta {
     background-image: url("{{'Website-Banner(700px).jpg' | asset_url }}");
     font-size: 10pt !important; 
+  }
+  span a .sub-banner-header {
+    font-size: 8pt !important; 
   }
 }
 
@@ -3909,11 +3918,15 @@ body .klaviyo_modal .exitpop .extra-title {
   span a .holiday-deals-cta {
     background-image: url("{{'Website-Banner(450px).jpg' | asset_url }}");
     font-size: 8pt !important; 
+    background-position-y: -6px !important;
+  }
+    span a .sub-banner-header {
+    font-size: 8pt !important; 
   }
 }
 span a .holiday-deals-cta {
     margin: 0px -20px;
-    padding: 7px 0 0;
+    padding: 6px  0;
     border-bottom: none;
     background-repeat: no-repeat;
     font-weight: bolder;
@@ -3963,6 +3976,8 @@ span a .holiday-deals-cta {
         padding: 10px;
         border: 3px solid black;
     }
+
+
 }
 
 @media only screen and (max-width: 400px) {
@@ -3973,3 +3988,5 @@ span a .holiday-deals-cta {
         border: 2px solid black;
     }
 }
+
+.text-green { color: #33ffcc !important;}
