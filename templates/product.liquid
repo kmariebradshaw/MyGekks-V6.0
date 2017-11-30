@@ -19,7 +19,7 @@
   </div>
   <section id="quick-order" class="split content">
        {% unless product.title == "Extra Gripper Sets" or product.title == "Gift Cards" or product.title == "Select" %}
-        <ul style="height: 30px; background: #33ffcc;min-width:310px;" class="sub-nav">
+        <ul style="height: 30px; background: #33ffcc;min-width:310px; margin-top: 8px;" class="sub-nav">
           <center>
             {% capture product_collection_url %}{{ product.url | within: collection }}{% endcapture %}
             {% for collection in product.collections %}
