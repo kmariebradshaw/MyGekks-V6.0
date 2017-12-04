@@ -39,8 +39,7 @@ $(document).ready(function(){
     };
   }
 })
-
-function getParameterByName(name, url) {
+ function getParameterByName(name, url) {
   if (!url) {
     url = window.location.href;
   }
@@ -71,7 +70,6 @@ if($discountCode){
 }; 
 function flashBlink() {
   $('#blink-banner').toggleClass("text-green"); 
-  console.log('blink')
 }
 var clr = setInterval(flashBlink, 1000);
 

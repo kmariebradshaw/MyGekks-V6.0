@@ -106,6 +106,12 @@ textarea {
     </div>
     </form> 
  <div class="error_message" style="display:none;"></div>
+<div class="mo"> 
+ <h2 style="margin-top: 50px;">Preferd to Text?</h2>
+ <h5>Enter your message below and press to send!<br> You will be able to enter the recipient information after</h5>
+ <textarea id="text-wishlist-input" style="display: block;margin: 0 auto;min-height:0; height: 100px !important;"></textarea>
+ <div class="button" id="textwishlist" style="width: 90%; display: block; margin: 20px auto;">send!</div>
+</div>
 <script type="text/javascript">
   KlaviyoSubscribe.attachToForms('#wishlist_signup', {
     success_message: "Your message has been sent!"
@@ -117,7 +123,6 @@ textarea {
   $("#friends_email").blur(function() {
     $('#to-wish').text(this.value);  
   }); 
-
   $("#your_name").keyup(function() {
     $('#from-wish').text(this.value); 
   }); 
@@ -132,8 +137,23 @@ textarea {
     $('#note-wish').show(); 
     $('#note-wish').text(this.value); 
   }); 
-</script>  
 
+    $('#textwishlist').click(function(){
+        var customNote = $('#text-wishlist-input').val(); 
+        var gekksNote = "Check these out, I'd love them for the holidays. wwww.mygekks.com" + " "+ customNote
+        var noteToText = gekksNote
+        if ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ){
+            window.location = "sms:&body=" + noteToText
+                return false;
+
+        } 
+        else {
+        window.location = "sms:?body=" + noteToText
+            return false;
+
+        }
+    }); 
+</script>  
     <h2>Or Treat Yourself</h2>
     <div class="discount-cta">
     <a href="/products/womens-closet-pack" class="d-button double"><h2>shop women</h2></a> 
