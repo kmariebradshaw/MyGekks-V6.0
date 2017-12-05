@@ -42,7 +42,6 @@ $(document).ready(function(){
   if (customGekks) {
     $('#custom-gekks a').attr("href", customGekks) 
     $('#custom-gekks').show()
-    console.log(customGekks)
   } 
 })
  function getParameterByName(name, url) {
