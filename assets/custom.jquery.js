@@ -30,6 +30,7 @@ if(window.location.href.indexOf("countdown") > -1) {
 $(document).ready(function(){
   var flowFinish = readCookie('flowFinish')
   var gekksVisit = readCookie('gekksVisit')
+  var customGekks = readCookie('customGekks')
   if ((!flowFinish) && (!gekksVisit)){
     createCookie("gekksVisit", "remarketing", 7)
     createCookie("flowFinish", "learnMore", 14)
@@ -38,6 +39,11 @@ $(document).ready(function(){
       window.location.href="/pages/customize"
     };
   }
+  if (customGekks) {
+    $('#custom-gekks a').attr("href", customGekks) 
+    $('#custom-gekks').show()
+    console.log(customGekks)
+  } 
 })
  function getParameterByName(name, url) {
   if (!url) {
