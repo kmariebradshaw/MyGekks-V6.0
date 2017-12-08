@@ -1,5 +1,5 @@
 {% layout 'theme.flow' %} 
-<style>section{text-align: center; min-height: 100vh; max-width: 320px; display: flex; align-items: center; margin: 0 auto;}section div{width: 100%;}#someone-purchased{display: none !important;}section div h1{font-size: 14pt; margin-left: 3%; margin-right: 3%; line-height: normal; text-transform: none !important; margin-top: 5vh;}section div h3{font-size: 11pt; line-height: normal; font-weight: lighter; margin-left: 10%; margin-right: 10%; text-transform: none !important; letter-spacing: normal;}.fbutton{display: inline-block; background: #33ffcc; color: white; width: 75%; padding: 15px 0px; font-size: 14pt; cursor: pointer; margin: 0 auto; margin-bottom: 5vh; box-shadow: 5px 6px 20px lightgrey; border-radius: 10px;}.fbutton:active{box-shadow: none;}#dw{height: 5vh; font-size: 8pt; line-height: normal; width: 70%; margin: 0 auto;}#step-one img{margin-right: 1.5%; margin-left: 1.5%;}ul{margin-top: 5vh; text-align: left;}ul li{padding: 10px; border: 2px solid whitesmoke; margin: 10px 5px; font-size: 8pt; cursor: pointer; line-height: normal; font-weight: lighter; min-height: 44px;}.highlight{border: 2px solid #33ffcc;}ul li div{font-size: 11pt; font-weight: normal; line-height: normal;}ul li img{float: left; position: relative; margin-right: 5px; margin-top: -5px;}.errors-s{color:crimson;}.errors-s p{margin-top: 0; margin-left: 0; margin-right: 0; font-size: 10pt;}p{font-size: 12pt; margin-left: 5%; margin-right: 5%; line-height: normal; font-weight: lighter; margin-top: 5vh;}#rtitle{font-size: 30pt !important; margin-top: 3vh; font-weight: bolder !important;}#rftitle{line-height: 5vh;}#step-five img{display: inline-block;}#step-four ul li div{line-height: 28px;}#step-three img{margin-top: 5vh;}#step-two-five ul li div{margin-top: 11px; margin-left: 60px;}#step-two-five ul li{min-height: 40px;}#step-two-five ul li img{margin-top: -9px;}header{width: 100%; height: 2vh;}#progress-bar{width: 16.666%; background-color: #33ffcc; height: 13px;}.green{color: #33ffcc; background-color: white; display: inline;}#intro-title{font-size: 45pt; text-transform: lowercase !important;}.clicked{background-color: lightgray !important;}#close{position: absolute; color: lightgray; font-size: 11pt; right: 4vh; top:4vh; font-weight: bolder; cursor: pointer;}.fbutton:hover{color: white;}.sgblogo{max-width: 80px; margin-top: 5vh;}#problem-info{margin-top: 2vh; border: none; margin: 0 5px; font-size: 10pt; cursor: inherit; line-height: normal; font-weight: lighter; min-height: 70px; width: 80%; /* margin-left: 21%; */ margin: 0 auto;}#problem-info li{padding: 10px; border: none; margin: 0 5px; font-size: 12pt; cursor: inherit; line-height: normal; font-weight: lighter; min-height: 70px;}#problem-info li div{font-size: 10pt; font-weight: lighter; display: inline-block !important; width: 70%; font-size: 8pt !important;}#wot{font-size: 11pt; margin-left: 5%; margin-right: 5%; line-height: normal; font-weight: normal; margin-bottom: 5vh; margin-top: 5vh;}#sub-til{margin-bottom: 3vh; font-size: 22pt;}.sbutton img{max-width: 51px;}.prog-bar-ticks{border-right: 2px solid lightgray; height: 13.33px; width: 16.66666%; position: absolute; top: 0;}.prog-bar-ticks:nth-of-type(2){margin-left: 16.6666%;}.prog-bar-ticks:nth-of-type(3){margin-left: 33.5%;}.prog-bar-ticks:nth-of-type(5){margin-left: 66.6666%;}.prog-bar-ticks:nth-of-type(4){margin-left: 49.9999%;}#problem-info li:nth-of-type(1):before{content: "1"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #33ffcc; margin-top: -10px; margin-right: 20px; font-weight: 700;}#problem-info li:nth-of-type(2):before{content: "2"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #33ffcc; margin-top: -10px; margin-right: 20px; font-weight: 700;}#problem-info li:nth-of-type(3):before{content: "3"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #33ffcc; margin-top: -10px; margin-right: 20px; font-weight: 700;}
+<style>section{text-align: center; min-height: 100vh; display: flex; align-items: center; margin: 0 auto;}section div{width: 100%;}#someone-purchased{display: none !important;}section div h1{font-size: 14pt; margin-left: 3%; margin-right: 3%; line-height: normal; text-transform: none !important; margin-top: 5vh;}section div h3{font-size: 11pt; line-height: normal; font-weight: lighter; margin-left: 10%; margin-right: 10%; text-transform: none !important; letter-spacing: normal;}.fbutton{display: inline-block; background: #33ffcc; color: white; width: 75%; padding: 15px 0px; font-size: 14pt; cursor: pointer; margin: 0 auto; margin-bottom: 5vh; box-shadow: 5px 6px 20px lightgrey; border-radius: 10px;}.fbutton:active{box-shadow: none;}#dw{height: 5vh; font-size: 8pt; line-height: normal; width: 70%; margin: 0 auto;}#step-one img{margin-right: 1.5%; margin-left: 1.5%;}ul{margin-top: 5vh; text-align: left;}ul li{padding: 10px; border: 2px solid whitesmoke; margin: 10px 5px; font-size: 8pt; cursor: pointer; line-height: normal; font-weight: lighter; min-height: 44px;}.highlight{border: 2px solid #33ffcc;}ul li div{font-size: 11pt; font-weight: normal; line-height: normal;}ul li img{float: left; position: relative; margin-right: 5px; margin-top: -5px;}.errors-s{color:crimson;}.errors-s p{margin-top: 0; margin-left: 0; margin-right: 0; font-size: 10pt;}p{font-size: 12pt; margin-left: 5%; margin-right: 5%; line-height: normal; font-weight: lighter; margin-top: 5vh;}#rtitle{font-size: 30pt !important; margin-top: 3vh; font-weight: bolder !important;}#rftitle{line-height: 5vh;}#step-five img{display: inline-block;}#step-four ul li div{line-height: 28px;}#step-three img{margin-top: 5vh;}#step-two-five ul li div{margin-top: 11px; margin-left: 60px;}#step-two-five ul li{min-height: 40px;}#step-two-five ul li img{margin-top: -9px;}header{width: 100%; height: 2vh;}#progress-bar{width: 16.666%; background-color: #33ffcc; height: 13px;}.green{color: #33ffcc; background-color: white; display: inline;}#intro-title{font-size: 45pt !important; text-transform: lowercase !important;}.clicked{background-color: lightgray !important;}#close{position: absolute; color: lightgray; font-size: 11pt; right: 4vh; top:4vh; font-weight: bolder; cursor: pointer;}.fbutton:hover{color: white;}.sgblogo{max-width: 80px; margin-top: 5vh;}#problem-info{margin-top: 2vh; border: none; margin: 0 5px; font-size: 10pt; cursor: inherit; line-height: normal; font-weight: lighter; min-height: 70px; width: 80%; /* margin-left: 21%; */ margin: 0 auto;}#problem-info li{padding: 10px; border: none; margin: 0 5px; font-size: 12pt; cursor: inherit; line-height: normal; font-weight: lighter; min-height: 70px;}#problem-info li div{font-size: 10pt; font-weight: lighter; display: inline-block !important; width: 70%; font-size: 8pt !important;}#wot{font-size: 11pt; margin-left: 5%; margin-right: 5%; line-height: normal; font-weight: normal; margin-bottom: 5vh; margin-top: 5vh;}#sub-til{margin-bottom: 3vh; font-size: 22pt;}.sbutton img{max-width: 51px;}.prog-bar-ticks{border-right: 2px solid lightgray; height: 13.33px; width: 16.66666%; position: absolute; top: 0;}.prog-bar-ticks:nth-of-type(2){margin-left: 16.6666%;}.prog-bar-ticks:nth-of-type(3){margin-left: 33.5%;}.prog-bar-ticks:nth-of-type(5){margin-left: 66.6666%;}.prog-bar-ticks:nth-of-type(4){margin-left: 49.9999%;}#problem-info li:nth-of-type(1):before{content: "1"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #33ffcc; margin-top: -10px; margin-right: 20px; font-weight: 700;}#problem-info li:nth-of-type(2):before{content: "2"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #33ffcc; margin-top: -10px; margin-right: 20px; font-weight: 700;}#problem-info li:nth-of-type(3):before{content: "3"; font-size: 55pt; vertical-align: top; line-height: inherit; float: left; color: #33ffcc; margin-top: -10px; margin-right: 20px; font-weight: 700;}
  
 b { font-weight: 600; }
 .flow-r {
@@ -229,7 +229,7 @@ body section #intro-title {
     float: left;
     text-align: right;
     width: 45%;
-    font-size: 66pt;
+    font-size: 66pt !important;
     margin-right: 7%;
     line-height: 1;
 }
@@ -339,10 +339,7 @@ perspective: 1000;
   transform:rotateY(180deg);
 }
 
-.flip-container, .front, .back-card {
-    width: 310px;
-    height: 78px;
-}
+
 .flipper {
 transition: 0.6s;
 transform-style: preserve-3d;
@@ -372,7 +369,6 @@ z-index: 2;
     -o-backface-visibility: hidden;
 }
 body section .flip-b {
-    width: 310px !important;
     box-sizing: border-box;
     margin: 10px 5px;
     height: 68px;
@@ -389,6 +385,57 @@ margin-top: 5px; }
     text-align: center;
 }
 
+@media only screen and (max-width: 374px) {
+    body section {
+        width: 320px;
+    }
+    body section .flip-b {
+        width: 310px !important;
+    }
+    .flip-container, .front, .back-card {
+        width: 310px;
+        height: 78px;
+        margin: 0 auto;
+    }
+    .s_w_b { display: inline !important; }
+
+}
+
+@media only screen and (min-width: 375px) and (max-width: 413px) {
+    body section {width: 375px;}
+
+    .flip-container, .front, .back-card {
+        width: 365px;
+        height: 78px;
+        margin: 0 auto;
+    }
+
+    body section .flip-b { width: 365px; } 
+    body section ul li { font-size: 8.5pt; }
+    body section ul li div { font-size: 12pt; }
+    body section div h1 {font-size: 15pt !important;}
+    body section div .sgblogo { max-width: 110px !important;}
+    body section #problem-info li { font-size: 14pt !important; }
+    body section div #sub-til { font-size: 20pt !important; }
+    body section #result-info-flow #rtitle { font-size: 34pt !important; }
+}
+
+@media only screen and (min-width: 414px) and (max-width: 800px) {
+    body section { width: 414px; }
+    body section .flib-b { width: 404px !important;}
+    body section ul li {font-size: 9pt !important;}
+    body section ul li div {font-size: 12pt !important;}
+    body section div h1{font-size: 17pt;}
+    body section div .sgblogo { max-width: 130px;}
+    body section div #problem-info li { font-size: 16pt !important; }
+    body section div #sub-til { font-size: 24pt !important; }
+    body section #result-info-flow #rtitle { font-size: 38pt !important; }
+    .flip-container, .front, .back-card {
+        width: 404px;
+        height: 78px;
+        margin: 0 auto;
+    }
+}
 </style>
   <div>
     <header id="prog-head">
@@ -432,7 +479,7 @@ margin-top: 5px; }
             </section>
             <section id="step-two" class="prob-select-first" style="display:none;">
                 <div> <img class="sgblogo" src="{{'blogo.png' | asset_url}}" alt="Gekks" />
-                    <h1 style="margin: 0 2%;">tap your sockless <br>style problems</h1>
+                    <h1 style="margin: 0 2%;">tap your sockless <br class="s_w_b" style="display: none;">style problems</h1>
                     <h3 style="margin: 0 9%;">select as many as you'd like</h3>
                     <ul>
                       <div class="flip-container">
