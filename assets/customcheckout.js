@@ -7,10 +7,6 @@ function orderContains() {
     }
 }
 
-function timeOfOrder() {
-
-}
-
 $(document).ready(function() {
     orderContains(); 
 }); 
