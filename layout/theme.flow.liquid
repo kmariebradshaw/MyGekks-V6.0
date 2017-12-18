@@ -24,14 +24,14 @@
   </head>
   <body>
   <header class="do-plus">
-      <div class="wrap cbb-ignored-image" style="text-align: center;"><span class="banner">
-            <a href="/pages/discounts" onClick="ga('send', 'event', 'Banner', 'Click', 'Upgrade to Closet Pack');">
-            <h4 class="holiday-deals-cta">Holiday Deals are Here</h4>
-        </a>
-        <a href="/pages/holiday" onClick="ga('send', 'event', 'Banner', 'Click', 'Holiday');">
-          {% unless template == 'page.gift-gekks' %}
-          <h4 class="sub-banner-header">Add Gekks to your Holiday Wishlist</h4>
-          {% endunless %}
+      <div class="wrap cbb-ignored-image" style="text-align: center;">
+             <span class="banner">
+        <a href="/pages/discounts" onClick="ga('send', 'event', 'Banner', 'Click', 'Upgrade to Closet Pack');">
+          {% if template == 'page.discounts' %}
+            <h4 class="holiday-deals-cta">Our New Year's Deals are Here</h4>
+          {% else %}
+            <h4 class="holiday-deals-cta" id="blink-banner">see our New Year's Deals</h4>
+          {% endif %}
         </a>
         </span>
        
@@ -113,7 +113,7 @@
       <div class="wrap">
         <div class="clearfix">
           <div class="half">
-            <img src="{{'blogo-white.png' | asset_url}}" alt="GEEKS" id="flogo" />
+            <img src="{{'blogo-white.png' | asset_url}}" alt="GEKKS" id="flogo" />
             <nav>
               <ul>
                 {% for link in linklists.footer-1.links %}<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}
