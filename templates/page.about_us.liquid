@@ -623,7 +623,8 @@
 .timeline {
     background-size: 100%;
     background-repeat: no-repeat;
-    margin: 0 auto
+    margin: 0 auto; 
+    display: inline-block;
 }
 </style>
 
@@ -647,19 +648,13 @@ else if (navigator.userAgent.search("Opera") >= 0) {
 <main id="page">	     
   <section class="content">
     <div class="wrap">
-<!--       <header>
-        <h1>about us</h1>
-      </header> -->
       <div class="page" style="text-align:center;">
         <img src="{{'About-Us.jpg' | asset_url}}" alt="Justin and Christian" id="jac" />
           <p id="brother-description" style="font-weight: 300">Brothers Justin and Christian</p>
 
       </div>
 <h1 id="gekks-story" style="text-align: center;">our story</h1> 
-{% comment %}<img src="{{'about-us-desktop.jpg' | asset_url}}" alt="Our Timeline" class="tw do" id="about-us-desktop"/>
-<img src="{{'about-us-mobile.jpg' | asset_url}}" alt="Our Timeline" class="tw mo" id="about-us-mobile"/>{% endcomment %}
 <div class="timeline">
-
 <div class="timeline-text" id="t1">
 <h1 class="timeline-year">1995</h1><br>
 <p class="timeline-expo">Mom dresses all <br> brothers the same</p>
