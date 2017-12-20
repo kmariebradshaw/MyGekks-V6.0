@@ -311,7 +311,7 @@ body > footer .clearfix + p {
 }
 
 main {
-    padding-top: 150px !important;
+    padding-top: 110px !important;
 }
 
 @media only screen and (min-width: 1080px) {
@@ -319,7 +319,7 @@ main {
 }
 @media only screen and (max-width: 800px) {
     body main {
-        padding-top: 130px !important;
+        padding-top: 110px !important;
     }
     body > header div.wrap {
         height: 65px;
@@ -639,12 +639,16 @@ body .closet-pack-men {
 .fake-buttons a h4 {
     font-size: 13px;
     font-weight: normal;
-    letter-spacing: initial;
     text-transform: lowercase;
-    letter-spacing: initial;
+    letter-spacing: normal;
     line-height: normal;
     padding-top: 16px;
 }
+
+.ajaxcart__inner .one-quarter { overflow: hidden;}
+
+
+div  { -ms-overflow-style: -ms-autohiding-scrollbar; }
 
 .fake-selected {
     background-color: black !important;
@@ -799,7 +803,7 @@ a {
 
 @media only screen and (max-width: 800px) {
     body > header nav {
-        top: 140px !important;
+        top: 105px !important;
     }
     .collection,
     .collection-m {
@@ -3657,9 +3661,9 @@ display: inline-block;
 }
 
  #newsletter_popup2 .klinner { 
-  background-image: url("{{'holiday-popup1.gif'| asset_url}}"); 
+  background-image: url("{{'ny-popup-main.jpg'| asset_url}}"); 
   background-repeat: no-repeat;
-  background-size: fill;
+  background-size: cover;
   button span:hover {background-image: none; color: black; background-color: white; }
 
 }
@@ -3677,7 +3681,7 @@ display: inline-block;
 }
 
 #exit_offer .exitpop { 
-  background-image: url("{{'exit-holiday.jpg' | asset_url}}"); 
+  background-image: url("{{'exit-pop-ny.jpg' | asset_url}}"); 
   background-repeat: no-repeat; 
   background-size: cover; 
 }
@@ -3896,7 +3900,6 @@ body .klaviyo_modal .exitpop .extra-title {
  
 @media only screen and (min-width: 701px) {
   span a .holiday-deals-cta {
-    background-image: url("{{'Website-Banner.jpg' | asset_url }}");
     font-size: 14pt !important; 
         letter-spacing: 4px;
 
@@ -3913,7 +3916,6 @@ body .klaviyo_modal .exitpop .extra-title {
   }
 @media only screen and (min-width: 451px) and (max-width: 700px) {
   span a .holiday-deals-cta {
-    background-image: url("{{'Website-Banner(700px).jpg' | asset_url }}");
     font-size: 10pt !important; 
   }
   span a .sub-banner-header {
@@ -3923,9 +3925,8 @@ body .klaviyo_modal .exitpop .extra-title {
 
 @media only screen and (max-width: 450px) {
   span a .holiday-deals-cta {
-    background-image: url("{{'Website-Banner(450px).jpg' | asset_url }}");
     font-size: 8pt !important; 
-    background-position-y: -6px !important;
+    margin-top: -10px;
   }
     span a .sub-banner-header {
     font-size: 8pt !important; 
@@ -3934,12 +3935,15 @@ body .klaviyo_modal .exitpop .extra-title {
 span a .holiday-deals-cta {
     margin: 0px -20px;
     padding: 6px  0;
+    color: white;
     border-bottom: none;
     background-repeat: no-repeat;
     font-weight: bolder;
     background-position: center;
     text-transform: uppercase !important;
     margin-top: -4px;
+        background-image: url("{{'ny-banner.jpg' | asset_url }}");
+
 }
 .discount-atf { 
     max-height: 50vh;
@@ -3996,32 +4000,10 @@ span a .holiday-deals-cta {
     }
 }
 
-#additional-sections {
-    padding-top: 136px;
-}
 
 .text-green { color: #33ffcc !important;}
 
-.patent-table { 
-    width: 90%;
-    margin: 50px auto;
-    max-width: 600px;
-    tbody { border-bottom: none !important;}
-    .bold-td {
-    width: 25%;
-    vertical-align: middle;
-    background: whitesmoke;
-    text-align: center;
-    border-bottom: none;
-    font-weight: bolder; 
-  }
-    .patent-date {
-    width: 509px;
-    padding: 0px 10px;
-    font-weight: lighter;
-    border-bottom: none !important;
-  }
-}
+
  
 .exitpop .success_message {
   background-color: rgba(255,255,255,0.85); 

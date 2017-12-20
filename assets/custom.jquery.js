@@ -73,10 +73,6 @@ if($discountCode){
   }
 }
 }; 
-function flashBlink() {
-  $('#blink-banner').toggleClass("text-green"); 
-}
-var clr = setInterval(flashBlink, 1000);
 
 $(document).ready(function(){
   checkForDiscount();
