@@ -40,14 +40,6 @@
           </center>
         </ul>
         {% endunless %}
-<!--     <div id="recommend" style="display: none;" >
-      <p>Based on your Results we Recommend</p>
-      {% if product.type == "Closet Pack" %}
-      <h4>our {{ product.title }} </h4>
-      {% else %}
-      <h4>Gekks for {{product.title}}</h4>
-      {% endif %} 
-    </div> -->
         <div class="wrap">
       <div class="clearfix">       
         <div class="mo">
@@ -55,6 +47,11 @@
          	{% if product.type == "Closet Pack" %} 
           			<h2 class="product-title small-title">
           		Closet Pack</h2>
+                {% if  product.collections.first.title == "Men" %}
+                  <h2 class="pair-count-title">(2 pairs)</h2>
+                {% elsif  product.collections.first.title == "Women" %}
+                  <h2 class="pair-count-title">(3 pairs)</h2>
+                {% endif %}
           	{% else %}
           		<h2 class="product-title small-title">{{ product.title }}</h2>
           	{% endif %}
@@ -92,7 +89,11 @@
 
          {% endunless %}
          {% unless product.title == "Gift Cards" %}
-         <div class="price{% if product.price < product.compare_at_price_max %} sale{% endif %}" itemprop="price" content="{{ product.compare_at_price | money_without_currency }}" style="font-size:10pt;">
+          {% if product.type == "Closet Pack" %} 
+          <div class="price{% if product.price < product.compare_at_price_max %} sale{% endif %}" itemprop="price" content="{{ product.compare_at_price | money_without_currency }}" style="font-size:10pt; margin-top: -80px !important;">
+         {% else %}
+          <div class="price{% if product.price < product.compare_at_price_max %} sale{% endif %}" itemprop="price" content="{{ product.compare_at_price | money_without_currency }}" style="font-size:10pt;">
+        {% endif %}
            <span id="product-price-{{ product.id }}">{{ product.price | money }}</span>
            {% if product.price < product.compare_at_price_max and product.type == "Closet Pack" %}<span id="compare-price-{{ product.id }}" style="font-size:10pt;">{{ product.compare_at_price | money }}</span>{% endif %}
          </div> 
@@ -271,12 +272,6 @@
                 {% endunless %}
                 {% endfor %}
                 {% endfor %}
-<!--                 <div class="fake-buttons do">
-                  <a href="/products/extra-gripper-sets">
-                    <img src="{{'gripper-icon.jpg' | asset_url }}" class="select-icons" />
-                    <h4>Extra Grippers</h4>
-                  </a>
-                </div> -->
               </div>
           </div>
             </div>
