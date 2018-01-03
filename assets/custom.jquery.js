@@ -130,7 +130,7 @@ if($discountCode){
 $('#activate-timer').click(function(){
   discountTimedBanner(); 
   localStorage.setItem("timer", true);
-} 
+});
 
 
 $(document).ready(function(){
