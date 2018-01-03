@@ -57,6 +57,15 @@ $(document).ready(function(){
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
+function countdownActive(){
+  localStorage.setItem("activate", true);
+  setTimeout(function() {
+    $('span a h4').hide(); 
+    $('#activate-countdown').show();
+   }, 15000); 
+ }
+ 
+
 function checkForDiscount() {
 $discountInput = $("input.js-form-discount");
 $coupon = getParameterByName('coupon');
@@ -74,6 +83,64 @@ if($discountCode){
 }
 }; 
 
+
+ function discountTimedBanner(){
+   $('span a h4').hide();
+    $('#activate-countdown').hide(); 
+    $('#countdown').show();
+   var minutesleft = 10;
+   var secondsleft = 0; 
+   var finishedtext = "Out of Time! Check back soon!";
+   var end;
+    if(localStorage.getItem("end")) {
+      end = new Date(localStorage.getItem("end"));
+   } else {
+       end = new Date();
+    end.setMinutes(end.getMinutes()+minutesleft);
+    end.setSeconds(end.getSeconds()+secondsleft);
+   }
+  var counter = function () {
+     var now = new Date();
+    var diff = end - now;
+    diff = new Date(diff);
+    var sec = diff.getSeconds();
+   var min = diff.getMinutes(); 
+    if (min < 10) {
+       min = "0" + min;
+    }
+     if (sec < 10) { 
+       sec = "0" + sec;
+     }     
+      
+      if(now >= end || localStorage.getItem("end") == "Invalid Date") { 
+       $('#countdown').hide();
+        clearTimeout(interval);
+        localStorage.setItem("end", null)
+        localStorage.clear()
+      } 
+      else {
+        var value = min + ":" + sec;
+        localStorage.setItem("end", end);
+        document.getElementById('divCounter').innerHTML = value
+     }
+    }
+    var interval = setInterval(counter, 1000);
+}
+
+$('#activate-timer').click(function(){
+  discountTimedBanner(); 
+  localStorage.setItem("timer", true);
+});
+
+
 $(document).ready(function(){
   checkForDiscount();
+  if (localStorage.getItem("timer")){    
+     discountTimedBanner(); 
+   }
+   else if (localStorage.getItem("activate")) {
+    $('span a h4').hide(); 
+    $('#countdown').hide(); 
+    $('#activate-countdown').show(); 
+   }
 });
