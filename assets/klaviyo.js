@@ -294,13 +294,19 @@ var KlaviyoSubscribe = KlaviyoSubscribe || {};
                 c.delegate(".klaviyo_close_modal", "click", function(a) {
                     a.preventDefault();
                     c.hide();                  
-                    KlaviyoSubscribe.setClosedModalCookie();
-                });
+                KlaviyoSubscribe.setClosedModalCookie()
+                    if ((activeModalId == "newsletter_popup2") && !successSubmit){
+                        countdownActive();
+                    }               
+                 });
                 c.click(function(a) {
                  if (a.currentTarget === a.target){ 
                     c.hide(); 
-                    KlaviyoSubscribe.setClosedModalCookie();                 
-                 }    
+   KlaviyoSubscribe.setClosedModalCookie()
+                    if ((activeModalId == "newsletter_popup2") && !successSubmit){
+                        countdownActive();
+                    } 
+                    }              
                 });
                 KlaviyoSubscribe._canShowElem(b) && jQuery(function() {
                     setTimeout(function() {
