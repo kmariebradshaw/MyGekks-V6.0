@@ -42,7 +42,8 @@ $(document).ready(function(){
     delay_seconds: 0,
     success_message: "<div class='success_feedback'><div class='klaviyo_header'><em>Thank you!</em></div><div class='klaviyo_subheader'>Use the discount code below<br> to receive 10% off orders over $45 USD</div><div class='klaviyo_header'>GEKKS45</div></div>",
      success: function ($form) {
-    $form.find('.hide_on_submit').hide();
+      ga('send', 'event', 'Acquisition', 'Pop Up', 'Website');
+      $form.find('.hide_on_submit').hide();
     },
   }); 
   };
@@ -89,11 +90,12 @@ $(document).ready(function(){
       function leaveFromTop(e){
         if ($('.klaviyo_modal:visible').length == 0 && (e.clientY < 0 ) && (!executed)){
             KlaviyoSubscribe.attachToModalForm('#exit_offer', {
-              success_message: "<div class='success_feedback'><div class='klaviyo_header'><em>Thank you!</em></div><div class='klaviyo_subheader'>Use the discount code below<br> to receive 10% off your first order over $30 USD</div><div class='klaviyo_header'>GEKKS10</div></div>",
+              success_message: "<div class='success_feedback'><div class='klaviyo_header'><em>Thank you!</em></div><div class='klaviyo_subheader'>Use the discount code below to receive 10% off your first order over $30 USD</div><div class='klaviyo_header'>GEKKS10</div></div>",
               ignore_cookie: true, 
               delay_seconds: 0.1,
               success: function ($form) {
               $form.find('.hide_on_submit').hide();
+              ga('send', 'event', 'Acquisition', 'Exit Offer', 'Website');
               },
             }); 
             executed = true 
