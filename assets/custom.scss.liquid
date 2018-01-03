@@ -3477,7 +3477,9 @@ body .khalf {
     display: inline-block;
     width: 50%;
     vertical-align: top;
-    padding: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     .klaviyo_header {
     font-weight: bolder;
     line-height: 1.2;
@@ -3660,26 +3662,6 @@ display: inline-block;
 
 @media only screen and (max-width: 350px) {
   body #activate-countdown { font-size: 11px ; }
-}
-
- #newsletter_popup2 .klinner { 
-  background-image: url("{{'ny-popup-main.jpg'| asset_url}}"); 
-  background-repeat: no-repeat;
-  background-size: cover;
-  button span:hover {background-image: none; color: black; background-color: white; }
-
-}
-
- #newsletter_popup2 .klinner input[type=email]  {
-    background: white;
-    border: none !important;
-    text-align: center;
-}
-
-
-#newsletter_popup2 .khalf { 
-  float: right;
-  background-color: rgba(255,255,255,0.85);
 }
 
 b {font-weight: 700; }
